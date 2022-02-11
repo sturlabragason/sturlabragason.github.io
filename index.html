@@ -16,7 +16,7 @@
 
 - experience:
   - company: Cloudeon, 2019 - Present
-      title: Cloud Specialist
+      title: Senior Cloud Engineer, DevOps
         working_with: [ Azure Devops, Azure, Terraform, pwsh, az cli, git, IAM ]
         description: |
                   Bleeding edge Azure platform
