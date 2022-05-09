@@ -3,8 +3,7 @@
 | Repository | Status |
 |--|--|
 | [`sturlabragason/sturlabragason_github_managment`](https://github.com/sturlabragason/sturlabragason_github_managment) | [![Setup and run Terraform](https://github.com/sturlabragason/sturlabragason_github_managment/actions/workflows/terraform.yml/badge.svg)](https://github.com/sturlabragason/sturlabragason_github_managment/actions/workflows/terraform.yml)   |
-| [`sturlabragason/terraform_state_artifact`](https://github.com/sturlabragason/terraform_state_artifact) | [![Terraform State Artifact](https://github.com/sturlabragason/terraform_state_artifact/actions/workflows/terraform.yml/badge.svg)](https://github.com/sturlabragason/terraform_state_artifact/actions/workflows/terraform.yml)   |
-| [![Setup and run Terraform](https://github.com/sturlabragason/terraform_backstage/actions/workflows/deploy.yml/badge.svg)](https://github.com/sturlabragason/terraform_backstage/actions/workflows/deploy.yml)   |
+| [`sturlabragason/terraform_state_artifact`](https://github.com/sturlabragason/terraform_state_artifact) | [![Terraform State Artifact](https://github.com/sturlabragason/terraform_state_artifact/actions/workflows/terraform.yml/badge.svg)](https://github.com/sturlabragason/terraform_state_artifact/actions/workflows/terraform.yml)
 
 </center>
 
