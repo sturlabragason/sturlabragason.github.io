@@ -28,7 +28,7 @@ With the cost of Synapse Serverless being low, this approach allows for cost-eff
 
 To set up the environment for this project, we utilized Azure DevOps and Terraform to deploy the managed compliance solution for Azure. The solution included various resources such as Azure Functions, Synapse serverless instance, and storage accounts, all of which were deployed using Terraform. 
 
-Terraform is deployed using Azure Devops Pipelines and several ´__variables__´ are replaced before running ´terraform apply´ allowing for some of the tricks we see in the code later. The default Azure Devops agents also have both [Azure CLI and PowerShell installed](https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md).
+Terraform is deployed using Azure Devops Pipelines and several <code>__variables__</code> are replaced before running <code>terraform apply</code> allowing for some of the tricks we see in the code later. The default Azure Devops agents also have both [Azure CLI and PowerShell installed](https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md).
 
 
 ## Using Terraform to Provision the Synapse Serverless Instance and creating the database
