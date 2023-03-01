@@ -46,16 +46,18 @@ Below are relevant parts of the code
 
 ## Querying the Synapse Serverless Instance
 
-Detail how you used Pwsh to query the Synapse serverless instance
-Explain what data was extracted and why it's important for cloud compliance
+Pwsh (PowerShell) is a cross-platform task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language built on the .NET Framework. PowerShell provides full access to COM and WMI, enabling administrators to perform administrative tasks on both local and remote Windows systems.
+
+In this project, we used Pwsh to query the Synapse serverless instance. We extracted data related to cloud compliance, such as data access logs, user activities, and data retention policies. This data is essential for managing and monitoring cloud compliance in a cost-effective manner.
 
 ## Exposing Data to API Calls
 
-Discuss how Azure Functions was used to expose the data to API calls
-Explain how these API calls are used in the web interface for managed cloud compliance
+Azure Functions is a serverless compute service that enables you to run event-triggered code without having to provision or manage infrastructure. We used Azure Functions to build an API that exposes the data extracted from the Synapse instance.
+
+The API calls are used in the web interface for managed cloud compliance. With the API, users can query the Synapse instance for compliance-related data, providing an efficient and cost-effective way to manage cloud compliance.
 
 ## Conclusion
 
-Summarize the main points of the blog post
-Discuss any insights or lessons learned from the project
-Offer suggestions for future improvements or projects that build on this one
+In this blog post, we explored how Terraform, Azure Functions, and Pwsh can be used together to query a Synapse serverless instance and expose some of the data through API calls. We discussed the challenges we faced during the setup process, how we used Terraform to provision the Synapse instance, how we used Pwsh to query the data, and how we used Azure Functions to expose the data to API calls.
+
+This approach provides organizations with a cost-effective way to manage and monitor cloud compliance while maintaining scalability and flexibility. Insights gained from this project can be applied to other projects, and we recommend exploring more cloud-based analytics interfaces that utilize these technologies."
