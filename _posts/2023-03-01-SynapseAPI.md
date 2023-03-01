@@ -26,7 +26,7 @@ With the cost of Synapse Serverless being low, this approach allows for cost-eff
 
 ## Setting up the Environment
 
-To set up the environment for this project, I utilized Azure DevOps and Terraform to deploy the proprietary solution for Azure. The solution included various resources such as Azure Functions, Synapse serverless instance, and storage accounts, all of which were deployed using Terraform. 
+The environment used for this project was Azure DevOps and Terraform for deploying the proprietary solution on Azure. The solution involved multiple resources, including Azure Functions and Synapse serverless instances which were all deployed using Terraform. Additionally, other components related to the solution were deployed using Azure Pipelines. 
 
 The Terraform code is deployed using Azure Devops Pipelines and several <code>__variables__</code> are replaced before running <code>terraform apply</code> allowing for some of the tricks I see in the code later. The default Azure Devops agents also have both [Azure CLI and PowerShell installed](https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md).
 
@@ -75,13 +75,9 @@ The API calls are used in the web interface for managed proprietary solution. Wi
 
 ## Querying the Synapse Serverless Instance
 
-Pwsh (PowerShell) is a cross-platform task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language built on the .NET Framework. PowerShell provides full access to COM and WMI, enabling administrators to perform administrative tasks on both local and remote Windows systems.
-
-In this project, I used Pwsh to query the Synapse serverless instance. I extracted data related to proprietary solution, such as data access logs, user activities, and data retention policies. This data is essential for managing and monitoring proprietary solution in a cost-effective manner.
+I used Pwsh to query the Synapse serverless instance. I extracted data related to the proprietary solution. This data is essential for managing the proprietary solution in a cost-effective manner.
 
 <script src="https://gist.github.com/sturlabragason/e056da97409eb9fe688739b40d1c9c08.js"></script>
-
-
 
 ## Conclusion
 
