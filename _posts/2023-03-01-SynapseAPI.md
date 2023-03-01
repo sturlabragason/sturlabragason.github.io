@@ -8,7 +8,7 @@ tags: [terraform, pwsh, azure functions, azure synapse, proprietary solution, se
 
 ## Introduction
 
-In this blog post, we will explore how Terraform, Azure Functions, and Pwsh can be used together to query a Synapse serverless instance and expose some of the data through API calls. 
+In this blog post, I will explore how Terraform, Azure Functions, and Pwsh can be used together to query a Synapse serverless instance and expose some of the data through API calls. 
 
 <b> <u> As the solution is proprietary, I will only share the necessary sections of the code. </u> </b>
 
@@ -26,9 +26,9 @@ With the cost of Synapse Serverless being low, this approach allows for cost-eff
 
 ## Setting up the Environment
 
-To set up the environment for this project, we utilized Azure DevOps and Terraform to deploy the proprietary solution for Azure. The solution included various resources such as Azure Functions, Synapse serverless instance, and storage accounts, all of which were deployed using Terraform. 
+To set up the environment for this project, I utilized Azure DevOps and Terraform to deploy the proprietary solution for Azure. The solution included various resources such as Azure Functions, Synapse serverless instance, and storage accounts, all of which were deployed using Terraform. 
 
-The Terraform code is deployed using Azure Devops Pipelines and several <code>__variables__</code> are replaced before running <code>terraform apply</code> allowing for some of the tricks we see in the code later. The default Azure Devops agents also have both [Azure CLI and PowerShell installed](https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md).
+The Terraform code is deployed using Azure Devops Pipelines and several <code>__variables__</code> are replaced before running <code>terraform apply</code> allowing for some of the tricks I see in the code later. The default Azure Devops agents also have both [Azure CLI and PowerShell installed](https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md).
 
 
 ## Using Terraform to Provision the Synapse Serverless Instance and creating the database
@@ -66,7 +66,7 @@ Here's a step-by-step breakdown of the code:
 
 
 ## Exposing Data to API Calls
-Azure Functions is a serverless compute service that enables you to run event-triggered code without having to provision or manage infrastructure. We used Azure Functions to build an API that exposes the data extracted from the Synapse instance.
+Azure Functions is a serverless compute service that enables you to run event-triggered code without having to provision or manage infrastructure. I used Azure Functions to build an API that exposes the data extracted from the Synapse instance.
 
 The API calls are used in the web interface for managed proprietary solution. With the API, users can query the Synapse instance for compliance-related data, providing an efficient and cost-effective way to manage proprietary solution.
 
@@ -77,7 +77,7 @@ The API calls are used in the web interface for managed proprietary solution. Wi
 
 Pwsh (PowerShell) is a cross-platform task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language built on the .NET Framework. PowerShell provides full access to COM and WMI, enabling administrators to perform administrative tasks on both local and remote Windows systems.
 
-In this project, we used Pwsh to query the Synapse serverless instance. We extracted data related to proprietary solution, such as data access logs, user activities, and data retention policies. This data is essential for managing and monitoring proprietary solution in a cost-effective manner.
+In this project, I used Pwsh to query the Synapse serverless instance. I extracted data related to proprietary solution, such as data access logs, user activities, and data retention policies. This data is essential for managing and monitoring proprietary solution in a cost-effective manner.
 
 <script src="https://gist.github.com/sturlabragason/e056da97409eb9fe688739b40d1c9c08.js"></script>
 
@@ -85,6 +85,6 @@ In this project, we used Pwsh to query the Synapse serverless instance. We extra
 
 ## Conclusion
 
-In this blog post, we explored how Terraform, Azure Functions, and Pwsh can be used together to query a Synapse serverless instance and expose some of the data through API calls. We discussed the challenges we faced during the setup process, how we used Terraform to provision the Synapse instance, how we used Pwsh to query the data, and how we used Azure Functions to expose the data to API calls.
+In this blog post, I explored how Terraform, Azure Functions, and Pwsh can be used together to query a Synapse serverless instance and expose some of the data through API calls. I discussed the challenges I faced during the setup process, how I used Terraform to provision the Synapse instance, how I used Pwsh to query the data, and how I used Azure Functions to expose the data to API calls.
 
-This approach provides organizations with a cost-effective way to manage and monitor proprietary solution while maintaining scalability and flexibility. Insights gained from this project can be applied to other projects, and we recommend exploring more cloud-based analytics interfaces that utilize these technologies."
+This approach provides organizations with a cost-effective way to manage and monitor proprietary solution while maintaining scalability and flexibility. Insights gained from this project can be applied to other projects, and I recommend exploring more cloud-based analytics interfaces that utilize these technologies."
