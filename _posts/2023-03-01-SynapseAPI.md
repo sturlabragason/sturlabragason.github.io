@@ -50,9 +50,13 @@ Here's a step-by-step breakdown of the code:
 
 
 ## Exposing Data to API Calls
-Azure Functions is a serverless compute service that enables you to run event-triggered code without having to provision or manage infrastructure. I used Azure Functions to build an API that exposes the data extracted from the Synapse instance.
+Azure Functions is a serverless compute service that enables you to run event-triggered code without having to provision or manage infrastructure. I used Azure Functions to build an API that exposes the data extracted from the Synapse instance. At this point the SQL database created in the previous step has already been populated with data from the proprietary solution.
 
-The API calls are used in the web interface for managed proprietary solution. With the API, users can query the Synapse instance for compliance-related data, providing an efficient and cost-effective way to manage proprietary solution.
+By deploying an API through Azure Functions, users can efficiently and cost-effectively query a specific slice of the Synapse data exposed by the API instance as determined by the code.
+
+We create an Azure Windows Function App and deploy it using a zip file, with the app settings configured to include several environment variables. The function app is given access to various Azure resources such as storage accounts, a SQL database, and a Synapse workspace.
+
+Here are the relevant code snippets:
 
 <script src="https://gist.github.com/sturlabragason/b8515e52fb2baefcc2855d168d2f02f9.js"></script>
 
