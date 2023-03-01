@@ -12,7 +12,7 @@ tags: [terraform, pwsh, azure functions, azure synapse, proprietary solution, se
 
 Data analytics have become an essential tool for businesses today. However, querying large volumes of data can be expensive and time-consuming, leading to organizations seeking cost-effective and efficient solutions. In this blog post, we will explore how to leverage Terraform, Azure Functions, and Pwsh to query Synapse serverless instances and expose data through APIs, providing a cost-effective alternative for businesses to analyze their data.
 
-<b><u> Note:</u></b> As this is part of a larger proprietary solution, I will only share the necessary sections of the code.
+<b><u> Note:</u></b> Sharing only necessary code as part of proprietary solution for managed cloud compliance that automates compliance monitoring and reporting, provides expert knowledge, and helps organizations meet global standards, identify risks, and enforce policies in their cloud environment.
 
 Prior knowledge of the following tools is assumed:
 
