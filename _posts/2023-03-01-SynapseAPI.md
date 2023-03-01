@@ -63,12 +63,22 @@ Here are the relevant code snippets:
 
 ## Querying the Synapse Serverless Instance
 
-I used Pwsh to query the Synapse serverless instance. I extracted data related to the proprietary solution. This data is essential for managing the proprietary solution in a cost-effective manner.
+As mentioned in the previous section, the PowerShell code below has been deployed  This was done through the deployment of the <code>"null_resource" "deploy"</code> resource. 
+
+The Powershell code connects to the Synapse Serverless Endpoint and queries the database created earlier. The results of the query are returned as a response to the API query.
 
 <script src="https://gist.github.com/sturlabragason/e056da97409eb9fe688739b40d1c9c08.js"></script>
 
 ## Conclusion
 
-In this blog post, I explored how Terraform, Azure Functions, and Pwsh can be used together to query a Synapse serverless instance and expose some of the data through API calls. I discussed the challenges I faced during the setup process, how I used Terraform to provision the Synapse instance, how I used Pwsh to query the data, and how I used Azure Functions to expose the data to API calls.
+Conclusion
 
-This approach provides organizations with a cost-effective way to manage and monitor proprietary solution while maintaining scalability and flexibility. Insights gained from this project can be applied to other projects, and I recommend exploring more cloud-based analytics interfaces that utilize these technologies."
+In this blog post, we explored how Terraform, Azure Functions, and Pwsh can be used to query a Synapse serverless instance and expose data through API calls. We also saw how this solution can be cost-effective for organizations with budgetary constraints due to the low cost of Synapse Serverless.
+
+Using Terraform, we provisioned the Synapse Serverless instance, created a database, and granted access to the database via connection to the serverless instance. We also used Azure Functions to build an API that exposes the data extracted from the Synapse instance.
+
+This solution provides a robust toolset for querying and exposing data from a Synapse serverless instance through APIs, making it an ideal solution for organizations that require efficient and cost-effective data querying and analytics capabilities.
+
+<b><u> Note:</u></b> This solution is part of a larger proprietary solution, and therefore, only the necessary sections of the code have been shared in this blog post.
+
+Thank you for reading!
