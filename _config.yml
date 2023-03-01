@@ -1,4 +1,4 @@
-title: 'Radical Open Source: Exploring the Boundaries of Tech'
+title: 'Techno-sorcery: Code Incantation'
 author:
   name: Sturla Bragason
   email: sturlabragason@gmail.com
@@ -6,9 +6,7 @@ author:
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
-  Write an awesome description for your new site here. You can edit this line
-  in _config.yml. It will appear in your document head meta (for Google search
-  results) and in your feed.xml site description.
+  Trying to gather some of my ramblings into coherent thought. I've been urged to start putting together my spell book to catalog some of the stuff I've put together.
 
 # Build settings
 
