@@ -8,6 +8,8 @@ tags: [terraform, pwsh, azure functions, azure synapse, proprietary solution, se
 
 {% include toc.html html=content %}
 
+{{ content }}
+
 ## Introduction
 
 Data analytics have become an essential tool for businesses today. However, querying large volumes of data can be expensive and time-consuming, leading to organizations seeking cost-effective and efficient solutions. In this blog post, we will explore how to leverage Terraform, Azure Functions, and Pwsh to query Synapse serverless instances and expose data through APIs, providing a cost-effective alternative for businesses to analyze their data.
