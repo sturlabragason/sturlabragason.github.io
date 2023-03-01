@@ -22,3 +22,30 @@ With the cost of Synapse Serverless being low, this approach allows for cost-eff
 
 
 <script src="https://gist.github.com/sturlabragason/0691ee74a713834217209e48ca40edc6.js"></script>
+
+
+## Setting up the Environment
+
+Detail the steps you took to set up the environment for the project
+Discuss any challenges you faced during this process
+
+## Using Terraform to Provision the Synapse Serverless Instance
+
+Explain what Terraform is and how it was used in this project
+Discuss the process of provisioning the Synapse serverless instance using Terraform
+
+## Querying the Synapse Serverless Instance
+
+Detail how you used Pwsh to query the Synapse serverless instance
+Explain what data was extracted and why it's important for cloud compliance
+
+## Exposing Data to API Calls
+
+Discuss how Azure Functions was used to expose the data to API calls
+Explain how these API calls are used in the web interface for managed cloud compliance
+
+## Conclusion
+
+Summarize the main points of the blog post
+Discuss any insights or lessons learned from the project
+Offer suggestions for future improvements or projects that build on this one
