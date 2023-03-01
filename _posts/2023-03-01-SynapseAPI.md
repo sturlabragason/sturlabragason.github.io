@@ -6,21 +6,7 @@ categories: [blog]
 tags: [terraform, pwsh, azure functions, azure synapse, proprietary solution, serverless, infrastructure as code, API calls, data querying, data analytics]
 ---
 
-{% raw %}{% assign headings = content | scan /<h\d.*?>(.*?)<\/h\d>/i %}
-{% if headings.size > 0 %}
-  <div class="toc">
-    <h2>Table of Contents</h2>
-    <ul>
-      {% for heading in headings %}
-        {% assign anchor = heading | replace: "<.*?>", "" | replace: " ", "-" | downcase %}
-        {% assign level = heading | split: "<" | first | size %}
-        <li><a href="#{{ anchor }}">{{ heading | replace: "<.*?>", "" }}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
-{% endif %}
 {% toc %}
-{% endtoc %}{% endraw %}
 
 ## Introduction
 
