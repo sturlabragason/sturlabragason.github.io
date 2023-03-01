@@ -26,8 +26,10 @@ With the cost of Synapse Serverless being low, this approach allows for cost-eff
 
 ## Setting up the Environment
 
-Detail the steps you took to set up the environment for the project
-Discuss any challenges you faced during this process
+To set up the environment for this project, we utilized Azure DevOps and Terraform to deploy the managed compliance solution for Azure. The solution included various resources such as Azure Functions, Synapse serverless instance, and storage accounts, all of which were deployed using Terraform. 
+
+During the setup process, we faced some challenges, such as ensuring the correct configuration for Azure Functions and establishing the necessary connections to the Synapse serverless instance. However, with the help of the Terraform documentation and community support, we were able to overcome these challenges and successfully deploy the solution.
+
 
 ## Using Terraform to Provision the Synapse Serverless Instance
 
