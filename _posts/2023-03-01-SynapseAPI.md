@@ -10,7 +10,7 @@ tags: [terraform, pwsh, azure functions, azure synapse, proprietary solution, se
 
 In this blog post, I will explore how Terraform, Azure Functions, and Pwsh can be used together to query a Synapse serverless instance and expose some of the data through API calls. 
 
-<b> <u> As the solution is proprietary, I will only share the necessary sections of the code. </u> </b>
+<b> <u> As this is part of a larger proprietary solution, I will only share the necessary sections of the code. </u> </b>
 
 Prior knowledge of the following tools is assumed:
 
@@ -22,20 +22,19 @@ Prior knowledge of the following tools is assumed:
 
 - [**Azure Synapse**](https://azure.microsoft.com/en-us/services/synapse-analytics/) is a limitless analytics service that brings together big data and data warehousing. It gives you the freedom to query data on your terms, using either serverless on-demand or provisioned resources—at scale.
 
-With the cost of Synapse Serverless being low, this approach allows for cost-effective querying of large amounts of data, making it an ideal solution for organizations with budget constraints. Together, Terraform, Azure Functions, and Pwsh provide a powerful toolset for querying and exposing data from a Synapse serverless instance through APIs, making it easier to manage and monitor proprietary solution while keeping costs low. 
+Due to its low cost, Synapse Serverless is a cost-effective solution for querying large volumes of data, making it suitable for organizations with budgetary constraints. Terraform, Azure Functions, and Pwsh together provide a robust toolset for querying and exposing data from a Synapse serverless instance through APIs.
 
 ## Setting up the Environment
 
-The environment used for this project was Azure DevOps and Terraform for deploying the proprietary solution on Azure. The solution involved multiple resources, including Azure Functions and Synapse serverless instances which were all deployed using Terraform. Additionally, other components related to the solution were deployed using Azure Pipelines. 
+The environment used for this project was Azure DevOps and Terraform for deploying the solution to Azure. The solution involves multiple resources, including Azure Functions and Synapse serverless instances which were all deployed using Terraform. Additionally, other components related to the solution were deployed using Azure Pipelines.
 
-The Terraform code is deployed using Azure Devops Pipelines and several <code>__variables__</code> are replaced before running <code>terraform apply</code> allowing for some of the tricks I see in the code later. The default Azure Devops agents also have both [Azure CLI and PowerShell installed](https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md).
-
+In this setup, the Terraform code is deployed using Azure DevOps Pipelines. Prior to running <code>terraform apply<code>, several <code>__variables__<code> are replaced, enabling certain features in the code later. It is worth noting that the default Azure DevOps agents come equipped with both Azure CLI and PowerShell [pre-installed](https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md). 
 
 ## Using Terraform to Provision the Synapse Serverless Instance and creating the database
 
-An Azure Synapse Workspace is created, followed by the creation of a database and granting of access to it via connection to the serverless instance.
+The code creates an Azure Synapse Workspace, followed by the creation of a database, and finally granting access to the database via connection to the serverless instance.
 
-Below are relevant parts of the code:
+Here are the relevant code snippets:
 
 <script src="https://gist.github.com/sturlabragason/96ef1058be3a69913ac70e8947f00883.js"></script>
 
@@ -43,26 +42,11 @@ The code defines and creates the Azure Synapse workspace and a database on the s
 
 Here's a step-by-step breakdown of the code:
 
-1. The code defines the Azure Synapse workspace.
+- The code defines the Azure Synapse workspace.
 
-2. The code creates a null resource called synapse_create_db, which will execute a local PowerShell script to create a database on the serverless endpoint. The script uses the following steps:
-   - Login to Azure using the service principal created for the user.
-   - Get an access token to authenticate with the Azure SQL database.
-   - Create a PowerShell function called SqlQuery that will execute a SQL query against the Azure SQL database.
-   - Define a SQL query to create a database called "xxx" if it does not already exist.
-   - Call the SqlQuery function with the server instance, database, access token, and SQL query parameters to create the database.
-   - The provisioner block uses PowerShell to execute the script.
+- The code creates a null resource called synapse_create_db, which will execute a local PowerShell script to create a database on the serverless endpoint. 
 
-3. The code creates another null resource called synapse_sql_access, which will execute a local PowerShell script to grant access to the function apps managed identity to the Synapse serverless database. The script uses the following steps:
-   - Get a list of users that need access to the database, which includes the name of the function app and the name of the Synapse workspace.
-   - Login to Azure using the service principal created for the user.
-   - Get an access token to authenticate with the Azure SQL database.
-   - Create a PowerShell function called SqlQuery that will execute a SQL query against the Azure SQL database.
-   - For each user in the list, define two SQL queries:
-     - The first query creates a login for the user if it does not already exist.
-     - The second query creates a user for the login in the "xxx" database and adds the user to the db_owner role.
-   - Call the SqlQuery function with the server instance, database, access token, and SQL query parameters for each query to grant access to each user.
-   - The provisioner block uses PowerShell to execute the script.
+- The code creates another null resource called synapse_sql_access, which will execute a local PowerShell script to grant access to the function apps managed identity to the Synapse serverless database.
 
 
 ## Exposing Data to API Calls
