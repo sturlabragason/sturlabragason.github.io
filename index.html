@@ -2,14 +2,7 @@
 layout: home
 ---
 
-# Welcome to my blog!
-
-Here are my recent posts:
 
 {% for post in site.posts %}
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
-
-<footer>
-  <p>{{ site.title }} &copy; {{ site.time | date: '%Y' }} - {{ site.author.name }} - {{ site.author.email }}</p>
-</footer>
