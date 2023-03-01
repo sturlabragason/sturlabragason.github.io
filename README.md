@@ -1,2 +1,2 @@
-# sturlabragason.github.io
-My CV as web page.
+<!-- # sturlabragason.github.io
+My CV as web page. -->
