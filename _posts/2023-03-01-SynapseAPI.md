@@ -30,7 +30,7 @@ Due to its low cost, Synapse Serverless is a cost-effective solution for queryin
 
 The environment used for this project was Azure DevOps and Terraform for deploying the solution to Azure. The solution involves multiple resources, including Azure Functions and Synapse serverless instances which were all deployed using Terraform. Additionally, other components related to the solution were deployed using Azure Pipelines.
 
-In this setup, the Terraform code is deployed using Azure DevOps Pipelines. Prior to running <code>terraform apply<code>, several <code>__variables__<code> are replaced, enabling certain features in the code later. It is worth noting that the default Azure DevOps agents come equipped with both Azure CLI and PowerShell [pre-installed](https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md). 
+In this setup, the Terraform code is deployed using Azure DevOps Pipelines. Prior to running <code>terraform apply</code>, several <code>__variables__</code> are replaced, enabling certain features in the code later. It is worth noting that the default Azure DevOps agents come equipped with both Azure CLI and PowerShell [pre-installed](https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md). 
 
 ## Using Terraform to Provision the Synapse Serverless Instance and creating the database
 
