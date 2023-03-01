@@ -6,7 +6,7 @@ categories: [blog]
 tags: [terraform, pwsh, azure functions, azure synapse, proprietary solution, serverless, infrastructure as code, API calls, data querying, data analytics]
 ---
 
-{% include toc.html html=content %}
+{{ content }}
 
 ## Introduction
 
