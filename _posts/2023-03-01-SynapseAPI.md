@@ -10,7 +10,7 @@ tags: [terraform, pwsh, azure functions, azure synapse, proprietary solution, se
 
 In this blog post, I will explore how Terraform, Azure Functions, and Pwsh can be used together to query a Synapse serverless instance and expose some of the data through API calls. 
 
-<b> <u> As this is part of a larger proprietary solution, I will only share the necessary sections of the code. </u> </b>
+<b><u> Note:</u></b> As this is part of a larger proprietary solution, I will only share the necessary sections of the code.
 
 Prior knowledge of the following tools is assumed:
 
