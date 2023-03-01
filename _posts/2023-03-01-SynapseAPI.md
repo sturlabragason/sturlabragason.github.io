@@ -71,8 +71,6 @@ The Powershell code connects to the Synapse Serverless Endpoint and queries the 
 
 ## Conclusion
 
-Conclusion
-
 In this blog post, we explored how Terraform, Azure Functions, and Pwsh can be used to query a Synapse serverless instance and expose data through API calls. We also saw how this solution can be cost-effective for organizations with budgetary constraints due to the low cost of Synapse Serverless.
 
 Using Terraform, we provisioned the Synapse Serverless instance, created a database, and granted access to the database via connection to the serverless instance. We also used Azure Functions to build an API that exposes the data extracted from the Synapse instance.
