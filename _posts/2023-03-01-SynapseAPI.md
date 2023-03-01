@@ -6,7 +6,7 @@ categories: [blog]
 tags: [terraform, pwsh, azure-functions, azure-synapse]
 ---
 
-I. Introduction
+## Introduction
 
 In this blog post, we will explore how Terraform, Azure Functions, and Pwsh can be used together to query a Synapse serverless instance and expose some of the data through API calls. 
 
