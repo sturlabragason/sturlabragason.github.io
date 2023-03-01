@@ -65,20 +65,21 @@ Here's a step-by-step breakdown of the code:
    - The provisioner block uses PowerShell to execute the script.
 
 
-## Querying the Synapse Serverless Instance
-
-Pwsh (PowerShell) is a cross-platform task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language built on the .NET Framework. PowerShell provides full access to COM and WMI, enabling administrators to perform administrative tasks on both local and remote Windows systems.
-
-In this project, we used Pwsh to query the Synapse serverless instance. We extracted data related to proprietary solution, such as data access logs, user activities, and data retention policies. This data is essential for managing and monitoring proprietary solution in a cost-effective manner.
-
-
-
 ## Exposing Data to API Calls
 Azure Functions is a serverless compute service that enables you to run event-triggered code without having to provision or manage infrastructure. We used Azure Functions to build an API that exposes the data extracted from the Synapse instance.
 
 The API calls are used in the web interface for managed proprietary solution. With the API, users can query the Synapse instance for compliance-related data, providing an efficient and cost-effective way to manage proprietary solution.
 
 <script src="https://gist.github.com/sturlabragason/b8515e52fb2baefcc2855d168d2f02f9.js"></script>
+
+
+## Querying the Synapse Serverless Instance
+
+Pwsh (PowerShell) is a cross-platform task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language built on the .NET Framework. PowerShell provides full access to COM and WMI, enabling administrators to perform administrative tasks on both local and remote Windows systems.
+
+In this project, we used Pwsh to query the Synapse serverless instance. We extracted data related to proprietary solution, such as data access logs, user activities, and data retention policies. This data is essential for managing and monitoring proprietary solution in a cost-effective manner.
+
+<script src="https://gist.github.com/sturlabragason/e056da97409eb9fe688739b40d1c9c08.js"></script>
 
 
 
