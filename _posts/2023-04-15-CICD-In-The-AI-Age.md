@@ -1,8 +1,12 @@
-# Title: Enhancing CI/CD with AI: A Practical Example with Terraform
+---
+layout: post
+title: "Title: Enhancing CI/CD with AI: A Practical Example with Terraform."
+date: 2023-04-15
+categories: [blog]
+tags: [AI, Language Models, LLM, software development, Terraform, code validation, error fixing, infrastructure, terraform plan, terraform apply, AgentGPT, Auto-GPT]
+---
 
 ## Introduction:
-
-
 
 In the modern era of software development, artificial intelligence (AI) is playing an increasingly significant role in making the coding process more efficient and less error-prone. AI-powered Language Models (LLMs) can now assist developers in various tasks, from validating code to fixing it before deployment. In this blog post, we will explore an example of using LLM agents to streamline the process.
 
