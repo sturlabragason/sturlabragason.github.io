@@ -38,7 +38,7 @@ And just like that, the LLM agent has successfully deployed the infrastructure w
 
 Explore the AI-Enhanced Infrastructure Deployment process with this visual representation:
 
-<img src = "_posts/diagram.png" alt = "Diagram" />
+<img src = "images/diagram.png" alt = "Diagram" />
 
 
 To better understand the process, here's some example pseudocode:
