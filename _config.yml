@@ -15,7 +15,7 @@ remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-mermaid
+  # - jekyll-mermaid
   # - jekyll-toc
 # Theme-specific settings
 
