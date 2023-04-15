@@ -11,3 +11,5 @@ gem 'jekyll-seo-tag'
 
 # Add the Jekyll Spaceship plugin
 gem 'jekyll-spaceship'
+
+gem "minima"
