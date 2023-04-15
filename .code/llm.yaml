@@ -1,0 +1,18 @@
+name: Terraform Automation with LLM Agent
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run workflow with LLM agent
+      run: |
+        python terraform_llm_agent_workflow.py

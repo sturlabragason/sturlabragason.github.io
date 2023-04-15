@@ -1,6 +1,8 @@
-# Title: Enhancing Programming with AI: A Practical Example with Terraform
+# Title: Enhancing CI/CD with AI: A Practical Example with Terraform
 
 ## Introduction:
+
+
 
 In the modern era of software development, artificial intelligence (AI) is playing an increasingly significant role in making the coding process more efficient and less error-prone. AI-powered Language Models (LLMs) can now assist developers in various tasks, from validating code to fixing it before deployment. In this blog post, we will explore an example of using LLM agents to streamline the process.
 
@@ -40,3 +42,15 @@ graph TB
     F -->|No| I
     I --> J[Execute Terraform Apply]
 @endmermaid
+
+
+Here is some imagined psudocode of what it might work like:
+
+<script src="https://gist.github.com/sturlabragason/dfbfa723db8219f5c12a8eddeba9a1ab.js"></script>
+
+ python terraform_llm_agent_workflow.py would then contain something like:
+
+ <script src="https://gist.github.com/sturlabragason/6b619686d7a1375dd270f47221ac127a.js"></script>
+
+
+Work is already being done in this same field for example with [AgentGPT](https://github.com/reworkd/AgentGPT) and [Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT).
