@@ -26,7 +26,6 @@ Here's how LLM agents can assist in creating infrastructure with Terraform:
 
 Here is the process visualized:
 
-<pre>
 ```mermaid
 graph TB
     A[Terraform Code] --> B[Send Code to LLM Agent via API]
@@ -41,4 +40,3 @@ graph TB
     F -->|No| I
     I --> J[Execute Terraform Apply]
 ```
-</pre>
