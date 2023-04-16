@@ -18,8 +18,6 @@ This blog post will delve into the exciting world of AI-driven Language Models (
 
 Once upon a time, in the world of software development, errors in code led to faulty infrastructure deployment, causing headaches for developers everywhere. But with the rise of artificial intelligence, a new era has dawned - an era in which AI-powered Language Models can predict, detect, and fix errors, streamlining the deployment process. In this blog post, we'll explore an example of how LLM agents can enhance Terraform workflows.
 
-## 
-
 Imagine a world where AI-powered agents work hand-in-hand with developers to create robust infrastructure. This reality is brought to life through LLM agents. Here's how they can assist in deploying infrastructure using Terraform:
 
 1. **The Birth of an Idea: Sending Code to LLM Agents**
