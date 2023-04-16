@@ -8,6 +8,9 @@ tags: [AI, Language Models, LLM, software development, Terraform, code validatio
 
 > Note: Even though this post is centered around infrastructure deployment, this general model of using AI agents is applicable to almost any process at all!
 
+<img src = "https://sturlabragason.github.io/images/_ff6353af-3365-403a-a2be-62e274aa2e87.jpeg" alt = "Clouds" />
+
+
 ## The Dawn of AI-Driven Infrastructure Deployment
 
 Welcome to the age of AI-enhanced infrastructure! As the integration of AI into our work lives progresses, achieving peak performance now depends on our ability to communicate clearly and execute our vision through a fleet of AI agents.
