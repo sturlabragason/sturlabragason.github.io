@@ -6,13 +6,13 @@ categories: [blog]
 tags: [AI, Language Models, LLM, software development, Terraform, code validation, error fixing, infrastructure, terraform plan, terraform apply, AgentGPT, Auto-GPT]
 ---
 
+> Note: Even though this post is centered around infrastructure deployment, this general model of using agents is applicable to almost any process at all!
+
 ## The Dawn of AI-Driven Infrastructure Deployment
 
 Welcome to the age of AI-enhanced infrastructure! As the integration of AI into our work lives progresses, achieving peak performance now depends on our ability to communicate clearly and execute our vision through a fleet of AI agents.
 
 This blog post will delve into the exciting world of AI-driven Language Models (LLMs) and their potential to predict, detect, and fix errors, streamlining the deployment process. If you haven't yet embraced AI in your day-to-day, it's time to catch up!
-
->> Note: Even though this post is centered around infrastructure deployment, this general model of using agents is applicable to almost any process at all!
 
 ## The AI-Enhanced Infrastructure Deployment Journey: From Code to Deployment with LLM Agents
 
