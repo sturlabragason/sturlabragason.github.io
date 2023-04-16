@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The AI-Enhanced Infrastructure Deployment Revolution"
+title: "AI-Driven Language Models and Infrastructure Deployment"
 date: 2023-04-15
 categories: [blog]
 tags: [AI, Language Models, LLM, software development, Terraform, code validation, error fixing, infrastructure, terraform plan, terraform apply, AgentGPT, Auto-GPT]
@@ -8,9 +8,17 @@ tags: [AI, Language Models, LLM, software development, Terraform, code validatio
 
 ## The Dawn of AI-Driven Infrastructure Deployment
 
-Once upon a time, in the world of software development, errors in code led to faulty infrastructure deployment, causing headaches for developers everywhere. But with the rise of artificial intelligence (AI), a new era has dawned - an era in which AI-powered Language Models (LLMs) can predict, detect, and fix errors, streamlining the deployment process. In this blog post, we'll explore an exciting example of how LLM agents can enhance Terraform workflows.
+Welcome to the age of AI-enhanced infrastructure! As the integration of AI into our work lives progresses, achieving peak performance now depends on our ability to communicate clearly and execute our vision through a fleet of AI agents.
+
+This blog post will delve into the exciting world of AI-driven Language Models (LLMs) and their potential to predict, detect, and fix errors, streamlining the deployment process. If you haven't yet embraced AI in your day-to-day, it's time to catch up!
+
+>> Note: Even though this post is centered around infrastructure deployment, this general model of using agents is applicable to almost any process at all!
 
 ## The AI-Enhanced Infrastructure Deployment Journey: From Code to Deployment with LLM Agents
+
+Once upon a time, in the world of software development, errors in code led to faulty infrastructure deployment, causing headaches for developers everywhere. But with the rise of artificial intelligence, a new era has dawned - an era in which AI-powered Language Models can predict, detect, and fix errors, streamlining the deployment process. In this blog post, we'll explore an example of how LLM agents can enhance Terraform workflows.
+
+## 
 
 Imagine a world where AI-powered agents work hand-in-hand with developers to create robust infrastructure. This reality is brought to life through LLM agents. Here's how they can assist in deploying infrastructure using Terraform:
 
@@ -36,28 +44,28 @@ And just like that, the LLM agent has successfully deployed the infrastructure w
 
 ## Visualizing the AI-Enhanced Infrastructure Deployment Process
 
-Explore the AI-Enhanced Infrastructure Deployment process with this visual representation:
+Let's review the above AI-Enhanced Infrastructure Deployment process with this visual representation:
 
 <img src = "https://sturlabragason.github.io/images/diagram.png" alt = "Diagram" />
 
 
-To better understand the process, here's some example pseudocode:
+Using a [Github Workflow](https://docs.github.com/en/actions/using-workflows), here's what the process might look like:
 
 <script src="https://gist.github.com/sturlabragason/dfbfa723db8219f5c12a8eddeba9a1ab.js"></script>
 
-The python script, terraform_llm_agent_workflow.py, might look like this:
+The python script, terraform_llm_agent_workflow.py, might then look something like this:
 
 <script src="https://gist.github.com/sturlabragason/6b619686d7a1375dd270f47221ac127a.js"></script>
 
+In the above example, for simplicity I've moved all the python functions into a single file to simplify the example, these would easily be split up and run separately.
 
-## What does this mean for the world of software development?
+## What does this mean for the world of infrastructure?
 
 The integration of LLM agents into Terraform workflows offers developers a wide array of benefits:
 
 - **Reduced errors:** LLM agents can detect and fix errors, minimizing the likelihood of deploying faulty infrastructure.
 - **Faster development:** By automating error-fixing, developers can focus on other tasks, accelerating the development process.
 - **Improved collaboration:** LLM agents can bridge the gap between developers, enabling them to work on a shared codebase more efficiently.
-- **Continuous learning:** As LLM agents interact with the code, they learn and improve their ability to predict, detect, and fix errors.
 
 ## Overcoming Challenges and Shaping the Future
 
