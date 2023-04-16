@@ -6,7 +6,7 @@ categories: [blog]
 tags: [AI, Language Models, LLM, software development, Terraform, code validation, error fixing, infrastructure, terraform plan, terraform apply, AgentGPT, Auto-GPT]
 ---
 
-> Note: Even though this post is centered around infrastructure deployment, this general model of using agents is applicable to almost any process at all!
+> Note: Even though this post is centered around infrastructure deployment, this general model of using AI agents is applicable to almost any process at all!
 
 ## The Dawn of AI-Driven Infrastructure Deployment
 
