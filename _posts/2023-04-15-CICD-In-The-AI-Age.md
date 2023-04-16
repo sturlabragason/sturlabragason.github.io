@@ -10,7 +10,6 @@ tags: [AI, Language Models, LLM, software development, Terraform, code validatio
 
 <img src = "https://sturlabragason.github.io/images/ff6353af-3365-403a-a2be-62e274aa2e87.jpeg" alt = "Clouds" />
 
-
 ## The Dawn of AI-Driven Infrastructure Deployment
 
 Welcome to the age of AI-enhanced infrastructure! As the integration of AI into our work lives progresses, achieving peak performance now depends on our ability to communicate clearly and execute our vision through a fleet of AI agents.
@@ -43,7 +42,10 @@ Imagine a world where AI-powered agents work hand-in-hand with developers to cre
 
 And just like that, the LLM agent has successfully deployed the infrastructure while ensuring minimal errors.
 
+
 ## Visualizing the AI-Enhanced Infrastructure Deployment Process
+
+<img src = "https://sturlabragason.github.io/images/ca68d572-2ea2-4eab-a8c8-564754d6c7de.jpeg" alt = "Deployment" />
 
 Let's review the above AI-Enhanced Infrastructure Deployment process with this visual representation:
 
