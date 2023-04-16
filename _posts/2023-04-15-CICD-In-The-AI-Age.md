@@ -45,8 +45,6 @@ And just like that, the LLM agent has successfully deployed the infrastructure w
 
 ## Visualizing the AI-Enhanced Infrastructure Deployment Process
 
-<img src = "https://sturlabragason.github.io/images/ca68d572-2ea2-4eab-a8c8-564754d6c7de.jpeg" alt = "Deployment" />
-
 Let's review the above AI-Enhanced Infrastructure Deployment process with this visual representation:
 
 <img src = "https://sturlabragason.github.io/images/diagram.png" alt = "Diagram" />
