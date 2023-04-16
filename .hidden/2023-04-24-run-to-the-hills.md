@@ -12,38 +12,40 @@ tags: [AI, human thinking, adaptation, LLM, GPT, abstract thinking, creativity, 
 > — Hans Moravec, "Mind Children"
 
 
-I. Introduction
-A. The landscape of human competence analogy
-B. The need for humans to adapt and evolve in response to AI advancements
+# Elevating Human Thinking in the Age of AI
 
-II. Personal Experience: Integrating LLM into Workflows
-A. The shift to more abstract thinking
-B. The necessity to focus on higher-level tasks and strategy
+## Introduction
+- The landscape of human competence analogy
+- The need for humans to adapt and evolve in response to AI advancements
 
-III. The New Peaks of Human Competence
-A. Identifying areas where humans can excel in the AI era
-   1. Creativity and innovation
-   2. Emotional intelligence and empathy
-   3. Complex problem solving and critical thinking
-B. Strategies for honing these skills
-   1. Lifelong learning and continuous education
-   2. Interdisciplinary approaches
-   3. Collaboration and networking
+## Personal Experience: Integrating LLM into Workflows
+- The shift to more abstract thinking
+- The necessity to focus on higher-level tasks and strategy
 
-IV. Orchestrating AI: The Kubernetes of Artificial Intelligence
-A. The role of AI orchestration in optimizing workflows
-B. The need for human expertise in guiding and managing AI systems
-C. Potential benefits and challenges of orchestrating AI
-   1. Increased efficiency and resource allocation
-   2. Ensuring ethical and responsible AI usage
-   3. Adapting to an ever-changing technological landscape
+## The New Peaks of Human Competence
+- Identifying areas where humans can excel in the AI era
+  - Creativity and innovation
+  - Emotional intelligence and empathy
+  - Complex problem solving and critical thinking
+- Strategies for honing these skills
+  - Lifelong learning and continuous education
+  - Interdisciplinary approaches
+  - Collaboration and networking
 
-V. Building the Arks: Preparing for a Seafaring Life
-A. Embracing change and adapting to the AI-driven world
-B. Fostering a growth mindset and resilience
-C. The role of policymakers, educators, and organizations in facilitating this transition
+## Orchestrating AI: The Kubernetes of Artificial Intelligence
+- The role of AI orchestration in optimizing workflows
+- The need for human expertise in guiding and managing AI systems
+- Potential benefits and challenges of orchestrating AI
+  - Increased efficiency and resource allocation
+  - Ensuring ethical and responsible AI usage
+  - Adapting to an ever-changing technological landscape
 
-VI. Conclusion
-A. The importance of elevating human thinking in response to AI
-B. The potential for a mutually beneficial partnership between humans and AI
-C. The ongoing journey towards navigating the AI-flooded landscape together
+## Building the Arks: Preparing for a Seafaring Life
+- Embracing change and adapting to the AI-driven world
+- Fostering a growth mindset and resilience
+- The role of policymakers, educators, and organizations in facilitating this transition
+
+## Conclusion
+- The importance of elevating human thinking in response to AI
+- The potential for a mutually beneficial partnership between humans and AI
+- The ongoing journey towards navigating the AI-flooded landscape together
