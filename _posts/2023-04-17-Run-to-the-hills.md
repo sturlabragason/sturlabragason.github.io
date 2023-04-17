@@ -6,7 +6,7 @@ categories: [blog]
 tags: [AI, human thinking, adaptation, LLM, GPT, abstract thinking, creativity, innovation, orchestration, Kubernetes, lifelong learning, resilience]
 ---
 
-<img src = "https://sturlabragason.github.io/images/d1368674-8183-45c5-895e-ce7eaa16cd38.jpeg" alt = "Guru" />
+<img src = "https://sturlabragason.github.io/images/d6b08de1-0af5-46d7-895f-b26905c8b264.jpeg" alt = "Guru" />
 
 > "Computers are universal machines, their potential extends uniformly over a boundless expanse of tasks. Human potentials, on the other hand, are strong in areas long important for survival, but weak in things far removed. Imagine a “landscape of human competence,” having lowlands with labels like “arithmetic” and “rote memorization,” foothills like “theorem proving” and “chess playing,” and high mountain peaks labeled “locomotion,” “hand-eye coordination” and “social interaction.” Advancing computer performance is like water slowly flooding the landscape. A half century ago it began to drown the lowlands, driving out human calculators and record clerks, but leaving most of us dry. Now the flood has reached the foothills, and our outposts there are contemplating retreat. We feel safe on our peaks, but, at the present rate, those too will be submerged within another half century. I propose that we build Arks as that day nears, and adopt a seafaring life!"
 >
