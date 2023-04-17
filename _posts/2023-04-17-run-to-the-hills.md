@@ -82,3 +82,5 @@ Our journey highlights the potential for a mutually beneficial partnership betwe
 In this ongoing adventure, we continue to explore the AI-flooded landscape together, forging new paths and discovering untapped potential. As we collectively build our arks and set sail, we are reminded that the true power of human ingenuity lies not in our ability to conquer and dominate, but in our capacity to adapt, evolve, and collaborate with the very systems we have created.
 
 With an open mind and a resilient spirit, we embark on this journey towards a world where humans and AI coexist in harmony, confident that the uncharted waters we face are merely the beginning of a grand adventure filled with limitless possibilities and endless opportunities for growth.
+
+> Note: Work in this space is already being done by multiple initiatives such as Microsoft's [JARVIS](https://github.com/microsoft/JARVIS). Will create another post in the future where we can explore those in depth.
