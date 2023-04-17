@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Elevating Human Thinking in the Age of AI"
-date: 2023-04-19
+date: 2023-04-17
 categories: [blog]
 tags: [AI, human thinking, adaptation, LLM, GPT, abstract thinking, creativity, innovation, orchestration, Kubernetes, lifelong learning, resilience]
 ---
