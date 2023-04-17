@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Elevating Human Thinking in the Age of AI"
