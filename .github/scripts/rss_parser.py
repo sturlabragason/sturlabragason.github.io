@@ -1,6 +1,8 @@
 import feedparser
 import json
 from jinja2 import Environment, FileSystemLoader
+from datetime import datetime
+import pytz
 
 # Load RSS feed URLs
 with open('.github/scripts/feeds.json', 'r') as f:
@@ -11,10 +13,14 @@ news_items = []
 for feed_url in feeds:
     feed = feedparser.parse(feed_url)
     for entry in feed.entries:
+        # Parse the publication date string into a datetime object
+        published_datetime = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %Z')
+        published_datetime = pytz.UTC.localize(published_datetime)
+
         news_items.append({
             'title': entry.title,
             'link': entry.link,
-            'published': entry.published,
+            'published': published_datetime,
         })
 
 # Sort news items by publication date
