@@ -5,22 +5,16 @@
     <title>Curated News</title>
     <!-- Add Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Update the path to your stylesheet -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Curated News</h1>
-        {% for item in news_items %}
-        <div class="item">
-            <a href="{{ item.link }}">
-                <h2>{{ item.title }}</h2>
-            </a>
-            <p>Published: {{ item.published }}</p>
-            <p>{{ item.summary }}</p>
-        </div>
-        {% endfor %}
-    </div>
+    {% for item in news_items %}
+    <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
+    <p>Published: {{ item.published.strftime('%a, %d %b %Y %H:%M:%S %Z') }}</p>
+    <p>{{ item.summary }}</p>
+    <hr>
+    {% endfor %}
 </body>
 
 </html>
