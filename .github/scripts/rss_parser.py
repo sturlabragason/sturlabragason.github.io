@@ -17,16 +17,17 @@ for feed_url in feeds:
         if 'GMT' in entry.published:
             # Replace 'GMT' with '+0000'
             entry.published = entry.published.replace('GMT', '+0000')
-        
+
         # Parse the publication date string into a datetime object
-        published_datetime = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z')
+        published_datetime = datetime.strptime(
+            entry.published, '%a, %d %b %Y %H:%M:%S %z')
 
         news_items.append({
             'title': entry.title,
             'link': entry.link,
             'published': published_datetime,
+            'summary': entry.summary,  # Add this line
         })
-
 
 
 # Sort news items by publication date
