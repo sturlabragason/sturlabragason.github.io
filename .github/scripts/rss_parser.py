@@ -23,12 +23,14 @@ for feed_url in feeds:
             entry.published, '%a, %d %b %Y %H:%M:%S %z')
 
         summary = entry.summary if 'summary' in entry else ''
+        summary = summary.split('\n')[0]  # This line cuts off the summary after the first line break
         news_items.append({
             'title': entry.title,
             'link': entry.link,
             'published': published_datetime,
             'summary': summary,
         })
+
 
 
 # Sort news items by publication date
