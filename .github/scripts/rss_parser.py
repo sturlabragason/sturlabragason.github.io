@@ -13,6 +13,11 @@ news_items = []
 for feed_url in feeds:
     feed = feedparser.parse(feed_url)
     for entry in feed.entries:
+        # Check if 'GMT' is in the date string
+        if 'GMT' in entry.published:
+            # Replace 'GMT' with '+0000'
+            entry.published = entry.published.replace('GMT', '+0000')
+        
         # Parse the publication date string into a datetime object
         published_datetime = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z')
 
@@ -21,6 +26,7 @@ for feed_url in feeds:
             'link': entry.link,
             'published': published_datetime,
         })
+
 
 
 # Sort news items by publication date
