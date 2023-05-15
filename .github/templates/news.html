@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Curated News</title>
 </head>
+
 <body>
     {% for item in news_items %}
-        <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
-        <p>Published: {{ item.published.strftime('%a, %d %b %Y %H:%M:%S %Z') }}</p>
-        <hr>
+    <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
+    <p>Published: {{ item.published.strftime('%a, %d %b %Y %H:%M:%S %Z') }}</p>
+    <p>{{ item.summary }}</p>
+    <hr>
     {% endfor %}
 </body>
+
 </html>
