@@ -1,18 +1,13 @@
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
-    padding: 0;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    padding: 20px;
     background-color: #f8f9fa;
 }
 
 .container {
     max-width: 800px;
-    width: 100%;
-    padding: 20px;
+    margin: auto;
     box-sizing: border-box;
 }
 
@@ -37,15 +32,19 @@ h1 {
 
 .item p {
     margin: 0;
+    font-size: 1.2em;
 }
 
 @media (max-width: 600px) {
     body {
         padding: 10px;
-        font-size: 18px;  
     }
 
     h1 {
-        font-size: 2em; 
+        font-size: 1.5em;
+    }
+
+    .item p {
+        font-size: 1em;
     }
 }
