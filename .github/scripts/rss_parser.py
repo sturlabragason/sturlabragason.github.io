@@ -14,14 +14,14 @@ for feed_url in feeds:
     feed = feedparser.parse(feed_url)
     for entry in feed.entries:
         # Parse the publication date string into a datetime object
-        published_datetime = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %Z')
-        published_datetime = pytz.UTC.localize(published_datetime)
+        published_datetime = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z')
 
         news_items.append({
             'title': entry.title,
             'link': entry.link,
             'published': published_datetime,
         })
+
 
 # Sort news items by publication date
 news_items.sort(key=lambda x: x['published'], reverse=True)
