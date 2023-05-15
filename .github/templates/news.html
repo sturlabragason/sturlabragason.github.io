@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Curated News</title>
+</head>
+<body>
+    {% for item in news_items %}
+        <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
+        <p>Published: {{ item.published }}</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
