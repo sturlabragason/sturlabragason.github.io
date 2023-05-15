@@ -3,6 +3,7 @@ import json
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
 import pytz
+import html
 
 # Load RSS feed URLs
 with open('.github/scripts/feeds.json', 'r') as f:
@@ -23,13 +24,15 @@ for feed_url in feeds:
             entry.published, '%a, %d %b %Y %H:%M:%S %z')
 
         summary = entry.summary if 'summary' in entry else ''
-        summary = summary.split('\n')[0]  # This line cuts off the summary after the first line break
+        summary = html.unescape(summary)  # Convert HTML escape characters to regular characters
+        summary = html.remove_tags(summary).split('\n')[0]  # Remove HTML tags and split by '\n'
         news_items.append({
             'title': entry.title,
             'link': entry.link,
             'published': published_datetime,
             'summary': summary,
         })
+
 
 
 
