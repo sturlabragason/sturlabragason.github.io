@@ -5,14 +5,13 @@
     <title>Curated News</title>
     <!-- Add Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Update the path to your stylesheet -->
 </head>
 
 <body>
-    {% for item in news_items %}
     <div class="container">
         <h1>Curated News</h1>
-        {% for item in items %}
+        {% for item in news_items %}
         <div class="item">
             <a href="{{ item.link }}">
                 <h2>{{ item.title }}</h2>
@@ -22,7 +21,6 @@
         </div>
         {% endfor %}
     </div>
-    {% endfor %}
 </body>
 
 </html>
