@@ -22,11 +22,12 @@ for feed_url in feeds:
         published_datetime = datetime.strptime(
             entry.published, '%a, %d %b %Y %H:%M:%S %z')
 
+        summary = entry.summary if 'summary' in entry else ''
         news_items.append({
             'title': entry.title,
             'link': entry.link,
             'published': published_datetime,
-            'summary': entry.summary,  # Add this line
+            'summary': summary,
         })
 
 
