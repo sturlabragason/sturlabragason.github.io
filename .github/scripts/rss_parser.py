@@ -26,7 +26,7 @@ for feed_url in feeds:
         summary = entry.summary if 'summary' in entry else ''
         soup = BeautifulSoup(summary, "html.parser")
         summary = soup.get_text()  # Convert HTML escape characters to regular characters and remove HTML tags
-        summary = summary.split('.')[0]  # Split by '\n'
+        summary = summary.split('. ')[0]  # Split by '\n'
         news_items.append({
             'title': entry.title,
             'link': entry.link,
