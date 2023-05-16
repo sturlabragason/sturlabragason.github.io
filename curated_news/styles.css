@@ -41,7 +41,7 @@ h1, h2 {
 }
 
 .item .published {
-    font-size: 0.9em;  /* adjust this value to make the text smaller or larger */
+    font-size: 0.6m;  /* adjust this value to make the text smaller or larger */
 }
 
 @media (max-width: 600px) {
