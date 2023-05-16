@@ -1,8 +1,16 @@
+:root {
+    --background-color: #282a36;
+    --text-color: #f8f8f2;
+    --link-color: #6272a4;
+    --border-color: #44475a;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .container {
@@ -11,13 +19,14 @@ body {
     box-sizing: border-box;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     font-size: 2em;
+    color: var(--text-color);
 }
 
 .item {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-color);
     padding: 20px 0;
 }
 
@@ -27,12 +36,13 @@ h1 {
 
 .item a {
     text-decoration: none;
-    color: #007bff;
+    color: var(--link-color);
 }
 
 .item p {
     margin: 0;
     font-size: 1.2em;
+    color: var(--text-color);
 }
 
 @media (max-width: 600px) {
@@ -40,7 +50,7 @@ h1 {
         padding: 10px;
     }
 
-    h1 {
+    h1, h2 {
         font-size: 1.5em;
     }
 
