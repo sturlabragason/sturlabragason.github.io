@@ -25,10 +25,10 @@ h1, h2 {
     color: var(--text-color);
 }
 
-.item {
+/* .item {
     border-bottom: 1px solid var(--border-color);
     padding: 10px 0;
-}
+} */
 
 .item:last-child {
     border-bottom: none;
