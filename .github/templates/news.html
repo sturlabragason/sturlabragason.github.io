@@ -11,9 +11,11 @@
 
 <body>
     {% for item in news_items %}
-    <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
-    <p>Published: {{ item.published.strftime('%a, %d %b %Y %H:%M:%S %Z') }}</p>
-    <p>{{ item.summary }}</p>
+    <div class="item">
+        <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
+        <p>Published: {{ item.published.strftime('%a, %d %b %Y %H:%M:%S %Z') }}</p>
+        <p>{{ item.summary }}</p>
+    </div>
     <hr>
     {% endfor %}
 </body>
