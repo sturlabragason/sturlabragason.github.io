@@ -25,11 +25,6 @@ h1, h2 {
     color: var(--text-color);
 }
 
-/* .item {
-    border-bottom: 1px solid var(--border-color);
-    padding: 10px 0;
-} */
-
 .item:last-child {
     border-bottom: none;
 }
@@ -43,6 +38,10 @@ h1, h2 {
     margin: 0;
     font-size: 1.2em;
     color: var(--text-color);
+}
+
+.item .published {
+    font-size: 0.9em;  /* adjust this value to make the text smaller or larger */
 }
 
 @media (max-width: 600px) {
