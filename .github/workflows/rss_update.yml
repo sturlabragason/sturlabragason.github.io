@@ -20,7 +20,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install feedparser jinja2 pytz html
+        pip install feedparser jinja2 pytz beautifulsoup4
 
     - name: Fetch and Parse RSS Feed
       run: python .github/scripts/rss_parser.py
