@@ -1,5 +1,6 @@
 [
     "https://www.ruv.is/rss/innlent",
     "https://www.dr.dk/nyheder/service/feeds/indland",
-    "http://feeds.bbci.co.uk/news/world/europe/rss.xml"
+    "http://feeds.bbci.co.uk/news/world/europe/rss.xml",
+    "https://hnrss.org/newest?q=git+OR+linux+OR+terraform"
 ]
