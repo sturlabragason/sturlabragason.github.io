@@ -12,6 +12,20 @@
 <body>
     
     <div class="item">
+        <h2><a href="https://samstodin.is/2023/06/segir-ad-vid-getum-veitt-tvofalt-meiri-thorsk/">Segir að við getum veitt tvöfalt meira af þorski</a></h2>
+        <p class="published">Published: Tue, 13 Jun 2023 12:39:36 UTC</p>
+        <p>Hafrannsóknarstofnun ráðleggur svo til óbreyttan þorskkvóta á næsta fiskveiðiári, 211 þúsund tonn</p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://www.bbc.co.uk/news/uk-england-london-65890080?at_medium=RSS&at_campaign=KARANGA">Southwark: Rare Roman mausoleum unearthed in London</a></h2>
+        <p class="published">Published: Tue, 13 Jun 2023 12:30:03 UTC</p>
+        <p>Excavators say the discovery is incredibly rare and "completely unique".</p>
+    </div>
+    <hr>
+    
+    <div class="item">
         <h2><a href="https://nyr.ruv.is/frettir/innlent/2023-06-13-ny-hvalfjardargong-verda-ad-veruleika-og-einbreidar-bryr-heyra-sogunni-til/">Ný Hvalfjarðargöng verða að veruleika og einbreiðar brýr heyra sögunni til</a></h2>
         <p class="published">Published: Tue, 13 Jun 2023 12:21:04 UTC</p>
         <p>Ríflega níu hundruð milljörðum verður varið í samgönguframkvæmdir á næstu fimmtán árum, þar af um 260 milljörðum á næstu fimm árum</p>
@@ -28,7 +42,7 @@
     <div class="item">
         <h2><a href="https://www.bbc.co.uk/news/world-europe-65890869?at_medium=RSS&at_campaign=KARANGA">French HR murders: Man on trial for killing three female job managers</a></h2>
         <p class="published">Published: Tue, 13 Jun 2023 11:44:30 UTC</p>
-        <p>The suspect is accused of targeting HR managers he held responsible for wrecking his career.</p>
+        <p>The suspect is accused of targeting French HR managers he held responsible for wrecking his career.</p>
     </div>
     <hr>
     
@@ -54,9 +68,51 @@
     <hr>
     
     <div class="item">
+        <h2><a href="https://news.ycombinator.com/item?id=36308476">Show HN: A little bash script to install the latest Git (2.41.0)</a></h2>
+        <p class="published">Published: Tue, 13 Jun 2023 11:20:09 UTC</p>
+        <p>Since 2.34 you can use SSH keys to do commit signing, but my Debian 11 only comes with 2.30.This little script is tested on Debian 11, modify as needed:  #!/usr/bin/env bash
+
+  which autoconf || sudo apt install -y autoconf
+  which make || sudo apt install -y build-essential
+  sudo apt install -y libcurl4-openssl-dev libz-dev libssl-dev libexpat-dev gettext asciidoc
+  TMPD1=$(mktemp -d)
+  cd $TMPD1
+  wget -O git.tar.gz https://github.com/git/git/archive/refs/tags/v2.41.0.tar.gz
+  gunzip git.tar.gz
+  tar -xf git.tar
+  rm git.tar
+  cd git*
+  pwd
+  echo $TMPD1
+  make configure
+  ./configure --prefix=/usr
+  make all doc
+  sudo make install install-doc
+  cd $HOME
+  rm -rf $TMPD1
+  echo Git 2.41.0 installed!
+  git --version
+
+Comments URL: https://news.ycombinator.com/item?id=36308476
+Points: 2
+# Comments: 0</p>
+    </div>
+    <hr>
+    
+    <div class="item">
         <h2><a href="https://www.bbc.co.uk/news/uk-england-kent-65878554?at_medium=RSS&at_campaign=KARANGA">Channel migrants: More than 600 people cross in one day</a></h2>
         <p class="published">Published: Tue, 13 Jun 2023 10:31:55 UTC</p>
         <p>The Home Office says 616 people crossed the Channel on Sunday - the highest daily number this year.</p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://hamon.in/blog/bare-git-repository/">Bare Git Repository</a></h2>
+        <p class="published">Published: Tue, 13 Jun 2023 10:21:54 UTC</p>
+        <p>Article URL: https://hamon.in/blog/bare-git-repository/
+Comments URL: https://news.ycombinator.com/item?id=36308056
+Points: 5
+# Comments: 1</p>
     </div>
     <hr>
     
@@ -96,6 +152,16 @@
     <hr>
     
     <div class="item">
+        <h2><a href="https://webchick.net/git-bisect">Git Bisect</a></h2>
+        <p class="published">Published: Tue, 13 Jun 2023 08:08:45 UTC</p>
+        <p>Article URL: https://webchick.net/git-bisect
+Comments URL: https://news.ycombinator.com/item?id=36307119
+Points: 2
+# Comments: 0</p>
+    </div>
+    <hr>
+    
+    <div class="item">
         <h2><a href="https://www.bbc.co.uk/news/uk-scotland-65855913?at_medium=RSS&at_campaign=KARANGA">Tenant urges others to follow after deposit win</a></h2>
         <p class="published">Published: Tue, 13 Jun 2023 07:58:10 UTC</p>
         <p>A tribunal rules Adéla Koubová should get her deposit back because her Edinburgh flat was not a holiday let.</p>
@@ -106,6 +172,16 @@
         <h2><a href="https://www.dr.dk/nyheder/indland/faar-sygeplejersker-en-hoej-loen-det-har-en-kommission-brugt-aar-paa-svare-paa-nu">MINUT FOR MINUT Lønstrukturkomitéen fremlagde længe ventede resultater</a></h2>
         <p class="published">Published: Tue, 13 Jun 2023 07:45:00 UTC</p>
         <p></p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://utcc.utoronto.ca/~cks/space/blog/linux/PackageBuildingTwoIsolationLevels">There are two levels of isolation when building Linux packages</a></h2>
+        <p class="published">Published: Tue, 13 Jun 2023 07:12:15 UTC</p>
+        <p>Article URL: https://utcc.utoronto.ca/~cks/space/blog/linux/PackageBuildingTwoIsolationLevels
+Comments URL: https://news.ycombinator.com/item?id=36306662
+Points: 2
+# Comments: 0</p>
     </div>
     <hr>
     
@@ -162,6 +238,16 @@
         <h2><a href="https://samstodin.is/2023/06/staersta-bankasamruna-sidan-i-fjarmalakrisunni-2008-lokid-ubs-stjornar-nu-5-trilljordum-dollara/">Stærsta bankasamruna síðan í fjármálakrísunni 2008 lokið – UBS stjórnar nú 5 trilljörðum dollara</a></h2>
         <p class="published">Published: Tue, 13 Jun 2023 01:11:53 UTC</p>
         <p>Svissneski bankinn UBS hefur lokið yfirtöku sinni á Credit Suisee, öðrum stærsta banka Sviss</p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://www.pulumi.com/blog/converting-full-terraform-programs-to-pulumi/">Converting Full Terraform Programs to Pulumi</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 23:47:37 UTC</p>
+        <p>Article URL: https://www.pulumi.com/blog/converting-full-terraform-programs-to-pulumi/
+Comments URL: https://news.ycombinator.com/item?id=36303074
+Points: 66
+# Comments: 55</p>
     </div>
     <hr>
     
@@ -250,6 +336,26 @@
     <hr>
     
     <div class="item">
+        <h2><a href="https://github.com/square/terraform-provider-anomalo">Terraform-Provider-Anomalo: Manage your Anomalo resources in bulk</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 18:16:50 UTC</p>
+        <p>Article URL: https://github.com/square/terraform-provider-anomalo
+Comments URL: https://news.ycombinator.com/item?id=36298350
+Points: 2
+# Comments: 0</p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://richiejp.com/zig-cross-compile-ltp-ltx-linux">Minimal Linux VM Cross Compiled with Clang and Zig</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 17:52:48 UTC</p>
+        <p>Article URL: https://richiejp.com/zig-cross-compile-ltp-ltx-linux
+Comments URL: https://news.ycombinator.com/item?id=36297913
+Points: 2
+# Comments: 0</p>
+    </div>
+    <hr>
+    
+    <div class="item">
         <h2><a href="https://www.bbc.co.uk/news/world-middle-east-65882063?at_medium=RSS&at_campaign=KARANGA">Netherlands and Canada ask world court to rule on Syria torture claims</a></h2>
         <p class="published">Published: Mon, 12 Jun 2023 17:20:59 UTC</p>
         <p>The Netherlands and Canada ask the ICJ to compel the Syrian government to cease any acts of torture.</p>
@@ -264,9 +370,30 @@
     <hr>
     
     <div class="item">
+        <h2><a href="https://news.ycombinator.com/item?id=36296951">Ask HN: Seamless sync of notes between Linux, macOS, iOS</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 17:07:05 UTC</p>
+        <p>Are there any services that provide syncing of notes between phones and computers (multiple os'es)? I use Notes app on my phone but cannot access it easily on my linux machine (I can via a web browser, but would like to edit natively).
+
+Comments URL: https://news.ycombinator.com/item?id=36296951
+Points: 4
+# Comments: 6</p>
+    </div>
+    <hr>
+    
+    <div class="item">
         <h2><a href="https://nyr.ruv.is/frettir/innlent/2023-06-12-moss-i-blaa-loninu-faer-michelin-stjornu/">Moss í Bláa Lóninu fær Michelin-stjörnu</a></h2>
         <p class="published">Published: Mon, 12 Jun 2023 16:52:45 UTC</p>
         <p>Veitingastaðurinn Moss í Bláa Lóninu var sæmdur Michelin-stjörnu í dag.Michelin-stjörnur eru einungis gefnar út til veitingastaða sem Michelin álítur þá allra bestu.Ein Michelin stjarna þýðir að staðurinn sé í háum gæðaflokki</p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://ordina-jworks.github.io/cloud/2023/06/05/back-to-terraform.html">Back to Terraform</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 16:35:28 UTC</p>
+        <p>Article URL: https://ordina-jworks.github.io/cloud/2023/06/05/back-to-terraform.html
+Comments URL: https://news.ycombinator.com/item?id=36296288
+Points: 2
+# Comments: 1</p>
     </div>
     <hr>
     
@@ -341,9 +468,29 @@
     <hr>
     
     <div class="item">
+        <h2><a href="https://www.freecodecamp.org/news/how-to-fix-merge-conflicts-in-git/">How to Fix Merge Conflicts in Git</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 14:07:46 UTC</p>
+        <p>Article URL: https://www.freecodecamp.org/news/how-to-fix-merge-conflicts-in-git/
+Comments URL: https://news.ycombinator.com/item?id=36293650
+Points: 1
+# Comments: 0</p>
+    </div>
+    <hr>
+    
+    <div class="item">
         <h2><a href="https://nyr.ruv.is/frettir/innlent/2023-06-12-skorad-a-bjarna-ad-halda-joni/">Skorað á Bjarna að halda Jóni</a></h2>
         <p class="published">Published: Mon, 12 Jun 2023 14:00:04 UTC</p>
         <p>Nú er Alþingi úti og komið að því að Guðrún Hafsteinsdóttir, þingmaður Sjálfstæðisflokksins og fyrsti þingmaður Suðurlands, taki sæti í ríkisstjórn</p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://privsec.dev/posts/linux/linux-insecurities/">Linux Insecurities</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 13:50:58 UTC</p>
+        <p>Article URL: https://privsec.dev/posts/linux/linux-insecurities/
+Comments URL: https://news.ycombinator.com/item?id=36293406
+Points: 3
+# Comments: 0</p>
     </div>
     <hr>
     
@@ -369,9 +516,29 @@
     <hr>
     
     <div class="item">
+        <h2><a href="https://www.thinkpenguin.com/gnu-linux/penguin-t4-gnulinux-laptop">Penguin T4 GNU/Linux Laptop</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 13:08:41 UTC</p>
+        <p>Article URL: https://www.thinkpenguin.com/gnu-linux/penguin-t4-gnulinux-laptop
+Comments URL: https://news.ycombinator.com/item?id=36292831
+Points: 85
+# Comments: 81</p>
+    </div>
+    <hr>
+    
+    <div class="item">
         <h2><a href="https://nyr.ruv.is/frettir/innlent/2023-06-12-oljost-hver-aetti-ad-borga-fyrir-bakvaktir-lyfjafraedinga-a-landsbyggdinni/">Óljóst hver ætti að borga fyrir bakvaktir lyfjafræðinga á landsbyggðinni</a></h2>
         <p class="published">Published: Mon, 12 Jun 2023 12:37:57 UTC</p>
         <p>Sigurbjörg Sæunn Guðmundsdóttir, formaður Lyfjafræðingafélags Íslands, telur erfitt að ætlast til að lyfjafræðingar á landsbyggðinni séu á bakvakt allan sólarhringinn</p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://www.phoronix.com/news/RISC-V-Vector-ISA-For-Linux-6.5">RISC-V Vector ISA Support Slated for Linux 6.5</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 12:27:30 UTC</p>
+        <p>Article URL: https://www.phoronix.com/news/RISC-V-Vector-ISA-For-Linux-6.5
+Comments URL: https://news.ycombinator.com/item?id=36292349
+Points: 5
+# Comments: 1</p>
     </div>
     <hr>
     
@@ -397,6 +564,16 @@
     <hr>
     
     <div class="item">
+        <h2><a href="https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/">When to Use Each of the Git Diff Algorithms</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 11:39:58 UTC</p>
+        <p>Article URL: https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/
+Comments URL: https://news.ycombinator.com/item?id=36291887
+Points: 4
+# Comments: 0</p>
+    </div>
+    <hr>
+    
+    <div class="item">
         <h2><a href="https://www.bbc.co.uk/news/world-europe-65878077?at_medium=RSS&at_campaign=KARANGA">Berlusconi, the belly dancer and the bunga bunga parties</a></h2>
         <p class="published">Published: Mon, 12 Jun 2023 11:17:46 UTC</p>
         <p>Apart from his impact as a politician, the late Italian ex-PM had a lurid and colourful personal life.</p>
@@ -418,6 +595,16 @@
     <hr>
     
     <div class="item">
+        <h2><a href="https://privsec.dev/posts/linux/desktop-linux-hardening/">Desktop Linux Hardening (2022)</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 10:23:35 UTC</p>
+        <p>Article URL: https://privsec.dev/posts/linux/desktop-linux-hardening/
+Comments URL: https://news.ycombinator.com/item?id=36291169
+Points: 267
+# Comments: 148</p>
+    </div>
+    <hr>
+    
+    <div class="item">
         <h2><a href="https://nyr.ruv.is/frettir/innlent/2023-06-12-vilja-koma-i-veg-fyrir-mogulegt-samrad-med-breyttri-nalgun-i-verdgatt/">Vilja koma í veg fyrir mögulegt samráð með breyttri nálgun í verðgátt</a></h2>
         <p class="published">Published: Mon, 12 Jun 2023 10:21:57 UTC</p>
         <p>Forstjóri Samkeppniseftirlitsins segir vanta að neytendur geti séð fleiri vörur í verðgáttinni, þar sem fylgjast má með vöruverði í þremur stærstu matvöruverslunum landsins</p>
@@ -428,6 +615,16 @@
         <h2><a href="https://nyr.ruv.is/frettir/innlent/2023-06-12-gagnryna-ad-lyfsalar-beri-engar-skyldur-a-kvoldin-og-um-helgar/">Gagnrýna að lyfsalar beri engar skyldur á kvöldin og um helgar</a></h2>
         <p class="published">Published: Mon, 12 Jun 2023 10:15:42 UTC</p>
         <p>Már Egilsson heimilislæknir sem starfað hefur á Austurlandi skrifar grein á Vísi og vekur athygli á að á landsbyggðinni sé í sumum tilvikum ótraust aðgengi að lyfjum eftir að apótekin loka</p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://github.com/liamg/traitor">Traitor – Automatic Linux privesc via exploitation of low-hanging fruits</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 10:04:31 UTC</p>
+        <p>Article URL: https://github.com/liamg/traitor
+Comments URL: https://news.ycombinator.com/item?id=36290977
+Points: 1
+# Comments: 0</p>
     </div>
     <hr>
     
@@ -488,6 +685,16 @@
     <hr>
     
     <div class="item">
+        <h2><a href="https://alfon.xyz/posts/hiding-cryptominers-linux">Hiding Cryprominers on Linux</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 05:55:26 UTC</p>
+        <p>Article URL: https://alfon.xyz/posts/hiding-cryptominers-linux
+Comments URL: https://news.ycombinator.com/item?id=36288948
+Points: 3
+# Comments: 0</p>
+    </div>
+    <hr>
+    
+    <div class="item">
         <h2><a href="https://www.dr.dk/stories/1288510966/johanne-schmidt-nielsen-blev-udsat-for-falske-ngenbilleder/">Johanne Schmidt-Nielsen om egne falske nøgenbilleder: 'Følelsen af, at det er ydmygende, er jo rigtig'</a></h2>
         <p class="published">Published: Mon, 12 Jun 2023 05:01:00 UTC</p>
         <p></p>
@@ -505,6 +712,26 @@
         <h2><a href="https://www.dr.dk/nyheder/seneste/aflysninger-hos-dsb-her-til-morgen-paa-grund-af-arbejdsnedlaeggelse">Aflysninger hos DSB her til morgen på grund af arbejdsnedlæggelse</a></h2>
         <p class="published">Published: Mon, 12 Jun 2023 03:49:00 UTC</p>
         <p>Arbejdsnedlæggelse og overgravet kabel fører til, at flere passagerer mandag må vente forgæves på deres tog.</p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://chimera-linux.org/news/2023/06/entering-alpha.html">Chimera Linux Entering alpha stage</a></h2>
+        <p class="published">Published: Mon, 12 Jun 2023 02:43:07 UTC</p>
+        <p>Article URL: https://chimera-linux.org/news/2023/06/entering-alpha.html
+Comments URL: https://news.ycombinator.com/item?id=36287869
+Points: 5
+# Comments: 0</p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://boilingsteam.com/nobara-is-the-fastest-growing-linux-distro-for-gaming/">Nobara Is the Fastest Growing Linux Distro for Gaming</a></h2>
+        <p class="published">Published: Sun, 11 Jun 2023 23:30:41 UTC</p>
+        <p>Article URL: https://boilingsteam.com/nobara-is-the-fastest-growing-linux-distro-for-gaming/
+Comments URL: https://news.ycombinator.com/item?id=36286815
+Points: 3
+# Comments: 0</p>
     </div>
     <hr>
     
@@ -554,6 +781,16 @@
         <h2><a href="https://nyr.ruv.is/frettir/innlent/2023-06-11-telja-ad-asmundur-hefdi-engar-athugasemdir-gert-vid-gudridi-i-eldflauginni/">Telja að Ásmundur hefði engar athugasemdir gert við Guðríði í eldflauginni</a></h2>
         <p class="published">Published: Sun, 11 Jun 2023 16:53:58 UTC</p>
         <p>Það vakti mikla athygli þegar listakonurnar Steinunn Gunnlaugsdóttir og Bryndís Björnsdóttir komu afsteypu af verkinu „Fyrsta hvíta móðirin í Ameríku“ eftir Ásmund Sveinsson fyrir eldflaug og stilltu henni upp fyrir utan Nýlistasafnið</p>
+    </div>
+    <hr>
+    
+    <div class="item">
+        <h2><a href="https://github.com/AmrDeveloper/GQL">GQL: A SQL like language for .git files written in Rust</a></h2>
+        <p class="published">Published: Sun, 11 Jun 2023 16:22:00 UTC</p>
+        <p>Article URL: https://github.com/AmrDeveloper/GQL
+Comments URL: https://news.ycombinator.com/item?id=36282746
+Points: 2
+# Comments: 0</p>
     </div>
     <hr>
     
@@ -631,13 +868,6 @@
         <h2><a href="https://www.bbc.co.uk/news/world-europe-65812846?at_medium=RSS&at_campaign=KARANGA">Ukrainians remember Bakhmut, city of salt and sparkling wine</a></h2>
         <p class="published">Published: Sat, 10 Jun 2023 23:46:19 UTC</p>
         <p>Residents share memories of their city, before its destruction in Russia's full-scale invasion.</p>
-    </div>
-    <hr>
-    
-    <div class="item">
-        <h2><a href="https://samstodin.is/2023/06/mun-corbyn-fara-i-frambod-gegn-verkamannaflokknum/">Mun Corbyn fara í framboð gegn Verkamannaflokknum?</a></h2>
-        <p class="published">Published: Sat, 10 Jun 2023 22:11:53 UTC</p>
-        <p>Á föstudaginn voru fjörutíu ár liðin frá því Jeremy Corbyn var kjörinn á þing fyrir Verkamannaflokkinn, einum og hálfum mánuði …</p>
     </div>
     <hr>
     
