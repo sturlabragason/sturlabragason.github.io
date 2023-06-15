@@ -34,8 +34,8 @@ And injected into my HTML Template.
 
 <script src="https://gist.github.com/sturlabragason/faafabb8521ef8dd549e3bb74609d693.js"></script>
 
-Lastly, I employed [CSS to enhance the reading experience](https://github.com/sturlabragason/sturlabragason.github.io/blob/main/curated_news/styles.css), applying the [Catpuccin Mocha](https://github.com/catppuccin/catppuccin) color scheme for a visually appealing interface. 
+Lastly, I employed [CSS to enhance the reading experience](https://github.com/sturlabragason/sturlabragason.github.io/blob/main/curated_news/styles.css), applying the [Catppuccin Mocha](https://github.com/catppuccin/catppuccin) color scheme for a visually appealing interface. 
 
-The complete code is spread around this repository [sturlabragason/sturlabragason.github.io](https://github.com/sturlabragason/sturlabragason.github.io).
+The complete code is spread around this repository [sturlabragason/sturlabragason.github.io](https://github.com/sturlabragason/sturlabragason.github.io) while my newsfeed is found here [https://sturlabragason.github.io/curated_news/](https://sturlabragason.github.io/curated_news/).
 
 Remember, today's media environment requires vigilance and critical thinking. It's up to us to actively seek reliable sources and engage with diverse perspectives.
