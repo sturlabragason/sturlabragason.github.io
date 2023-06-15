@@ -6,6 +6,8 @@ categories: [blog]
 tags: [Personalized News Feed, News Aggregation, RSS Feeds, GitHub Pages, Python, GitHub Actions, Filter Bubbles, Media Bias, Code Automation, Web Scraping, Jinja2, News Curation, Web Development, CSS, Software Development]
 ---
 
+<img src = "https://sturlabragason.github.io/images/0ee3f89b-acde-4c7e-8a98-753e9c9ded30.jpeg" alt = "City" />
+
 ## Why?
 
 Navigating the current media landscape can be overwhelming. With an endless stream of information, some reliable and some not, sorting through the noise to find trustworthy and relevant news is a challenge. The situation is complicated by the focus of many media outlets on views and click-traffic over factual accuracy, contributing to an increase in sensationalized, divisive stories. The drive for profits in media can often lead to compromised news quality. I believe the purpose of news is to inform, not to generate revenue. Social media platforms, too, play a role in this information overload. They often amplify our existing beliefs and confine us within digital echo chambers, limiting our exposure to different viewpoints and fueling polarization. 
