@@ -1,24 +1,24 @@
 ---
 layout: post
-title: "Why I made my own news feed"
+title: "Why I Built My Own News Feed"
 date: 2023-06-15
 categories: [blog]
 tags: [AI, Language Models, GPT, software development, Terraform, code validation, error fixing, infrastructure, Azure Functions, OpenAI API, Azure Policies]
 ---
 
-## Why
+## Why?
 
 Navigating the current media landscape can be overwhelming. With an endless stream of information, some reliable and some not, sorting through the noise to find trustworthy and relevant news is a challenge. The situation is complicated by the focus of many media outlets on views and click-traffic over factual accuracy, contributing to an increase in sensationalized, divisive stories. The drive for profits in media can often lead to compromised news quality. I believe the purpose of news is to inform, not to generate revenue. Social media platforms, too, play a role in this information overload. They often amplify our existing beliefs and confine us within digital echo chambers, limiting our exposure to different viewpoints and fueling polarization. Confronted with these challenges, I sought a solution tailored to my needs: accurate updates on local, regional, and global events without having to sift through sensationalized posts or rehashed content from platforms like Reddit, TikTok, or Instagram.
 
-This situation demands a different approach, a personalized news feed. This tool can filter the noise, presenting reliable, balanced information tailored to my preferences. By ensuring I receive news from diverse, trustworthy sources, I can stay informed and navigate the media landscape with confidence. The paradox here lies in the act of filtering. While cautioning against echo chambers, I'm advocating for a personalized news feed. But here's the distinction: this is not about reinforcing biases or excluding differing views. It's about curating a diverse, reliable news diet from sources known for their factual integrity. To learn more about this you can start by this short talk on [Filter bubbles by Joan Blades and John Gable](https://www.ted.com/talks/joan_blades_and_john_gable_free_yourself_from_your_filter_bubbles). I would caution the reader to verify your news sources, perhaps by reviewing their rating on sites such ash [Allsides](https://www.allsides.com/media-bias/ratings) or [Adfontes Media](https://adfontesmedia.com/interactive-media-bias-chart/
+This situation demands a different approach, a personalized news feed. This tool can filter the noise, presenting reliable, balanced information tailored to my preferences. By ensuring I receive news from diverse, trustworthy sources, I can stay informed and navigate the media landscape with confidence. The paradox here lies in the act of filtering. While cautioning against echo chambers, I'm advocating for a personalized news feed. But here's the distinction: this is not about reinforcing biases or excluding differing views. It's about curating a diverse, reliable news diet from sources known for their factual integrity. To learn more about this you can start by this short talk on [Filter bubbles by Joan Blades and John Gable](https://www.ted.com/talks/joan_blades_and_john_gable_free_yourself_from_your_filter_bubbles). I would caution the reader to verify your news sources, perhaps by reviewing their rating on sites such ash [Allsides](https://www.allsides.com/media-bias/ratings) or [Adfontes Media](https://adfontesmedia.com/interactive-media-bias-chart/).
 
-## How
+## How?
 
-I decided to use the following approach since I've had to set up personalized RSS feeds before, the configuration and source getting lost each time I switch to a new device, OS, browser etc. 
+I decided to use the following approach since I've had to set up personalized RSS feeds before, the configurations and sources getting lost each time I switch to a new device, OS, browser etc. 
 
 To construct my personalized news feed, I leveraged a combination of RSS feeds, GitHub Pages, Python, and GitHub Actions. RSS, or 'Really Simple Syndication,' is a time-tested technology used to deliver updates from websites in a chronological list, acting as a personalized news wire service. This approach enables users to follow their preferred websites and receive updates directly. GitHub Pages, Python, and GitHub Actions provide the technological backbone of the solution. GitHub Pages hosts a website directly from a repository, offering a platform accessible across devices. Python, renowned for its rich ecosystem of libraries, is used to parse RSS feeds. And GitHub Actions allows for the automation of tasks, such as fetching and updating the news feed.
 
-To automate this process, I set up a GitHub Actions workflow to fetch and parse the RSS feeds at regular intervals.
+To automate this process, I set up a GitHub Actions workflow to fetch and parse the RSS feeds every hour.
 
 <script src="https://gist.github.com/sturlabragason/9fe9fe61ece57327bd745a264216dccb.js"></script>
 
