@@ -45,3 +45,5 @@ The complete code is spread around this repository [sturlabragason/sturlabragaso
 Remember, today's media environment requires vigilance and critical thinking. It's up to us to actively seek reliable sources and engage with diverse perspectives.
 
 > The newsfeed is found here [https://sturlabragason.github.io/curated_news/](https://sturlabragason.github.io/curated_news/). P.s. Since I mostly read the news on my phone, the experience is optimized for mobile.
+
+An additional note; If all of the above seems overwhelming I highly recommend trying Brave browser, which has essentially the same built in! For more information start here [https://brave.com/brave-today-rss/](https://brave.com/brave-today-rss/). This allows you to both select from their offered sources or simply adding your own sources by the click of their "Follow this source in one click" button, which is just awesome!
