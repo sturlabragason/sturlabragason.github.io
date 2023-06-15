@@ -26,10 +26,16 @@ With the `feedparser` Python module, I parsed the RSS feeds from the chosen sour
 
 <script src="https://gist.github.com/sturlabragason/78098ab2fb3562a7f3647ca805d5e982.js"></script>
 
-And the HTML Template.
+Constructed from my feeds.
+
+<script src="https://gist.github.com/sturlabragason/f26b0f199f52369edbd5306a16142f1a.js"></script>
+
+And injected into my HTML Template.
 
 <script src="https://gist.github.com/sturlabragason/faafabb8521ef8dd549e3bb74609d693.js"></script>
 
-Lastly, I employed [CSS to enhance the reading experience](https://github.com/sturlabragason/sturlabragason.github.io/blob/main/curated_news/styles.css), applying the [Catpuccin Mocha](https://github.com/catppuccin/catppuccin) color scheme for a visually appealing interface.
+Lastly, I employed [CSS to enhance the reading experience](https://github.com/sturlabragason/sturlabragason.github.io/blob/main/curated_news/styles.css), applying the [Catpuccin Mocha](https://github.com/catppuccin/catppuccin) color scheme for a visually appealing interface. 
+
+The complete code is spread around this repository [sturlabragason/sturlabragason.github.io](https://github.com/sturlabragason/sturlabragason.github.io).
 
 Remember, today's media environment requires vigilance and critical thinking. It's up to us to actively seek reliable sources and engage with diverse perspectives.
