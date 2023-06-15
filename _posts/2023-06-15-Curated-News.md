@@ -26,7 +26,7 @@ To automate this process, I set up a GitHub Actions workflow to fetch and parse 
 
 <script src="https://gist.github.com/sturlabragason/9fe9fe61ece57327bd745a264216dccb.js"></script>
 
-With the `feedparser` Python module, I parsed the RSS feeds from the chosen sources, extracting relevant news items for my personalized feed. To create the actual news feed, I used Jinja2 to inject the extracted news items into an HTML template, generating a static HTML page. This page was then committed and pushed to the GitHub Pages repository.
+With the `feedparser` Python module, I parsed the RSS feeds from the chosen sources, extracting relevant news items for my personalized feed. To create the actual news feed, I used Jinja2 to inject the extracted news items into an HTML template, generating a static HTML page. This page was then committed and pushed to the GitHub Pages repository. Here is my rss_parser.py.
 
 <script src="https://gist.github.com/sturlabragason/78098ab2fb3562a7f3647ca805d5e982.js"></script>
 
