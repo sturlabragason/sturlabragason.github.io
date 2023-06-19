@@ -1,4 +1,4 @@
-title: 'Techno-sorcery: Code Incantation'
+title: 'Techno-sorcery'
 author:
   name: Sturla Bragason
   email: sturla.bragason@proton.me
@@ -35,6 +35,7 @@ minima:
   #   - { platform: facebook,       user_url: "https://www.facebook.com/jekyll" }
   #   - { platform: flickr,         user_url: "https://www.flickr.com/photos/jekyll" }
     - { platform: github,         user_url: "https://github.com/sturlabragason" }
+    - { platform: mastodon,         user_url: "https://mastodon.social/@sturlabragason" }
   #   - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ" }
   #   - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
   #   - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
