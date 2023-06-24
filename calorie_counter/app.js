@@ -20,7 +20,7 @@ async function addCalorieEntry(event) {
   }
   const time = new Date();
   const { data, error } = await supabase
-    .from('calorieEntries')
+    .from('calorieentries')
     .insert([{ calories, time }])
   if (error) console.error("Error adding document: ", error);
   calorieInput.value = '';
@@ -29,7 +29,7 @@ async function addCalorieEntry(event) {
 
 async function updateEntries() {
   const { data, error } = await supabase
-    .from('calorieEntries')
+    .from('calorieentries')
     .select('*')
     .order('time', { ascending: false })
   if (error) console.error("Error getting entries: ", error);
