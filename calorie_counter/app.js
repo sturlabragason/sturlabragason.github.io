@@ -1,5 +1,4 @@
 // Replace with your Supabase URL and public anon key
-import { createClient } from '@supabase/supabase-js'
 const SUPABASE_URL = 'https://fdufvbfhmcahufwagkzh.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZkdWZ2YmZobWNhaHVmd2Fna3poIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODc2MjEyOTIsImV4cCI6MjAwMzE5NzI5Mn0.OpC-bwxefICd_7oqodemrrkdljQV_jyLM2zMIlybOBI';
 
