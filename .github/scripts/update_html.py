@@ -10,7 +10,7 @@ def update_html():
     template = env.get_template('.github/templates/index_template.html')
 
     # Get the list of maze images
-    image_files = [f for f in os.listdir('../../mazes') if f.endswith('.png')]
+    image_files = [f for f in os.listdir('./mazes') if f.endswith('.png')]
     image_files.sort(reverse=True)  # Sort by creation time (newest first)
 
     # Render the template with the images
