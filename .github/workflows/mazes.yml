@@ -3,7 +3,7 @@ name: Maze Generator
 # Controls when the action will run. 
 on:
 
-  # Runs every hour
+  # Runs every month
   schedule:
     - cron:  '0 0 1 * *'
 
