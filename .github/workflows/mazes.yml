@@ -1,0 +1,41 @@
+name: Maze Generator
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Runs every hour
+  schedule:
+    - cron:  '0 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install matplotlib numpy jinja2
+    - name: Run Maze Generator
+      run: |
+        python .github/scripts/maze_generator.py
+    - name: Update HTML
+      run: |
+        python .github/scripts/update_html.py
+    - name: Commit and push if it changed
+      run: |
+        git config --global user.name 'Automatic Maze Generator'
+        git config --global user.email 'mazegen@no-reply.com'
+        git add -A
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update mazes"
+        git push
