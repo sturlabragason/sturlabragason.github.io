@@ -57,9 +57,9 @@ def visualize_maze(maze, filename):
 if not os.path.exists('mazes'):
     os.makedirs('mazes')
 
-# Generate and save 10 mazes
-for i in range(10):
+# Generate and save 50 mazes
+for i in range(50):
     maze = generate_maze(WIDTH, HEIGHT)
     filename = f'mazes/maze_{int(time.time())}.png'
     visualize_maze(maze, filename)
-    time.sleep(1)  # Ensure unique filenames by waiting 1 second between each generation
+    # time.sleep(1)  # Ensure unique filenames by waiting 1 second between each generation
