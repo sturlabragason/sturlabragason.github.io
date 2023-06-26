@@ -32,16 +32,54 @@ async function updateEntries() {
     .from('calorieentries')
     .select('*')
     .order('time', { ascending: false })
+  
   if (error) console.error("Error getting entries: ", error);
-  let entriesHTML = '';
-  let totalCalories = 0;
+
+  // Group entries by date
+  let entriesByDate = {};
   data.forEach(({ calories, time }) => {
-    totalCalories += calories;
-    entriesHTML += `<li>${new Date(time).toLocaleString()}: ${calories} calories</li>`;
+    let date = new Date(time);
+    let day = `${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`;
+    if (!entriesByDate[day]) {
+      entriesByDate[day] = [];
+    }
+    entriesByDate[day].push({ calories, time });
   });
+
+  let entriesHTML = '';
+  let previousDaySummariesHTML = '';
+  let totalCalories = 0;
+  let totalCaloriesForToday = 0;
+
+  // Get today's date in 'YYYY/MM/DD' format
+  let today = new Date();
+  let todayString = `${today.getFullYear()}/${today.getMonth()+1}/${today.getDate()}`;
+
+  // Iterate over entries by date
+  for (let day in entriesByDate) {
+    let dailyCalories = entriesByDate[day].reduce((sum, entry) => sum + entry.calories, 0);
+
+    // For today's entries, append to the top of the list and add to the total
+    if (day === todayString) {
+      entriesByDate[day].forEach(({ calories, time }) => {
+        totalCalories += calories;
+        totalCaloriesForToday += calories;
+        entriesHTML = `<li>${new Date(time).toLocaleString()}: ${calories} calories</li>` + entriesHTML;
+      });
+    } else {
+      totalCalories += dailyCalories;
+      previousDaySummariesHTML += `<p>${day}: Consumed ${dailyCalories} calories. ${Math.max(0, calorieLimit - dailyCalories)} calories left.</p>`;
+    }
+  }
+
   list.innerHTML = entriesHTML;
-  const remainingCalories = Math.max(0, calorieLimit - totalCalories);
-  summary.innerHTML = `Today you have consumed ${totalCalories} calories. You have ${remainingCalories} calories left.`;
+
+  const previousDaySummariesDiv = document.getElementById('previous-day-summaries');
+  previousDaySummariesDiv.innerHTML = previousDaySummariesHTML;
+
+  const remainingCaloriesForToday = Math.max(0, calorieLimit - totalCaloriesForToday);
+  summary.innerHTML = `Today you have consumed ${totalCaloriesForToday} calories. You have ${remainingCaloriesForToday} calories left.`;
 }
+
 
 updateEntries();
