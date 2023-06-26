@@ -20,6 +20,8 @@ This situation demands a different approach, a personalized news feed. This tool
 
 I decided to use the following approach since I've had to set up personalized RSS feeds before, the configurations and sources getting lost each time I switch to a new device, OS, browser etc. 
 
+> A note; If all of the below seems overwhelming I highly recommend trying Brave browser, which has essentially the same feature already built in! For more information start here [https://brave.com/brave-today-rss/](https://brave.com/brave-today-rss/). This allows you to both select from their offered sources or simply adding your own sources by the click of their "Follow this source in one click" button, which is just awesome!
+
 To construct my personalized news feed, I leveraged a combination of RSS feeds, GitHub Pages, Python, and GitHub Actions. RSS, or 'Really Simple Syndication,' is a time-tested technology used to deliver updates from websites in a chronological list, acting as a personalized news wire service. This approach enables users to follow their preferred websites and receive updates directly. GitHub Pages, Python, and GitHub Actions provide the technological backbone of the solution. GitHub Pages hosts a website directly from a repository, offering a platform accessible across devices. Python, renowned for its rich ecosystem of libraries, is used to parse RSS feeds. And GitHub Actions allows for the automation of tasks, such as fetching and updating the news feed.
 
 To automate this process, I set up a GitHub Actions workflow to fetch and parse the RSS feeds every hour.
@@ -45,5 +47,3 @@ The complete code is spread around this repository [sturlabragason/sturlabragaso
 Remember, today's media environment requires vigilance and critical thinking. It's up to us to actively seek reliable sources and engage with diverse perspectives.
 
 > The newsfeed is found here [https://sturlabragason.github.io/curated_news/](https://sturlabragason.github.io/curated_news/). Since I mostly read the news on my phone, the experience is optimized for mobile.
-
-An additional note; If all of the above seems overwhelming I highly recommend trying Brave browser, which has essentially the same feature already built in! For more information start here [https://brave.com/brave-today-rss/](https://brave.com/brave-today-rss/). This allows you to both select from their offered sources or simply adding your own sources by the click of their "Follow this source in one click" button, which is just awesome!
