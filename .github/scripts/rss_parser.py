@@ -26,7 +26,19 @@ for feed_url in feeds:
         summary = entry.summary if 'summary' in entry else ''
         soup = BeautifulSoup(summary, "html.parser")
         summary = soup.get_text()  # Convert HTML escape characters to regular characters and remove HTML tags
-        summary = summary.split('. ')[0]  # Split by '\n'
+        
+        # Modify the summary processing
+        if summary:  # If summary is not empty
+            if len(summary) >= 200:  # If summary length is greater than or equal to 200
+                substring = summary[:200]  # Get the first 200 characters
+                index = substring.find('. ')  # Find the first '. ' in the substring
+                if index != -1:  # If '. ' found
+                    summary = substring[:index + 1]  # Slice summary up to '. '
+                else:  # If '. ' not found
+                    summary = substring  # Use the first 200 characters
+            else:  # If summary length is less than 200
+                summary = summary.split('. ')[0]  # Follow the existing procedure
+
         news_items.append({
             'title': entry.title,
             'link': entry.link,
