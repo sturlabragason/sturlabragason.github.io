@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calorie Counter</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>    
 </head>
-
 <body>
     <h1>Calorie Counter</h1>
     <form id="calorie-form">
@@ -22,45 +19,6 @@
     <ul id="calorie-list"></ul>
     <div id="calorie-summary"></div>
     <div id="previous-day-summaries"></div>
-    <button id="loginButton">Login</button>
-    <script>
-        async function initAuth0() {
-            console.log('DOM fully loaded and parsed');
-            const auth0 = await createAuth0Client({
-                domain: 'sturlabragason.eu.auth0.com',
-                client_id: 'pRbgDHM10ZAl2TknVg0F3yUSb7OWepNx',
-                redirect_uri: 'https://sturlabragason.github.io/calorie_counter/',
-            });
-
-            try {
-                await auth0.handleRedirectCallback();
-            } catch (err) {
-                console.log("Error handling redirect callback:", err);
-            }
-
-            const isAuthenticated = await auth0.isAuthenticated();
-            console.log("Is Authenticated:", isAuthenticated);
-            if (!isAuthenticated) {
-                document.getElementById('loginButton').addEventListener('click', () => {
-                    auth0.loginWithRedirect();
-                });
-            } else {
-                const user = await auth0.getUser();
-                console.log("User:", user); // Add this line
-                window.SUPABASE_URL = user.user_metadata.supabase_url;
-                window.SUPABASE_ANON_KEY = user.user_metadata.supabase_anon_key;
-
-                // Assuming createSupabaseClient is a function in app.js that creates the Supabase client
-                window.createSupabaseClient();
-
-                console.log("SUPABASE_URL:", window.SUPABASE_URL);
-                console.log("SUPABASE_ANON_KEY:", window.SUPABASE_ANON_KEY);
-                updateEntries();
-            }
-        }
-    </script>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
     <script src="app.js"></script>
 </body>
-
 </html>
