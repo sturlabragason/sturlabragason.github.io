@@ -31,9 +31,14 @@
                 redirect_uri: 'https://sturlabragason.github.io/calorie_counter/',
             });
 
+            try {
+                await auth0.handleRedirectCallback();
+            } catch (err) {
+                console.log("Error handling redirect callback:", err);
+            }
+
             const isAuthenticated = await auth0.isAuthenticated();
             console.log("Is Authenticated:", isAuthenticated);
-
             if (!isAuthenticated) {
                 document.getElementById('loginButton').addEventListener('click', () => {
                     auth0.loginWithRedirect();
@@ -49,6 +54,7 @@
 
                 console.log("SUPABASE_URL:", window.SUPABASE_URL);
                 console.log("SUPABASE_ANON_KEY:", window.SUPABASE_ANON_KEY);
+                updateEntries();
             }
         }
     </script>
