@@ -7,7 +7,6 @@
     <title>Calorie Counter</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
-
 </head>
 
 <body>
@@ -22,41 +21,33 @@
     <ul id="calorie-list"></ul>
     <div id="calorie-summary"></div>
     <div id="previous-day-summaries"></div>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+    <button id="loginButton">Login</button>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js" onload="initAuth0()"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', async () => {
+        async function initAuth0() {
             console.log('DOM fully loaded and parsed');
             const auth0 = await createAuth0Client({
-                domain: 'sturlabragason.eu.auth0.com',  // Your Auth0 domain
-                client_id: 'pRbgDHM10ZAl2TknVg0F3yUSb7OWepNx',  // Replace with your Auth0 Client ID
+                domain: 'sturlabragason.eu.auth0.com',
+                client_id: 'pRbgDHM10ZAl2TknVg0F3yUSb7OWepNx',
                 redirect_uri: 'https://sturlabragason.github.io/calorie_counter/',
             });
 
             const isAuthenticated = await auth0.isAuthenticated();
 
             if (!isAuthenticated) {
-                // Not authenticated, show login form
                 document.getElementById('loginButton').addEventListener('click', () => {
                     auth0.loginWithRedirect();
                 });
             } else {
-                // User is authenticated, get the user info
                 const user = await auth0.getUser();
-                // Get the Supabase URL and key from user metadata
                 window.SUPABASE_URL = user['https://sturlabragason-app.com/supabase_url'];
                 window.SUPABASE_ANON_KEY = user['https://sturlabragason-app.com/supabase_anon_key'];
 
-                // Now you can use SUPABASE_URL and SUPABASE_ANON_KEY to interact with Supabase
-                // Log the values
                 console.log("SUPABASE_URL:", window.SUPABASE_URL);
                 console.log("SUPABASE_ANON_KEY:", window.SUPABASE_ANON_KEY);
             }
-        });
-
-
+        }
     </script>
-    <button id="loginButton">Login</button>
-
     <script src="app.js"></script>
 </body>
 
