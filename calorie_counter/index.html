@@ -39,6 +39,7 @@
                 });
             } else {
                 const user = await auth0.getUser();
+                console.log("User:", user); // Add this line
                 window.SUPABASE_URL = user.user_metadata.supabase_url;
                 window.SUPABASE_ANON_KEY = user.user_metadata.supabase_anon_key;
 
