@@ -20,7 +20,7 @@ async function addCalorieEntry(event) {
   const calories = parseInt(calorieInput.value);
   if (isNaN(calories)) {
     return;
-  }
+  }updateEntries
   const time = new Date();
   const { data, error } = await supabase
     .from('calorieentries')
@@ -85,4 +85,4 @@ async function updateEntries() {
 }
 
 
-updateEntries();
+// updateEntries();
