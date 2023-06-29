@@ -42,8 +42,8 @@
                 // User is authenticated, get the user info
                 const user = await auth0.getUser();
                 // Get the Supabase URL and key from user metadata
-                const SUPABASE_URL = user['https://sturlabragason-app.com/supabase_url'];
-                const SUPABASE_ANON_KEY = user['https://sturlabragason-app.com/supabase_anon_key'];
+                window.SUPABASE_URL = user['https://sturlabragason-app.com/supabase_url'];
+                window.SUPABASE_ANON_KEY = user['https://sturlabragason-app.com/supabase_anon_key'];
 
                 // Now you can use SUPABASE_URL and SUPABASE_ANON_KEY to interact with Supabase
             }
