@@ -1,6 +1,6 @@
 // Replace with your Supabase URL and public anon key
-// const SUPABASE_URL = window.SUPABASE_URL;
-// const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY;
+const SUPABASE_URL = window.SUPABASE_URL;
+const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY;
 
 var supabase = supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
 
