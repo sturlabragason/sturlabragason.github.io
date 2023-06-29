@@ -25,6 +25,7 @@
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
+            console.log('DOM fully loaded and parsed');
             const auth0 = await createAuth0Client({
                 domain: 'sturlabragason.eu.auth0.com',  // Your Auth0 domain
                 client_id: 'pRbgDHM10ZAl2TknVg0F3yUSb7OWepNx',  // Replace with your Auth0 Client ID
