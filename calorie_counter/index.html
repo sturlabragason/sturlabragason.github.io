@@ -22,7 +22,6 @@
     <div id="calorie-summary"></div>
     <div id="previous-day-summaries"></div>
     <button id="loginButton">Login</button>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js" onload="initAuth0()"></script>
     <script>
         async function initAuth0() {
             console.log('DOM fully loaded and parsed');
@@ -43,11 +42,15 @@
                 window.SUPABASE_URL = user.user_metadata.supabase_url;
                 window.SUPABASE_ANON_KEY = user.user_metadata.supabase_anon_key;
 
+                // Assuming createSupabaseClient is a function in app.js that creates the Supabase client
+                window.createSupabaseClient();
+
                 console.log("SUPABASE_URL:", window.SUPABASE_URL);
                 console.log("SUPABASE_ANON_KEY:", window.SUPABASE_ANON_KEY);
             }
         }
     </script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js" onload="initAuth0()"></script>
     <script src="app.js"></script>
 </body>
 
