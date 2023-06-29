@@ -2,7 +2,7 @@
 var supabase;
 
 window.createSupabaseClient = function() {
-    supabase = supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+    supabase = new SupabaseClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
     // Once the Supabase client is created, we can update the entries
     updateEntries();
 };
