@@ -2,11 +2,11 @@
 var supabase;
 
 window.createSupabaseClient = function() {
-    supabase = new SupabaseClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
-    // Once the Supabase client is created, we can update the entries
-    updateEntries();
+  supabase = supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+  updateEntries();
 };
 
+const { createClient } = supabase;
 const form = document.getElementById('calorie-form');
 const list = document.getElementById('calorie-list');
 const summary = document.getElementById('calorie-summary');
