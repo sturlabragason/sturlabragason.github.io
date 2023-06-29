@@ -1,12 +1,9 @@
-// We'll initialize this later
-var supabase;
+// Replace with your Supabase URL and public anon key
+const SUPABASE_URL = 'https://fdufvbfhmcahufwagkzh.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZkdWZ2YmZobWNhaHVmd2Fna3poIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODc2MjEyOTIsImV4cCI6MjAwMzE5NzI5Mn0.OpC-bwxefICd_7oqodemrrkdljQV_jyLM2zMIlybOBI';
 
-window.createSupabaseClient = function() {
-  supabase = supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
-  updateEntries();
-};
+var supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-const { createClient } = supabase;
 const form = document.getElementById('calorie-form');
 const list = document.getElementById('calorie-list');
 const summary = document.getElementById('calorie-summary');
@@ -20,7 +17,7 @@ async function addCalorieEntry(event) {
   const calories = parseInt(calorieInput.value);
   if (isNaN(calories)) {
     return;
-  }updateEntries
+  }
   const time = new Date();
   const { data, error } = await supabase
     .from('calorieentries')
@@ -85,4 +82,4 @@ async function updateEntries() {
 }
 
 
-// updateEntries();
+updateEntries();
