@@ -1,8 +1,8 @@
 // Replace with your Supabase URL and public anon key
-const SUPABASE_URL = window.SUPABASE_URL;
-const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY;
+// const SUPABASE_URL = window.SUPABASE_URL;
+// const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY;
 
-var supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+var supabase = supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
 
 const form = document.getElementById('calorie-form');
 const list = document.getElementById('calorie-list');
