@@ -187,6 +187,6 @@ As for energy resources, the DACs' commitment to renewable energy sources and en
 
 So yes, while resource scarcity is a challenge, it also presents an opportunity - an opportunity to revolutionize our resource consumption and management, to make the construction of new towns a showcase for a sustainable, circular economy.
 
-> The DAC model does not promise a utopia without challenges. Rather, it proposes a system that can learn, adapt, and evolve in response to these challenges, driven by the collective intelligence of its members and the transformative power of technology.
+## The DAC model does not promise a utopia without challenges. Rather, it proposes a system that can learn, adapt, and evolve in response to these challenges, driven by the collective intelligence of its members and the transformative power of technology.
 
 
