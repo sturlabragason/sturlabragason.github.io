@@ -14,7 +14,7 @@ tags: [Decentralized Autonomous Communities, DACs, Blockchain Technology, Future
 
 > I'm putting together a series of posts, each serving as a component of a proposed global-scale solution to the economic challenges already unfolding - a narrative outlined in books such as [The End of the World Is Just the Beginning](https://www.goodreads.com/en/book/show/58782897) by Peter Zeihan. In his book, the author illustrates how the interconnected web of demographics, geography, and history, intertwined with the impending forces of climate change and deglobalization, will dramatically reshape the economic and political landscape, resulting in significant challenges for many countries across key sectors including agriculture, energy, finance, manufacturing, materials, and transport.
 
-There's a tale you may know, one of unsuspecting monkeys and a baited ladder. Five primates find themselves the actors in an experiment of societal control. Above them dangles the promise of reward—a ripe banana—just out of reach atop a looming ladder. Yet the ladder is a trap. A brave monkey's ascent is met not with sweet victory, but with a harsh, electrifying jolt. And the surprise isn't theirs alone. This jolt reverberates through each monkey in the room, sparking a harsh response—they assail the ambitious climber until he descends.
+There's a tale you may know, one of unsuspecting monkeys and a baited ladder. A group of primates find themselves the actors in an experiment of societal control. Above them dangles the promise of reward—a ripe banana—just out of reach atop a looming ladder. Yet the ladder is a trap. A brave monkey's ascent is met not with sweet victory, but with a harsh, electrifying jolt. And the surprise isn't theirs alone. This jolt reverberates through each monkey in the room, sparking a harsh response—they assail the ambitious climber until he descends.
 
 It doesn't take long for a grim lesson to take root. The banana, once a symbol of desire, becomes a haunting specter of collective pain. An unspoken rule is born: no one climbs, no matter the allure of the prize. New members replace the old, yet the rule is unchanging. Veterans enforce it with swift retribution, silencing any naive attempts to climb. When asked, their response is hauntingly simple: "That's how we do things around here."
 
@@ -24,12 +24,11 @@ But, imagine for a moment—a world where we dare to question, to challenge, to 
 
 ## Decentralized Autonomous Communities (DACs).
 
-As we march forward, the tactics and stratagems of DACs will be unraveled, showcasing how this new theory might upset the entrenched world order, preparing us for the incoming tidal wave of challenges. While it currently exists only in the realm of theory, a strategic exercise of sorts - isn't this where all grand strategies are birthed? Are you prepared to break ranks and venture into new terrain? Can you hear the trumpets of change sounding in the distance?
+As we move ahead, we'll delve into the fundamental underpinnings of DACs, exploring the potential of this new approach to disturb the existing world order and prime us for looming challenges. For now, it's purely conceptual - an intellectual exercise - but isn't this the very cradle of all great ideas? Are you prepared to diverge from the usual path and embark on an adventurous journey into the unknown? Can you hear the overture?
 
 <img src = "https://sturlabragason.github.io/images/loser.gif" alt = "Loser"  style="display: block; margin: auto;" /> 
 
 ## What exactly is a DAC composed of?
-
 
 #### Global Workforce in the Metaverse
 
