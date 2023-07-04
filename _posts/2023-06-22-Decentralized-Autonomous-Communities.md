@@ -51,7 +51,7 @@ To facilitate these new ways of working, each town could have a shared office or
 
 The community contribution model could be expanded to include digital contributions. For instance, a software engineer could contribute to the community by developing open-source software, or a digital artist could create virtual artworks for public spaces in the Metaverse.
 
-#### 6. Open-Source Knowledge Ecosystem
+#### Open-Source Knowledge Ecosystem
 
 In DACs, knowledge, creativity, and innovation are communal properties. Whether it's a new AI algorithm, a more efficient building design, or a breakthrough software update, all are shared freely among the network of DACs. This community-wide open-source approach fuels rapid progress and the spread of beneficial developments. 
 
