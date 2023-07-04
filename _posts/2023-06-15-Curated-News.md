@@ -5,8 +5,13 @@ date: 2023-06-15
 categories: [blog]
 tags: [Personalized News Feed, News Aggregation, RSS Feeds, GitHub Pages, Python, GitHub Actions, Filter Bubbles, Media Bias, Code Automation, Web Scraping, Jinja2, News Curation, Web Development, CSS, Software Development]
 ---
+<style>
+    .e-content p {
+        text-align: justify;
+    }
+</style>
 
-<img src = "https://sturlabragason.github.io/images/0ee3f89b-acde-4c7e-8a98-753e9c9ded30.jpeg" alt = "City" />
+<img src = "https://sturlabragason.github.io/images/0ee3f89b-acde-4c7e-8a98-753e9c9ded30.jpeg" alt = "City"  style="display: block; margin: auto;" /> 
 
 ## Why?
 
