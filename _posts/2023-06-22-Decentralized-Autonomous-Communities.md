@@ -75,8 +75,6 @@ The housing model in DACs resolves the traditional conflict between extravagance
 
 In the grand scheme, DACs are not mere constructs of wishful thinking. Rather, they stand as logical, viable drafts of a new world order where technology shifts from being a mechanism of control to an instrument uplifting human dignity and encouraging shared prosperity. It's not just a proposition—it's a heartfelt invitation to partake in a journey towards a more empathetic, just, and technologically harmonized world.
 
-############
-
 Before moving on to the details of each component, let us start be exploring various counterpoints to what we've currently discussed and then address them one by one.
 
 - **Economic Viability**: Universal Basic Income (UBI) is a significant economic undertaking. Funding UBI sustainably might require substantial revenue sources that could prove challenging for a newly formed community. While tax revenues, profits from community-owned businesses, and potentially, value generated from the community's digital presence could help, the financial feasibility of UBI in this context is not guaranteed.
