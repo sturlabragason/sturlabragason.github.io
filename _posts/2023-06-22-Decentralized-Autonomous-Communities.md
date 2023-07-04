@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Decentralized Autonomous Communities (DACs)"
+title: "Decentralized Autonomous Communities"
 date: 2023-07-04
 categories: [blog]
 tags: [Decentralized Autonomous Communities, DACs, Blockchain Technology, Future of Work, Metaverse, Sustainable Communities, Open-Source Knowledge, Augmented Reality Training, Smart Contracts, Artificial Intelligence and Robotics, Universal Basic Income, Remote Work Centers, Community Contributions, Global Workforce, Digital Economy, Peer-to-Peer Economy, Technological Advancement, Economic Innovation, Shared Economy, Equitable Housing Model, Digital Transformation]
