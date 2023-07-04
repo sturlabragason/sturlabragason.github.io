@@ -26,7 +26,7 @@ But, imagine for a moment—a world where we dare to question, to challenge, to 
 
 As we march forward, the tactics and stratagems of DACs will be unraveled, showcasing how this new theory might upset the entrenched world order, preparing us for the incoming tidal wave of challenges. While it currently exists only in the realm of theory, a strategic exercise of sorts - isn't this where all grand strategies are birthed? Are you prepared to break ranks and venture into new terrain? Can you hear the trumpets of change sounding in the distance?
 
-<img src = "https://sturlabragason.github.io/images/loser.gif" alt = "Loser" />
+<img src = "https://sturlabragason.github.io/images/loser.gif" alt = "Loser"  style="display: block; margin: auto;" /> 
 
 ## What exactly is a DAC composed of?
 
