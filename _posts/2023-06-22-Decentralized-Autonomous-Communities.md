@@ -38,7 +38,7 @@ Coupling this with the application of modern emerging technologies, such as AR, 
 
 In a DAC, wealth is redistributed in a way that prioritizes access to fundamental needs. It propounds a Universal Basic Income model, effectively assuring that everyone's basic needs—housing, education, healthcare—are met, thereby eliminating poverty. Moreover, the DAC environment naturally attracts intellectual prowess and forward-thinking individuals, creating a global braintrust that powers the community and drives unprecedented levels of innovation and growth.
 
-By transcending traditional borders and fostering a sense of global citizenship, DACs encourage unity and shared prosperity. In essence, the DAC model is not a mere theoretical concept; it is a pragmatic blueprint for a future where technology is harnessed not as an instrument of control, but as a tool for enhancing human dignity, fostering collective prosperity, and assuring a dignified life for all.
+By transcending traditional borders and fostering a sense of global citizenship, DACs encourage unity and shared prosperity. In essence, the DAC model is not a mere theoretical concept; it is a pragmatic blueprint for a future where technology is harnessed not as an instrument of control, but as a tool for enhancing human dignity, fostering collective prosperity, and assuring a dignified life for all. 
 
 ## What exactly is a DAC composed of?
 
@@ -203,3 +203,4 @@ So yes, while resource scarcity is a challenge, it also presents an opportunity 
 ## The DAC model does not promise a utopia without challenges. Rather, it proposes a system that can learn, adapt, and evolve in response to these challenges, driven by the collective intelligence of its members and the transformative power of technology.
 
 
+Similar work is already underway, for example [CityDAO](https://www.citydao.io/).
