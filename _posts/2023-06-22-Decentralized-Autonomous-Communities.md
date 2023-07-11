@@ -26,11 +26,21 @@ But, imagine for a moment—a world where we dare to question, to challenge, to 
 
 ## Decentralized Autonomous Communities (DACs).
 
-As we move ahead, we'll delve into the fundamental underpinnings of DACs, exploring the potential of this new approach to disturb the existing world order and prime us for looming challenges. For now, it's purely conceptual - an intellectual exercise - but isn't this the very cradle of all great ideas? Are you prepared to diverge from the usual path and embark on an adventurous journey into the unknown? Can you hear the overture?
+As we proceed, we'll unpack the core principles of DACs, illustrating how this novel perspective could question the existing world structure and prepare us for future challenges. Right now, it's purely a theoretical exploration - a stimulating intellectual experiment. But remember, all ideas originate from such playful investigations. Are you ready to step off the beaten track and scrutinize these innovative concepts? Can you hear the overture?
 
 <img src = "https://sturlabragason.github.io/images/loser.gif" alt = "Loser"  style="display: block; margin: auto;" /> 
 
 ## What exactly is a DAC composed of?
+
+A Decentralized Autonomous Community (DAC) is a novel paradigm of socio-economic organization that leverages blockchain technology, peer-to-peer networks, and consensus decision-making. In a DAC, each member, no matter their geographical location, contributes to and benefits from a shared, global economy. The transparency and security offered by blockchain technology ensure that every transaction and decision are traceable and tamper-proof. 
+
+The DAC model brings about a redefinition of wealth, redistributing it in a manner that prioritizes universal basic needs. It introduces a form of Universal Basic Income, effectively eliminating poverty by ensuring every member's basic needs—housing, education, healthcare—are met. 
+
+At the same time, smart contracts and automation liberate people from mundane and routine work, sparking a renaissance of creativity, innovation, and intellectual growth. This environment naturally becomes a magnet for bright minds and forward-thinking individuals, boosting the intellectual and productive capacity of the DACs.
+
+Envisioned as a global government, DACs transcend traditional borders, fostering a sense of global citizenship, unity, and shared prosperity. This model isn't just a theoretical utopia—it's a tangible, feasible blueprint for a world where technology empowers humanity to thrive, ensuring a dignified life for all.
+
+### DAC building blocks
 
 #### Global Workforce in the Metaverse
 
