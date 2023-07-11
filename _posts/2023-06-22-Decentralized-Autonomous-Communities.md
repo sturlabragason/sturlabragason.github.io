@@ -30,17 +30,17 @@ As we proceed, we'll unpack the core principles of DACs, illustrating how this n
 
 <img src = "https://sturlabragason.github.io/images/loser.gif" alt = "Loser"  style="display: block; margin: auto;" /> 
 
+## So what is a DAC?
+
+A Decentralized Autonomous Community is a novel paradigm of socio-economic organization that leverages blockchain technology, peer-to-peer networks, and consensus decision-making. In a DAC, each member, no matter their geographical location, contributes to and benefits from a shared, global economy. The transparency and security offered by blockchain technology ensure that every transaction and decision are traceable and tamper-proof. 
+
+Coupling this with the application of modern emerging technologies, such as AR, Metaverse, robotics, and AI, DACs foster an environment ripe for innovation and creative growth. These technologies not only revolutionize the way we work, but they also redefine how we interact, learn, and connect, enabling seamless collaboration and exchange of ideas across geographical boundaries.
+
+In a DAC, wealth is redistributed in a way that prioritizes access to fundamental needs. It propounds a Universal Basic Income model, effectively assuring that everyone's basic needs—housing, education, healthcare—are met, thereby eliminating poverty. Moreover, the DAC environment naturally attracts intellectual prowess and forward-thinking individuals, creating a global braintrust that powers the community and drives unprecedented levels of innovation and growth.
+
+By transcending traditional borders and fostering a sense of global citizenship, DACs encourage unity and shared prosperity. In essence, the DAC model is not a mere theoretical concept; it is a pragmatic blueprint for a future where technology is harnessed not as an instrument of control, but as a tool for enhancing human dignity, fostering collective prosperity, and assuring a dignified life for all.
+
 ## What exactly is a DAC composed of?
-
-A Decentralized Autonomous Community (DAC) is a novel paradigm of socio-economic organization that leverages blockchain technology, peer-to-peer networks, and consensus decision-making. In a DAC, each member, no matter their geographical location, contributes to and benefits from a shared, global economy. The transparency and security offered by blockchain technology ensure that every transaction and decision are traceable and tamper-proof. 
-
-The DAC model brings about a redefinition of wealth, redistributing it in a manner that prioritizes universal basic needs. It introduces a form of Universal Basic Income, effectively eliminating poverty by ensuring every member's basic needs—housing, education, healthcare—are met. 
-
-At the same time, smart contracts and automation liberate people from mundane and routine work, sparking a renaissance of creativity, innovation, and intellectual growth. This environment naturally becomes a magnet for bright minds and forward-thinking individuals, boosting the intellectual and productive capacity of the DACs.
-
-Envisioned as a global government, DACs transcend traditional borders, fostering a sense of global citizenship, unity, and shared prosperity. This model isn't just a theoretical utopia—it's a tangible, feasible blueprint for a world where technology empowers humanity to thrive, ensuring a dignified life for all.
-
-### DAC building blocks
 
 #### Open-Source Knowledge Ecosystem
 
