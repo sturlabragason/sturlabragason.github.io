@@ -42,9 +42,19 @@ Envisioned as a global government, DACs transcend traditional borders, fostering
 
 ### DAC building blocks
 
+#### Open-Source Knowledge Ecosystem
+
+In DACs, knowledge, creativity, and innovation are communal properties. Whether it's a new AI algorithm, a more efficient building design, or a breakthrough software update, all are shared freely among the network of DACs. This community-wide open-source approach fuels rapid progress and the spread of beneficial developments. 
+
+Anything contributed that proves beneficial for one is immediately available for all. Hardware designs, digital artworks, software enhancements, AI models, architectural blueprints, community improvements - they are all documented and shared openly. This rich exchange empowers every DAC, promoting collective learning, adaptation, and advancement. By cultivating a culture of sharing and cooperation, DACs ensure that each new discovery or creation benefits the whole, fostering an ever-evolving ecosystem of knowledge and innovation.
+
 #### Global Workforce in the Metaverse
 
 Through the Metaverse, anyone in the world could virtually "go" to work, collaborating with colleagues, and serving clients from different towns, countries, or even continents. This allows for a truly global workforce that isn't restricted by geography. For instance, a specialist surgeon could perform complex surgeries through a robotic interface controlled via the Metaverse, allowing them to treat patients worldwide from their home town.
+
+#### Remote Work Centers
+
+To facilitate these new ways of working, each town could have a shared office or co-working space equipped with the necessary technological infrastructure, such as high-speed internet and AR/VR equipment. This could serve as a hub for remote workers, providing a space for collaboration and community, even when the work itself is being done for distant organizations or clients.
 
 #### Augmented Reality Training
 
@@ -52,21 +62,13 @@ Augmented Reality (AR) can be used to provide practical training for various ski
 
 #### AI and Robotics
 
-Robots, guided by artificial intelligence, could handle much of the manual labor in each town, from farming to manufacturing, leaving humans free to engage in more creative, strategic, or interpersonal tasks. AI could also handle much of the administration and organization in each town, from scheduling appointments to managing public services.
+Robots, guided by artificial intelligence, have the potential to handle ever increasing amounts the manual labor in each town, from farming to manufacturing, leaving humans free to engage in more creative, strategic, or interpersonal tasks. AI could also handle much of the administration and organization in each town, from scheduling appointments to managing public services. This also offers an interface for 
 
-#### Remote Work Centers
-
-To facilitate these new ways of working, each town could have a shared office or co-working space equipped with the necessary technological infrastructure, such as high-speed internet and AR/VR equipment. This could serve as a hub for remote workers, providing a space for collaboration and community, even when the work itself is being done for distant organizations or clients.
 
 #### Community Contributions
 
 The community contribution model could be expanded to include digital contributions. For instance, a software engineer could contribute to the community by developing open-source software, or a digital artist could create virtual artworks for public spaces in the Metaverse.
 
-#### Open-Source Knowledge Ecosystem
-
-In DACs, knowledge, creativity, and innovation are communal properties. Whether it's a new AI algorithm, a more efficient building design, or a breakthrough software update, all are shared freely among the network of DACs. This community-wide open-source approach fuels rapid progress and the spread of beneficial developments. 
-
-Anything contributed that proves beneficial for one is immediately available for all. Hardware designs, digital artworks, software enhancements, AI models, architectural blueprints, community improvements - they are all documented and shared openly. This rich exchange empowers every DAC, promoting collective learning, adaptation, and advancement. By cultivating a culture of sharing and cooperation, DACs ensure that each new discovery or creation benefits the whole, fostering an ever-evolving ecosystem of knowledge and innovation.
 
 ## Some more
 
