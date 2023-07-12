@@ -70,7 +70,7 @@ Robots, guided by artificial intelligence, have the potential to handle ever inc
 The community contribution model could be expanded to include digital contributions. For instance, a software engineer could contribute to the community by developing open-source software, or a digital artist could create virtual artworks for public spaces in the Metaverse.
 
 
-## Some more
+## The vision
 
 As we traverse the path of an increasingly centralized world, fraught with inequality, we're driven to challenge the status quo, summoning a socioeconomic paradigm shift. Herein lies the battle cry for DACs - Decentralized Autonomous Communities - a revolutionary force in a world where collective power dethrones the autocratic rule of the few.
 
