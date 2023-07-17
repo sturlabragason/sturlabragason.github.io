@@ -10,6 +10,8 @@ def load_feeds():
     return feeds
 
 def parse_date(date_string):
+    if 'GMT' in date_string:
+        date_string = date_string.replace('GMT', '+0000')
     try:
         # Parse the publication date string into a datetime object
         return datetime.strptime(date_string, '%a, %d %b %Y %H:%M:%S %z')
@@ -61,6 +63,8 @@ def render_page(news_items):
 def main():
     feeds = load_feeds()
     news_items = fetch_and_parse(feeds)
+    # Filter out news_items with 'None' publication date
+    news_items = [item for item in news_items if item['published'] is not None]
     # Sort news items by publication date
     news_items.sort(key=lambda x: x['published'], reverse=True)
     render_page(news_items)
