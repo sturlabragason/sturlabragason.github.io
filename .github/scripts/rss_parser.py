@@ -2,57 +2,68 @@ import feedparser
 import json
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
-import pytz
 from bs4 import BeautifulSoup
 
-# Load RSS feed URLs
-with open('.github/scripts/feeds.json', 'r') as f:
-    feeds = json.load(f)
+def load_feeds():
+    with open('.github/scripts/feeds.json', 'r') as f:
+        feeds = json.load(f)
+    return feeds
 
-# Fetch and parse RSS feeds
-news_items = []
-for feed_url in feeds:
-    feed = feedparser.parse(feed_url)
-    for entry in feed.entries:
-        # Check if 'GMT' is in the date string
-        if 'GMT' in entry.published:
-            # Replace 'GMT' with '+0000'
-            entry.published = entry.published.replace('GMT', '+0000')
-
+def parse_date(date_string):
+    try:
         # Parse the publication date string into a datetime object
-        published_datetime = datetime.strptime(
-            entry.published, '%a, %d %b %Y %H:%M:%S %z')
+        return datetime.strptime(date_string, '%a, %d %b %Y %H:%M:%S %z')
+    except ValueError:
+        print(f'Could not parse date: {date_string}')
+        return None
 
-        summary = entry.summary if 'summary' in entry else ''
-        soup = BeautifulSoup(summary, "html.parser")
-        summary = soup.get_text()  # Convert HTML escape characters to regular characters and remove HTML tags
-        
-        # Modify the summary processing
-        if summary:  # If summary is not empty
-            if len(summary) >= 200:  # If summary length is greater than or equal to 200
-                substring = summary[:200]  # Get the first 200 characters
-                index = substring.find('. ')  # Find the first '. ' in the substring
-                if index != -1:  # If '. ' found
-                    summary = substring[:index + 1]  # Slice summary up to '. '
-                else:  # If '. ' not found
-                    summary = substring  # Use the first 200 characters
-            else:  # If summary length is less than 200
-                summary = summary.split('. ')[0]  # Follow the existing procedure
+def process_summary(summary):
+    summary = BeautifulSoup(summary, "html.parser").get_text()
+    if summary:  
+        if len(summary) >= 200:  
+            substring = summary[:200]  
+            index = substring.find('. ')  
+            if index != -1:  
+                return substring[:index + 1]
+            else:  
+                return substring
+        else:  
+            return summary.split('. ')[0]
+    return ''
 
-        news_items.append({
-            'title': entry.title,
-            'link': entry.link,
-            'published': published_datetime,
-            'summary': summary,
-        })
+def fetch_and_parse(feeds):
+    news_items = []
+    for feed_url in feeds:
+        try:
+            feed = feedparser.parse(feed_url)
+            for entry in feed.entries:
+                published_datetime = parse_date(entry.published)
+                summary = process_summary(entry.summary if 'summary' in entry else '')
+                news_items.append({
+                    'title': entry.title,
+                    'link': entry.link,
+                    'published': published_datetime,
+                    'summary': summary,
+                })
+        except Exception as e:
+            print(f'Failed to fetch or parse feed {feed_url}: {str(e)}')
+    return news_items
 
-# Sort news items by publication date
-news_items.sort(key=lambda x: x['published'], reverse=True)
+def render_page(news_items):
+    # Load Jinja2 template
+    env = Environment(loader=FileSystemLoader('.github/templates'))
+    template = env.get_template('news.html')
 
-# Load Jinja2 template
-env = Environment(loader=FileSystemLoader('.github/templates'))
-template = env.get_template('news.html')
+    # Render new HTML page
+    with open('curated_news/index.html', 'w') as f:
+        f.write(template.render(news_items=news_items))
 
-# Render new HTML page
-with open('curated_news/index.html', 'w') as f:
-    f.write(template.render(news_items=news_items))
+def main():
+    feeds = load_feeds()
+    news_items = fetch_and_parse(feeds)
+    # Sort news items by publication date
+    news_items.sort(key=lambda x: x['published'], reverse=True)
+    render_page(news_items)
+
+if __name__ == "__main__":
+    main()
