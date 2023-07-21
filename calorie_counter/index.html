@@ -11,80 +11,59 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #eff1f5;
-            /* Base */
-            color: #4c4f69;
-            /* Text */
+            font-family: 'Rubik', sans-serif;
+            background-color: #1e1e2e; /* Base */
+            color: #cdd6f4; /* Text */
         }
 
         .btn {
-            background-color: #dc8a78;
-            /* Rosewater */
+            background-color: #f38ba8; /* Rosewater */
         }
 
         .accent {
-            color: #04a5e5;
-            /* Sky */
+            color: #89dceb; /* Sky */
         }
 
         .card-panel {
-            background-color: #ccd0da;
-            /* Surface0 */
-            color: #5c5f77;
-            /* Subtext1 */
+            background-color: #313244; /* Surface0 */
+            color: #bac2de; /* Subtext1 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .card-title {
-            color: #4c4f69;
-            /* Text */
+            color: #cdd6f4; /* Text */
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h5 class="center-align">Calorie Counter</h5>
+        <h1 class="center-align">Calorie Counter</h1>
         <div class="card">
             <div class="card-content">
                 <form id="calorie-form">
                     <div class="row">
                         <div class="input-field col s12 m6">
                             <input type="number" id="calorie-input" required>
-                            <label for="calorie-input">Calories</label>
                         </div>
                         <div class="input-field col s12 m6">
                             <input type="datetime-local" id="calorie-date">
-                            <!-- <label for="calorie-date">Date and Time</label> -->
                         </div>
                     </div>
                     <div class="center-align">
                         <button type="submit" class="btn waves-effect waves-light">Add</button>
                     </div>
                 </form>
-
             </div>
         </div>
         <div id="calorie-list" class="card-panel">
             <span class="card-title">Calorie Entries</span>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Consumed</th>
-                        <th>Left</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Calorie entries will be added here -->
-                </tbody>
-            </table>
         </div>
         <div id="calorie-summary" class="card-panel"></div>
         <div id="previous-day-summaries" class="card-panel"></div>
