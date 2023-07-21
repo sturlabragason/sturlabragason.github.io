@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calorie Counter</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 </head>
+
 <body>
     <h1>Calorie Counter</h1>
     <form id="calorie-form">
@@ -14,11 +16,17 @@
             Calories:
             <input type="number" id="calorie-input" required>
         </label>
+        <label>
+            Date and Time:
+            <input type="datetime-local" id="calorie-date">
+        </label>
         <button type="submit">Add</button>
     </form>
+
     <ul id="calorie-list"></ul>
     <div id="calorie-summary"></div>
     <div id="previous-day-summaries"></div>
     <script src="app.js"></script>
 </body>
+
 </html>

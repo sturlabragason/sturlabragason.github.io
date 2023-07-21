@@ -14,32 +14,42 @@ form.addEventListener('submit', addCalorieEntry);
 async function addCalorieEntry(event) {
   event.preventDefault();
   const calorieInput = document.getElementById('calorie-input');
+  const calorieDateInput = document.getElementById('calorie-date');
   const calories = parseInt(calorieInput.value);
   if (isNaN(calories)) {
     return;
   }
-  const time = new Date();
+
+  let time;
+  if (calorieDateInput.value) {
+    time = new Date(calorieDateInput.value);
+  } else {
+    time = new Date();
+  }
+
   const { data, error } = await supabase
     .from('calorieentries')
     .insert([{ calories, time }])
   if (error) console.error("Error adding document: ", error);
   calorieInput.value = '';
+  calorieDateInput.value = '';
   updateEntries();
 }
+
 
 async function updateEntries() {
   const { data, error } = await supabase
     .from('calorieentries')
     .select('*')
     .order('time', { ascending: false })
-  
+
   if (error) console.error("Error getting entries: ", error);
 
   // Group entries by date
   let entriesByDate = {};
   data.forEach(({ calories, time }) => {
     let date = new Date(time);
-    let day = `${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`;
+    let day = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
     if (!entriesByDate[day]) {
       entriesByDate[day] = [];
     }
@@ -53,7 +63,7 @@ async function updateEntries() {
 
   // Get today's date in 'YYYY/MM/DD' format
   let today = new Date();
-  let todayString = `${today.getFullYear()}/${today.getMonth()+1}/${today.getDate()}`;
+  let todayString = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`;
 
   // Iterate over entries by date
   for (let day in entriesByDate) {
