@@ -11,6 +11,19 @@ const calorieLimit = 2000; // Set your daily calorie limit here
 
 form.addEventListener('submit', addCalorieEntry);
 
+window.onload = function() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = (now.getMonth() < 9 ? '0' : '') + (now.getMonth() + 1);
+  const date = (now.getDate() < 10 ? '0' : '') + now.getDate();
+  const hours = (now.getHours() < 10 ? '0' : '') + now.getHours();
+  const minutes = (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+
+  const datetimeLocal = `${year}-${month}-${date}T${hours}:${minutes}`;
+  document.getElementById('calorie-date').value = datetimeLocal;
+}
+
+
 async function addCalorieEntry(event) {
   event.preventDefault();
   const calorieInput = document.getElementById('calorie-input');
@@ -42,14 +55,14 @@ async function updateEntries() {
     .from('calorieentries')
     .select('*')
     .order('time', { ascending: false })
-  
+
   if (error) console.error("Error getting entries: ", error);
 
   // Group entries by date
   let entriesByDate = {};
   data.forEach(({ calories, time }) => {
     let date = new Date(time);
-    let day = `${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`;
+    let day = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
     if (!entriesByDate[day]) {
       entriesByDate[day] = [];
     }
@@ -63,7 +76,7 @@ async function updateEntries() {
 
   // Get today's date in 'YYYY/MM/DD' format
   let today = new Date();
-  let todayString = `${today.getFullYear()}/${today.getMonth()+1}/${today.getDate()}`;
+  let todayString = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`;
 
   // Iterate over entries by date
   for (let day in entriesByDate) {
