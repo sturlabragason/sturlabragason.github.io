@@ -9,9 +9,14 @@ const list = document.getElementById('calorie-list');
 const summary = document.getElementById('calorie-summary');
 const calorieLimit = 2000; // Set your daily calorie limit here
 
+// Get references to the table bodies
+const todayList = document.querySelector('#calorie-list tbody');
+const previousDaySummaries = document.querySelector('#previous-day-summaries tbody');
+
+
 form.addEventListener('submit', addCalorieEntry);
 
-window.onload = function() {
+window.onload = function () {
   const now = new Date();
   const year = now.getFullYear();
   const month = (now.getMonth() < 9 ? '0' : '') + (now.getMonth() + 1);
@@ -51,6 +56,8 @@ async function addCalorieEntry(event) {
 
 
 async function updateEntries() {
+  todayList.innerHTML = '';
+  previousDaySummaries.innerHTML = '';
   const { data, error } = await supabase
     .from('calorieentries')
     .select('*')
@@ -87,11 +94,16 @@ async function updateEntries() {
       entriesByDate[day].forEach(({ calories, time }) => {
         totalCalories += calories;
         totalCaloriesForToday += calories;
-        entriesHTML = `<li>${new Date(time).toLocaleString()}: ${calories} calories</li>` + entriesHTML;
+        // When creating entriesHTML, create a table row instead of a list item
+        entriesHTML = `<tr><td>${new Date(time).toLocaleString()}</td><td>${calories} calories</td></tr>`;
+        todayList.innerHTML += entriesHTML;
       });
     } else {
       totalCalories += dailyCalories;
-      previousDaySummariesHTML += `<p>${day}: Consumed ${dailyCalories} calories. ${Math.max(0, calorieLimit - dailyCalories)} calories left.</p>`;
+      // When creating previousDaySummariesHTML, create a table row instead of a paragraph
+      previousDaySummariesHTML = `<tr><td>${day}</td><td>Consumed ${dailyCalories} calories</td><td>${Math.max(0, calorieLimit - dailyCalories)} calories left</td></tr>`;
+      // Append the new row to the previousDaySummaries table body
+      previousDaySummaries.innerHTML += previousDaySummariesHTML;
     }
   }
 
