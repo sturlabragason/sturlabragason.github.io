@@ -5,44 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calorie Counter</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 </head>
 
+
 <body>
     <div class="container">
-        <header>
-            <h1 class="text-center my-4">Calorie Counter</h1>
-        </header>
-        <main>
-            <div class="row justify-content-center">
-                <div class="col-sm-8 px-2">
-                    <form id="calorie-form">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="calorie-input">Calories:</label>
-                                <input type="number" id="calorie-input" class="form-control" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="calorie-date">Date and Time:</label>
-                                <input type="datetime-local" id="calorie-date" class="form-control">
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Add</button>
-                    </form>
+        <h1 class="center-align">Calorie Counter</h1>
+        <form id="calorie-form" class="card">
+            <div class="card-content">
+                <span class="card-title">New Entry</span>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input type="number" id="calorie-input" required>
+                        <label for="calorie-input">Calories</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="datetime-local" id="calorie-date">
+                        <label for="calorie-date">Date and Time</label>
+                    </div>
                 </div>
             </div>
-            <div class="row justify-content-center mt-4">
-                <div class="col-sm-8 px-2 text-justify">
-                    <ul id="calorie-list" class="list-group"></ul>
-                    <div id="calorie-summary" class="mt-4"></div>
-                    <div id="previous-day-summaries" class="mt-4"></div>
-                </div>
+            <div class="card-action">
+                <button type="submit" class="btn-floating btn-large waves-effect waves-light"><i
+                        class="material-icons">add</i></button>
             </div>
-        </main>
+        </form>
+        <div id="calorie-list" class="card-panel">
+            <span class="card-title">Calorie Entries</span>
+            <ul></ul>
+        </div>
+        <div id="calorie-summary" class="card-panel"></div>
+        <div id="previous-day-summaries" class="card-panel"></div>
     </div>
     <script src="app.js"></script>
 </body>
+
 
 </html>
