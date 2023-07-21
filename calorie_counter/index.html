@@ -29,11 +29,17 @@
         }
 
         .input-field-center {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cdd6f4;
+}
+
+.input-field-center input::placeholder {
+    text-align: center;
+    color: #cdd6f4;
+}
+
 
         .card-panel {
             background-color: #313244; /* Surface0 */
@@ -59,12 +65,13 @@
                 <form id="calorie-form">
                     <div class="row">
                         <div class="input-field input-field-center col s12 m6">
-                            <input type="number" id="calorie-input" required>
+                            <input type="number" id="calorie-input" required placeholder="Calories">
                         </div>
                         <div class="input-field input-field-center col s12 m6">
-                            <input type="datetime-local" id="calorie-date">
+                            <input type="datetime-local" id="calorie-date" placeholder="Date and Time">
                         </div>
                     </div>
+                    
                     <div class="center-align">
                         <button type="submit" class="btn waves-effect waves-light">Add</button>
                     </div>
