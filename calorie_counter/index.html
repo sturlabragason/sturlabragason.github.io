@@ -28,12 +28,15 @@
             color: #89dceb; /* Sky */
         }
 
-        .card-panel {
-            background-color: #313244; /* Surface0 */
-            color: #bac2de; /* Subtext1 */
+        .input-field-center {
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .card-panel {
+            background-color: #313244; /* Surface0 */
+            color: #bac2de; /* Subtext1 */
         }
 
         .card-title {
@@ -44,15 +47,15 @@
 
 <body>
     <div class="container">
-        <h1 class="center-align">Calorie Counter</h1>
+        <h4 class="center-align">Calorie Counter</h4>
         <div class="card">
             <div class="card-content">
                 <form id="calorie-form">
                     <div class="row">
-                        <div class="input-field col s12 m6">
+                        <div class="input-field input-field-center col s12 m6">
                             <input type="number" id="calorie-input" required>
                         </div>
-                        <div class="input-field col s12 m6">
+                        <div class="input-field input-field-center col s12 m6">
                             <input type="datetime-local" id="calorie-date">
                         </div>
                     </div>
