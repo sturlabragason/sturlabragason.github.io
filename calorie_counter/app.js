@@ -84,11 +84,31 @@ async function updateEntries() {
 
     // For today's entries, append to the top of the list and add to the total
     if (day === todayString) {
+      entriesHTML = `<h2 class="text-2xl font-semibold mb-4">Today</h2>
+  <table class="w-full text-left border-collapse font-sans">
+<thead>
+<tr>
+    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Time</th>
+    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Item</th>
+    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories</th>
+</tr>
+</thead>
+<tbody>
+`;
+
       entriesByDate[day].forEach(({ calories, time }) => {
         totalCalories += calories;
         totalCaloriesForToday += calories;
-        entriesHTML = `<li class="py-1 border-b border-gray-200 text-center">${new Date(time).toLocaleString()}: ${calories} calories</li>` + entriesHTML;
+        entriesHTML += `
+    <tr>
+        <td class="py-2 px-4 border-b border-gray-200 text-center">${new Date(time).toLocaleTimeString()}</td>
+        <td class="py-2 px-4 border-b border-gray-200 text-center"></td>
+        <td class="py-2 px-4 border-b border-gray-200 text-center">${calories}</td>
+    </tr>
+    `;
       });
+
+      entriesHTML += `</tbody></table>`;
     } else {
       totalCalories += dailyCalories;
       previousDaySummariesHTML = `<h2 class="text-2xl font-semibold mb-4">Past</h2>
