@@ -136,7 +136,10 @@ async function updateEntries() {
   previousDaySummariesDiv.innerHTML = previousDaySummariesHTML;
 
   const remainingCaloriesForToday = Math.max(0, calorieLimit - totalCaloriesForToday);
-  summary.innerHTML = `<p class="py-1 text-center">Today you have consumed ${totalCaloriesForToday} calories. You have ${remainingCaloriesForToday} calories left.</p>`;
+  summary.innerHTML = `
+  <h2 class="text-2xl font-semibold mb-4">Past</h2>
+  <p class="py-1 text-center">Today you have consumed ${totalCaloriesForToday} calories. You have ${remainingCaloriesForToday} calories left.</p>
+  `;
 }
 
 
