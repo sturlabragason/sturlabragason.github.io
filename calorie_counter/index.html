@@ -5,37 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calorie Counter</title>
-    <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 </head>
 
-<body class="bg-gray-900 text-white">
-    <div class="container mx-auto py-10 px-4">
-        <h4 class="text-center text-3xl mb-6">Calorie Counter</h4>
-        <div class="bg-gray-800 p-6 rounded-md">
-            <form id="calorie-form" class="grid grid-cols-2 gap-4">
-                <div class="col-span-1">
-                    <input type="number" id="calorie-input" required placeholder="Calories"
-                        class="px-3 py-2 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
-                </div>
-                <div class="col-span-1">
-                    <input type="datetime-local" id="calorie-date" placeholder="Date and Time"
-                        class="px-3 py-2 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
-                </div>
-                <div class="col-span-2 text-center">
-                    <button type="submit"
-                        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add</button>
-                </div>
-            </form>
+<body class="bg-gray-50 text-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 class="text-3xl font-semibold mb-10 text-center">Calorie Counter</h1>
+
+        <form id="calorie-form" class="space-y-8">
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <input type="number" id="calorie-input" required placeholder="Calories" class="w-full sm:w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <input type="datetime-local" id="calorie-date" placeholder="Date and Time" class="w-full sm:w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+            </div>
+            <button type="submit" class="w-full sm:w-auto bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-500 transition">Add</button>
+        </form>
+
+        <div id="calorie-list" class="bg-white p-6 rounded-md shadow mt-8">
+            <h2 class="text-2xl font-semibold mb-4">Calorie Entries</h2>
+            <!-- Calorie Entries -->
         </div>
-        <div id="calorie-list" class="bg-gray-800 p-6 rounded-md mt-6">
-            <span class="text-2xl">Calorie Entries</span>
+
+        <div id="calorie-summary" class="bg-white p-6 rounded-md shadow mt-8">
+            <h2 class="text-2xl font-semibold mb-4">Calorie Summary</h2>
+            <!-- Calorie Summary -->
         </div>
-        <div id="calorie-summary" class="bg-gray-800 p-6 rounded-md mt-6"></div>
-        <div id="previous-day-summaries" class="bg-gray-800 p-6 rounded-md mt-6"></div>
+
+        <div id="previous-day-summaries" class="bg-white p-6 rounded-md shadow mt-8">
+            <h2 class="text-2xl font-semibold mb-4">Previous Day Summaries</h2>
+            <!-- Previous Day Summaries -->
+        </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 
