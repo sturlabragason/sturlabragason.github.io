@@ -10,22 +10,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body id="body" class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 class="text-3xl font-semibold mb-10 text-center">Calorie Counter</h1>
+        <div class="flex justify-between items-center">
+            <h1 class="text-3xl font-semibold mb-10">Calorie Counter</h1>
+            <button id="mode-switcher" class="bg-indigo-600 text-white px-6 py-2 rounded-md">🌞</button>
+        </div>
 
         <form id="calorie-form" class="space-y-8 sm:space-y-0 sm:flex sm:items-center sm:justify-between">
             <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 sm:flex-grow">
                 <input type="number" id="calorie-input" required placeholder="Calories"
-                    class="mx-auto w-full sm:w-auto flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    class="w-full sm:w-auto flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600">
                 <input type="datetime-local" id="calorie-date" placeholder="Date and Time"
-                    class="mx-auto w-full sm:w-auto flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    class="w-full sm:w-auto flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600">
             </div>
             <button type="submit"
                 class="w-full sm:w-auto bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-500 transition mt-4 sm:mt-0 sm:ml-4">Add</button>
         </form>
 
-        <div class="bg-white p-6 rounded-md shadow mt-8">
+        <div class="bg-white p-6 rounded-md shadow mt-8 dark:bg-gray-800">
             <div id="calorie-summary">
                 <!-- Calorie Summary -->
             </div>
@@ -34,12 +37,25 @@
             </div>
         </div>
 
-        <div id="previous-day-summaries" class="bg-white p-6 rounded-md shadow mt-8">
+        <div id="previous-day-summaries" class="bg-white p-6 rounded-md shadow mt-8 dark:bg-gray-800">
             <!-- Previous Day Summaries -->
         </div>
     </div>
 
     <script src="app.js"></script>
+    <script>
+        const modeSwitcher = document.getElementById('mode-switcher');
+        const body = document.getElementById('body');
+
+        modeSwitcher.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            if (body.classList.contains('dark')) {
+                modeSwitcher.innerText = '🌞';
+            } else {
+                modeSwitcher.innerText = '🌚';
+            }
+        });
+    </script>
 </body>
 
 </html>
