@@ -7,7 +7,7 @@ var supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const form = document.getElementById('calorie-form');
 const list = document.getElementById('calorie-list');
 const summary = document.getElementById('calorie-summary');
-const body = document.getElementById('body');
+// const body = document.getElementById('body');
 const calorieLimit = 2000; // Set your daily calorie limit here
 
 form.addEventListener('submit', addCalorieEntry);
