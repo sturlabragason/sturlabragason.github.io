@@ -7,6 +7,7 @@ var supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const form = document.getElementById('calorie-form');
 const list = document.getElementById('calorie-list');
 const summary = document.getElementById('calorie-summary');
+const body = document.getElementById('body');
 const calorieLimit = 2000; // Set your daily calorie limit here
 
 form.addEventListener('submit', addCalorieEntry);
@@ -22,7 +23,6 @@ window.onload = function () {
   const datetimeLocal = `${year}-${month}-${date}T${hours}:${minutes}`;
   document.getElementById('calorie-date').value = datetimeLocal;
 }
-
 
 async function addCalorieEntry(event) {
   event.preventDefault();
@@ -48,7 +48,6 @@ async function addCalorieEntry(event) {
   calorieDateInput.value = '';
   updateEntries();
 }
-
 
 async function updateEntries() {
   const { data, error } = await supabase
@@ -78,6 +77,13 @@ async function updateEntries() {
   let today = new Date();
   let todayString = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`;
 
+  // Check if dark mode is active
+  let isDark = body.classList.contains('dark');
+
+  // Define color classes based on the mode
+  let tableBgColor = isDark ? 'bg-gray-800' : 'bg-gray-100';
+  let tableBorderColor = isDark ? 'border-gray-600' : 'border-gray-200';
+
   // Iterate over entries by date
   for (let day in entriesByDate) {
     let dailyCalories = entriesByDate[day].reduce((sum, entry) => sum + entry.calories, 0);
@@ -88,9 +94,9 @@ async function updateEntries() {
     <table class="w-full text-left border-collapse font-sans">
       <thead>
         <tr>
-          <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Time</th>
-          <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Item</th>
-          <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories</th>
+          <th class="w-1/3 py-2 px-4 border-b ${tableBorderColor} ${tableBgColor} font-semibold text-sm text-center">Time</th>
+          <th class="w-1/3 py-2 px-4 border-b ${tableBorderColor} ${tableBgColor} font-semibold text-sm text-center">Item</th>
+          <th class="w-1/3 py-2 px-4 border-b ${tableBorderColor} ${tableBgColor} font-semibold text-sm text-center">Calories</th>
         </tr>
       </thead>
       <tbody>
@@ -101,9 +107,9 @@ async function updateEntries() {
         totalCaloriesForToday += calories;
         entriesHTML += `
       <tr>
-        <td class="py-2 px-4 border-b border-gray-200 text-center">${new Date(time).toLocaleTimeString()}</td>
-        <td class="py-2 px-4 border-b border-gray-200 text-center"></td>
-        <td class="py-2 px-4 border-b border-gray-200 text-center">${calories}</td>
+        <td class="py-2 px-4 border-b ${tableBorderColor} text-center">${new Date(time).toLocaleTimeString()}</td>
+        <td class="py-2 px-4 border-b ${tableBorderColor} text-center"></td>
+        <td class="py-2 px-4 border-b ${tableBorderColor} text-center">${calories}</td>
       </tr>
     `;
       });
@@ -115,9 +121,9 @@ async function updateEntries() {
       <table class="w-full text-left border-collapse font-sans">
         <thead>
           <tr>
-            <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Date</th>
-            <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Consumed Calories</th>
-            <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories Left</th>
+            <th class="w-1/3 py-2 px-4 border-b ${tableBorderColor} ${tableBgColor} font-semibold text-sm text-center">Date</th>
+            <th class="w-1/3 py-2 px-4 border-b ${tableBorderColor} ${tableBgColor} font-semibold text-sm text-center">Consumed Calories</th>
+            <th class="w-1/3 py-2 px-4 border-b ${tableBorderColor} ${tableBgColor} font-semibold text-sm text-center">Calories Left</th>
           </tr>
         </thead>
         <tbody>
@@ -132,9 +138,9 @@ async function updateEntries() {
           totalCalories += dailyCalories;
           previousDaySummariesHTML += `
         <tr>
-          <td class="py-2 px-4 border-b border-gray-200 text-center">${day}</td>
-          <td class="py-2 px-4 border-b border-gray-200 text-center">${dailyCalories}</td>
-          <td class="py-2 px-4 border-b border-gray-200 text-center">${Math.max(0, calorieLimit - dailyCalories)}</td>
+          <td class="py-2 px-4 border-b ${tableBorderColor} text-center">${day}</td>
+          <td class="py-2 px-4 border-b ${tableBorderColor} text-center">${dailyCalories}</td>
+          <td class="py-2 px-4 border-b ${tableBorderColor} text-center">${Math.max(0, calorieLimit - dailyCalories)}</td>
         </tr>
       `;
         }
@@ -152,13 +158,11 @@ async function updateEntries() {
 
   list.innerHTML = entriesHTML;
 
-
   const previousDaySummariesDiv = document.getElementById('previous-day-summaries');
   previousDaySummariesDiv.innerHTML = previousDaySummariesHTML;
 
   const remainingCaloriesForToday = Math.max(0, calorieLimit - totalCaloriesForToday);
   summary.innerHTML = `<p class="py-1 text-center">Today you have consumed ${totalCaloriesForToday} calories. You have ${remainingCaloriesForToday} calories left.</p>`;
 }
-
 
 updateEntries();
