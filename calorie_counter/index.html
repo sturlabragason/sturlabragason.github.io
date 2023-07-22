@@ -45,11 +45,11 @@
     <script src="app.js"></script>
     <script>
         const modeSwitcher = document.getElementById('mode-switcher');
-        const body = document.getElementById('body');
+        const htmlElement = document.documentElement; // <-- get the html element
 
         modeSwitcher.addEventListener('click', () => {
-            body.classList.toggle('dark');
-            if (body.classList.contains('dark')) {
+            htmlElement.classList.toggle('dark'); // <-- toggle on the html element
+            if (htmlElement.classList.contains('dark')) {
                 modeSwitcher.innerText = '🌞';
             } else {
                 modeSwitcher.innerText = '🌚';
