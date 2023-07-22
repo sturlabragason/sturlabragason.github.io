@@ -88,9 +88,9 @@ async function updateEntries() {
     <table class="w-full text-left border-collapse font-sans">
       <thead>
         <tr>
-          <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Time</th>
-          <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Item</th>
-          <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories</th>
+          <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Time</th>
+          <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Item</th>
+          <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories</th>
         </tr>
       </thead>
       <tbody>
@@ -115,9 +115,9 @@ async function updateEntries() {
       <table class="w-full text-left border-collapse font-sans">
         <thead>
           <tr>
-            <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Date</th>
-            <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Consumed Calories</th>
-            <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories Left</th>
+            <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Date</th>
+            <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Consumed Calories</th>
+            <th class="w-1/3 py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories Left</th>
           </tr>
         </thead>
         <tbody>
