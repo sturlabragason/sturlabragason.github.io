@@ -14,13 +14,17 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 class="text-3xl font-semibold mb-10 text-center">Calorie Counter</h1>
 
-        <form id="calorie-form" class="space-y-8">
-            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <input type="number" id="calorie-input" required placeholder="Calories" class="w-full sm:w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                <input type="datetime-local" id="calorie-date" placeholder="Date and Time" class="w-full sm:w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+        <form id="calorie-form" class="space-y-8 sm:space-y-0 sm:flex sm:items-end sm:justify-between">
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 sm:flex-grow">
+                <input type="number" id="calorie-input" required placeholder="Calories"
+                    class="w-full sm:w-auto flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <input type="datetime-local" id="calorie-date" placeholder="Date and Time"
+                    class="w-full sm:w-auto flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
             </div>
-            <button type="submit" class="w-full sm:w-auto bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-500 transition">Add</button>
+            <button type="submit"
+                class="w-full sm:w-auto bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-500 transition mt-4 sm:mt-0">Add</button>
         </form>
+
 
         <div id="calorie-list" class="bg-white p-6 rounded-md shadow mt-8">
             <h2 class="text-2xl font-semibold mb-4">Calorie Entries</h2>
