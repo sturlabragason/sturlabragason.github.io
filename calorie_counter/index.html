@@ -14,7 +14,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="flex justify-between items-center">
             <h1 class="text-3xl font-semibold mb-10">Calorie Counter</h1>
-            <button id="mode-switcher" class="bg-indigo-600 text-white px-6 py-2 rounded-md">🌞</button>
+            <!-- <button id="mode-switcher" class="bg-indigo-600 text-white px-6 py-2 rounded-md">🌞</button> -->
         </div>
 
         <form id="calorie-form" class="space-y-8 sm:space-y-0 sm:flex sm:items-center sm:justify-between">
@@ -48,14 +48,28 @@
         const htmlElement = document.documentElement; // <-- get the html element
 
         modeSwitcher.addEventListener('click', () => {
-            htmlElement.classList.toggle('dark'); // <-- toggle on the html element
-            if (htmlElement.classList.contains('dark')) {
+            if (localStorage.theme === 'dark') {
+                htmlElement.classList.remove('dark');
+                localStorage.theme = 'light';
                 modeSwitcher.innerText = '🌞';
             } else {
+                htmlElement.classList.add('dark');
+                localStorage.theme = 'dark';
                 modeSwitcher.innerText = '🌚';
             }
         });
+
+        window.onload = function () {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                modeSwitcher.innerText = '🌚';
+            } else {
+                document.documentElement.classList.remove('dark');
+                modeSwitcher.innerText = '🌞';
+            }
+        }
     </script>
+</body>
 </body>
 
 </html>
