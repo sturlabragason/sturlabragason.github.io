@@ -82,29 +82,29 @@ async function updateEntries() {
   for (let day in entriesByDate) {
     let dailyCalories = entriesByDate[day].reduce((sum, entry) => sum + entry.calories, 0);
 
-    // For today's entries, append to the top of the list and add to the total
+    // For today's entries
     if (day === todayString) {
       entriesHTML = `<h2 class="text-2xl font-semibold mb-4">Today</h2>
-  <table class="w-full text-left border-collapse font-sans">
-<thead>
-<tr>
-    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Time</th>
-    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Item</th>
-    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories</th>
-</tr>
-</thead>
-<tbody>
+    <table class="w-full text-left border-collapse font-sans">
+      <thead>
+        <tr>
+          <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Time</th>
+          <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Item</th>
+          <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories</th>
+        </tr>
+      </thead>
+      <tbody>
 `;
 
       entriesByDate[day].forEach(({ calories, time }) => {
         totalCalories += calories;
         totalCaloriesForToday += calories;
         entriesHTML += `
-    <tr>
+      <tr>
         <td class="py-2 px-4 border-b border-gray-200 text-center">${new Date(time).toLocaleTimeString()}</td>
         <td class="py-2 px-4 border-b border-gray-200 text-center"></td>
         <td class="py-2 px-4 border-b border-gray-200 text-center">${calories}</td>
-    </tr>
+      </tr>
     `;
       });
 
@@ -113,14 +113,14 @@ async function updateEntries() {
       totalCalories += dailyCalories;
       previousDaySummariesHTML = `<h2 class="text-2xl font-semibold mb-4">Past</h2>
       <table class="w-full text-left border-collapse font-sans">
-<thead>
-<tr>
-    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Date</th>
-    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Consumed Calories</th>
-    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories Left</th>
-</tr>
-</thead>
-<tbody>
+        <thead>
+          <tr>
+            <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Date</th>
+            <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Consumed Calories</th>
+            <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories Left</th>
+          </tr>
+        </thead>
+        <tbody>
 `;
 
       // Iterate over entries by date
@@ -132,17 +132,17 @@ async function updateEntries() {
           totalCalories += dailyCalories;
           previousDaySummariesHTML += `
         <tr>
-            <td class="py-2 px-4 border-b border-gray-200 text-center">${day}</td>
-            <td class="py-2 px-4 border-b border-gray-200 text-center">${dailyCalories}</td>
-            <td class="py-2 px-4 border-b border-gray-200 text-center">${Math.max(0, calorieLimit - dailyCalories)}</td>
+          <td class="py-2 px-4 border-b border-gray-200 text-center">${day}</td>
+          <td class="py-2 px-4 border-b border-gray-200 text-center">${dailyCalories}</td>
+          <td class="py-2 px-4 border-b border-gray-200 text-center">${Math.max(0, calorieLimit - dailyCalories)}</td>
         </tr>
-        `;
+      `;
         }
       }
 
       previousDaySummariesHTML += `</tbody></table>`;
-
     }
+
   }
 
   // If no entries for today, set default message
