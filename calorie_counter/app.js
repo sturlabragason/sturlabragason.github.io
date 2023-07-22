@@ -91,7 +91,8 @@ async function updateEntries() {
       });
     } else {
       totalCalories += dailyCalories;
-      previousDaySummariesHTML = `<table class="w-full text-left border-collapse font-sans">
+      previousDaySummariesHTML = `<h2 class="text-2xl font-semibold mb-4">Past</h2>
+      <table class="w-full text-left border-collapse font-sans">
 <thead>
 <tr>
     <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Date</th>
@@ -136,10 +137,7 @@ async function updateEntries() {
   previousDaySummariesDiv.innerHTML = previousDaySummariesHTML;
 
   const remainingCaloriesForToday = Math.max(0, calorieLimit - totalCaloriesForToday);
-  summary.innerHTML = `
-  <h2 class="text-2xl font-semibold mb-4">Past</h2>
-  <p class="py-1 text-center">Today you have consumed ${totalCaloriesForToday} calories. You have ${remainingCaloriesForToday} calories left.</p>
-  `;
+  summary.innerHTML = `<p class="py-1 text-center">Today you have consumed ${totalCaloriesForToday} calories. You have ${remainingCaloriesForToday} calories left.</p>`;
 }
 
 
