@@ -87,7 +87,7 @@ async function updateEntries() {
       entriesByDate[day].forEach(({ calories, time }) => {
         totalCalories += calories;
         totalCaloriesForToday += calories;
-        entriesHTML = `<li class="py-1 border-b border-gray-200">${new Date(time).toLocaleString()}: ${calories} calories</li>` + entriesHTML;
+        entriesHTML = `<li class="py-1 border-b border-gray-200 text-center">${new Date(time).toLocaleString()}: ${calories} calories</li>` + entriesHTML;
       });
     } else {
       totalCalories += dailyCalories;
@@ -136,7 +136,7 @@ async function updateEntries() {
   previousDaySummariesDiv.innerHTML = previousDaySummariesHTML;
 
   const remainingCaloriesForToday = Math.max(0, calorieLimit - totalCaloriesForToday);
-  summary.innerHTML = `<p class="py-1">Today you have consumed ${totalCaloriesForToday} calories. You have ${remainingCaloriesForToday} calories left.</p>`;
+  summary.innerHTML = `<p class="py-1 text-center">Today you have consumed ${totalCaloriesForToday} calories. You have ${remainingCaloriesForToday} calories left.</p>`;
 }
 
 
