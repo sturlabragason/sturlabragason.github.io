@@ -89,18 +89,19 @@ async function updateEntries() {
         totalCaloriesForToday += calories;
         entriesHTML = `<li>${new Date(time).toLocaleString()}: ${calories} calories</li>` + entriesHTML;
       });
-      // If no entries for today, set default message
-      if (entriesHTML === '') {
-        entriesHTML = '<li>0 calories consumed today.</li>';
-      }
     } else {
       totalCalories += dailyCalories;
       previousDaySummariesHTML += `<p>${day}: Consumed ${dailyCalories} calories. ${Math.max(0, calorieLimit - dailyCalories)} calories left.</p>`;
     }
+  }
 
+  // If no entries for today, set default message
+  if (!entriesByDate[todayString]) {
+    entriesHTML = '<li>0 calories consumed today.</li>' + entriesHTML;
   }
 
   list.innerHTML = entriesHTML;
+
 
   const previousDaySummariesDiv = document.getElementById('previous-day-summaries');
   previousDaySummariesDiv.innerHTML = previousDaySummariesHTML;
