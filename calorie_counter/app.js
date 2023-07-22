@@ -11,7 +11,7 @@ const calorieLimit = 2000; // Set your daily calorie limit here
 
 form.addEventListener('submit', addCalorieEntry);
 
-window.onload = function () {
+window.onload = function() {
   const now = new Date();
   const year = now.getFullYear();
   const month = (now.getMonth() < 9 ? '0' : '') + (now.getMonth() + 1);
@@ -78,25 +78,20 @@ async function updateEntries() {
   let today = new Date();
   let todayString = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`;
 
-  // Check if there are entries for today
-  if (!entriesByDate[todayString]) {
-    entriesHTML = '<li>0 calories consumed today.</li>';
-  } else {
-    // Iterate over entries by date
-    for (let day in entriesByDate) {
-      let dailyCalories = entriesByDate[day].reduce((sum, entry) => sum + entry.calories, 0);
+  // Iterate over entries by date
+  for (let day in entriesByDate) {
+    let dailyCalories = entriesByDate[day].reduce((sum, entry) => sum + entry.calories, 0);
 
-      // For today's entries, append to the top of the list and add to the total
-      if (day === todayString) {
-        entriesByDate[day].forEach(({ calories, time }) => {
-          totalCalories += calories;
-          totalCaloriesForToday += calories;
-          entriesHTML = `<li>${new Date(time).toLocaleString()}: ${calories} calories</li>` + entriesHTML;
-        });
-      } else {
-        totalCalories += dailyCalories;
-        previousDaySummariesHTML += `<p>${day}: Consumed ${dailyCalories} calories. ${Math.max(0, calorieLimit - dailyCalories)} calories left.</p>`;
-      }
+    // For today's entries, append to the top of the list and add to the total
+    if (day === todayString) {
+      entriesByDate[day].forEach(({ calories, time }) => {
+        totalCalories += calories;
+        totalCaloriesForToday += calories;
+        entriesHTML = `<li>${new Date(time).toLocaleString()}: ${calories} calories</li>` + entriesHTML;
+      });
+    } else {
+      totalCalories += dailyCalories;
+      previousDaySummariesHTML += `<p>${day}: Consumed ${dailyCalories} calories. ${Math.max(0, calorieLimit - dailyCalories)} calories left.</p>`;
     }
   }
 
@@ -108,7 +103,6 @@ async function updateEntries() {
   const remainingCaloriesForToday = Math.max(0, calorieLimit - totalCaloriesForToday);
   summary.innerHTML = `Today you have consumed ${totalCaloriesForToday} calories. You have ${remainingCaloriesForToday} calories left.`;
 }
-
 
 
 updateEntries();
