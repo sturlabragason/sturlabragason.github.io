@@ -91,12 +91,12 @@ async function updateEntries() {
       });
     } else {
       totalCalories += dailyCalories;
-      previousDaySummariesHTML = `<table class="w-full text-left border-collapse">
+      previousDaySummariesHTML = `<table class="w-full text-left border-collapse font-sans">
 <thead>
 <tr>
-    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm">Date</th>
-    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm">Consumed Calories</th>
-    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm">Calories Left</th>
+    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Date</th>
+    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Consumed Calories</th>
+    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm text-center">Calories Left</th>
 </tr>
 </thead>
 <tbody>
@@ -111,15 +111,16 @@ async function updateEntries() {
           totalCalories += dailyCalories;
           previousDaySummariesHTML += `
         <tr>
-            <td class="py-2 px-4 border-b border-gray-200">${day}</td>
-            <td class="py-2 px-4 border-b border-gray-200">${dailyCalories}</td>
-            <td class="py-2 px-4 border-b border-gray-200">${Math.max(0, calorieLimit - dailyCalories)}</td>
+            <td class="py-2 px-4 border-b border-gray-200 text-center">${day}</td>
+            <td class="py-2 px-4 border-b border-gray-200 text-center">${dailyCalories}</td>
+            <td class="py-2 px-4 border-b border-gray-200 text-center">${Math.max(0, calorieLimit - dailyCalories)}</td>
         </tr>
         `;
         }
       }
 
       previousDaySummariesHTML += `</tbody></table>`;
+
     }
   }
 
