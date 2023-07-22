@@ -91,7 +91,35 @@ async function updateEntries() {
       });
     } else {
       totalCalories += dailyCalories;
-      previousDaySummariesHTML += `<p class="py-1">${day}: Consumed ${dailyCalories} calories. ${Math.max(0, calorieLimit - dailyCalories)} calories left.</p>`;
+      previousDaySummariesHTML = `<table class="w-full text-left border-collapse">
+<thead>
+<tr>
+    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm">Date</th>
+    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm">Consumed Calories</th>
+    <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 font-semibold text-sm">Calories Left</th>
+</tr>
+</thead>
+<tbody>
+`;
+
+      // Iterate over entries by date
+      for (let day in entriesByDate) {
+        let dailyCalories = entriesByDate[day].reduce((sum, entry) => sum + entry.calories, 0);
+
+        // For previous day's entries
+        if (day !== todayString) {
+          totalCalories += dailyCalories;
+          previousDaySummariesHTML += `
+        <tr>
+            <td class="py-2 px-4 border-b border-gray-200">${day}</td>
+            <td class="py-2 px-4 border-b border-gray-200">${dailyCalories}</td>
+            <td class="py-2 px-4 border-b border-gray-200">${Math.max(0, calorieLimit - dailyCalories)}</td>
+        </tr>
+        `;
+        }
+      }
+
+      previousDaySummariesHTML += `</tbody></table>`;
     }
   }
 
