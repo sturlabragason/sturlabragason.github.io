@@ -173,4 +173,4 @@ The power of a DAC lies not just in its embrace of technology but also in its pe
 
 In essence, DACs offer a blueprint for a new kind of global empire, one that transcends physical borders and fosters a sense of global citizenship. They propagate a model of shared prosperity, empowering individuals, enhancing human dignity, and providing a dignified life for all. Through DACs, we can revisit the concept of global empires, not as relics of a bygone era, but as harbingers of a future marked by technological empowerment and human dignity.
 
-If you'd like to know more you can read the brief post I've written about DACs here: [https://sturlabragason.github.io/blog/2023/07/04/Decentralized-Autonomous-Communities.html](https://sturlabragason.github.io/blog/2023/07/04/Decentralized-Autonomous-Communities.html).
+I've written about DACs here: [https://sturlabragason.github.io/blog/2023/07/04/Decentralized-Autonomous-Communities.html](https://sturlabragason.github.io/blog/2023/07/04/Decentralized-Autonomous-Communities.html).
