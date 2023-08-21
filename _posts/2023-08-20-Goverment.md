@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Modern Governance Criticism"
+title: "Modern Governance Flaws"
 date: 2023-08-20
 categories: [blog]
 tags: [Modern Governance, Systemic Flaws, Democratic Process, Citizenship, Algocracy, Government Inefficiency, Decentralized Systems, Social Contract, Public Infrastructure, Essential Services, Choice and Agency, Political Affiliation, Radical Rethinking, Nation-States, Global Empires, Political Philosophy, Public Policy, Governance Models, Political Economy, Societal Contract]
