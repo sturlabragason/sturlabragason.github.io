@@ -14,7 +14,6 @@ tags: [Modern Governance, Systemic Flaws, Democratic Process, Citizenship, Algoc
 
 > I'm putting together a series of posts, each serving as a component of a global-scale solution to the economic challenges already unfolding - a narrative outlined in books such as [The End of the World Is Just the Beginning](https://www.goodreads.com/en/book/show/58782897) by Peter Zeihan. In his book, the author illustrates how the interconnected web of demographics, geography, and history, intertwined with the impending forces of climate change and deglobalization, will dramatically reshape the economic and political landscape, resulting in significant challenges for many countries across key sectors including agriculture, energy, finance, manufacturing, materials, and transport.
 
-<img src = "https://sturlabragason.github.io/images/sturlabragason_a_beatiful_huge_park_filled_with_trees_and_peopl_b71c854b-012c-4402-95c8-e25f389ce33c.png" alt = "Park"  style="display: block; margin: auto;" /> 
 
 
 ## I. A Brief History and Scrutiny of Modern Nation-States and Nationalism
