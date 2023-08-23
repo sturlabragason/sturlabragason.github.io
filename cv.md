@@ -4,6 +4,8 @@ title: About Me
 permalink: /cv/
 ---
 
+![cv/sturlabragasonslide.png](sturlabragasonslide)
+
 ## Hey there, I'm Sturla Bragason!
 
 I'm a firm believer in open-source and the power it holds for the exchange of information. I've been working with Linux for over a decade, and my dedication to the open-source community has only intensified with time.
