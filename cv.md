@@ -4,7 +4,6 @@ title: About Me
 permalink: /cv/
 ---
 
-![sturlabragasonslide](https://sturlabragason.github.io/cv/sturlabragasonslide.png)
 
 ## Hey there, I'm Sturla Bragason!
 
@@ -16,4 +15,6 @@ Outside of coding and trying out various applications, I'm committed to promotin
 
 Feel free to explore my site and learn more about me. I'm always open for a conversation, so don't hesitate to get in touch if you'd like to discuss anything tech-related.
 
-PS. If you came here looking for my CVs, here they are: [short](https://sturlabragason.github.io/cv/sturlabragason_onepager.pdf) / [long](https://sturlabragason.github.io/cv/sturlabragason.pdf).
+PS. If you came here looking for my CVs, here they are: [short](https://sturlabragason.github.io/cv/sturlabragason_onepager.pdf) / [long](https://sturlabragason.github.io/cv/sturlabragason.pdf), or if you just prefer the TL;DR:
+
+![sturlabragasonslide](https://sturlabragason.github.io/cv/sturlabragasonslide.png)
