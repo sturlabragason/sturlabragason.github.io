@@ -4,7 +4,7 @@ title: About Me
 permalink: /cv/
 ---
 
-![./cv/sturlabragasonslide.png](sturlabragasonslide)
+![https://sturlabragason.github.io/cv/sturlabragasonslide.png](sturlabragasonslide)
 
 ## Hey there, I'm Sturla Bragason!
 
