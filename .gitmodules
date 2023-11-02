@@ -1,0 +1,3 @@
+[submodule "spells"]
+	path = spells
+	url = git@ghsb:sturlabragason/pathfinder_spells.git
