@@ -1,0 +1,5 @@
+
+We implemented pipelines in both Azure DevOps and GitHub to automate what used to be a manual build and deployment process, originally designed for execution from a developer's laptop. Utilizing Azure DevOps hosted agents and GitHub Workflow agents made setting up the necessary Python and Node.js prerequisites straightforward. Experimenting with a self-hosted agent offered a clear insight: automated build pipelines significantly streamline the deployment process, outperforming manual prerequisite setups on a developer’s workstation by a wide margin. All in all, the build process now takes roughly 20 minutes, requiring minimal interaction—just a single click to deploy.
+
+
+Updating the RAG search index with new data is very simple. By adding new PDFs to a designated directory, we start a backend process that segments the documents, uploads them to a cloud storage account, and indexes them for search. This process enables the GPT models to access and incorporate this new data into their responses, 
