@@ -1,7 +1,8 @@
 ---
 layout: default
-title: "Session Notes"
+title: "My Collection Index"
 ---
+
 
 # Session Notes
 
