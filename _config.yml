@@ -25,6 +25,6 @@ jekyll_spaceship:
     enabled: true
 
 collections:
-  1316:
+  my_collection:
     output: true  # This makes sure the collection is rendered as web pages
     permalink: /:collection/:path/
