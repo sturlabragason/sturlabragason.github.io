@@ -8,4 +8,4 @@ permalink: /digitalautonomy/
 
 Welcome to the digital autonomy section.
 
-[View Presentation](/digitalautonomy/presentations/slides)
+[View Presentation](/digitalautonomy/presentations/static/)
