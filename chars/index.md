@@ -3,10 +3,6 @@ layout: default
 title: Goblin Pirate Pregens
 ---
 
-# 6th-Level Goblin Pirate Pregens for Pathfinder 1e
-
-Here are four character concepts for a Pathfinder 1st Edition campaign set in Eberron. They are all 6th level, with one level in six different classes. Players can pick one and fill in the details like skills, HP, gear, and alignment. The core build and stats are set.
-
 ---
 ### Character 1: The Crimson Captain
 ![A dashing goblin captain in a red coat, pointing a rapier forward confidently.](/chars/sturlabragason_goblin_pirate_portrait_captains_hat_action_pos_359d7f1b-d8db-4875-b071-6fccc2ed4d9f_1.png)
