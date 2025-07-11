@@ -9,7 +9,7 @@ Here are four character concepts for a Pathfinder 1st Edition campaign set in Eb
 
 ---
 ### Character 1: The Crimson Captain
-![A dashing goblin captain in a red coat, pointing a rapier forward confidently.](https://i.imgur.com/C3WJ1d3.jpeg)
+![A dashing goblin captain in a red coat, pointing a rapier forward confidently.](/chars/sturlabragason_goblin_pirate_portrait_captains_hat_action_pos_359d7f1b-d8db-4875-b071-6fccc2ed4d9f_1.png)
 
 **Concept:** A dashing, intelligent, and surprisingly dangerous pirate captain who leads with style and a sharp blade.
 
@@ -39,7 +39,7 @@ Here are four character concepts for a Pathfinder 1st Edition campaign set in Eb
 
 ---
 ### Character 2: The Lhazaar Wave Rider
-![A goblin in armor riding a large sea lizard through the waves at night, holding a lance.](https://i.imgur.com/gK6B2Bf.jpeg)
+![A goblin in armor riding a large sea lizard through the waves at night, holding a lance.](/chars/sturlabragason_goblin_pirate_portrait_holding_a_lancer_riding_0919ad6e-1ba9-4621-a21b-4d54dd788ab2_3.png)
 
 **Concept:** A dedicated mounted combatant who has adapted the traditions of land-based cavalry to the open sea, riding a fierce aquatic lizard.
 
@@ -70,7 +70,7 @@ Here are four character concepts for a Pathfinder 1st Edition campaign set in Eb
 
 ---
 ### Character 3: The Powder Keg
-![A chaotic goblin pirate dual-wielding a scimitar and a firing blunderbuss against a fiery backdrop.](https://i.imgur.com/rN5G5jT.jpeg)
+![A chaotic goblin pirate dual-wielding a scimitar and a firing blunderbuss against a fiery backdrop.](/chars/sturlabragason_goblin_pirate_portrait_holding_a_golden_scimit_5ea61b20-a910-4821-b8cf-d7ea5fc8a079_1.png)
 
 **Concept:** A chaotic demolitions expert who loves the sound of gunfire and the smell of alchemy. Has an unnatural immunity to fire.
 
@@ -100,7 +100,7 @@ Here are four character concepts for a Pathfinder 1st Edition campaign set in Eb
 
 ---
 ### Character 4: The Sea Sage
-![An older, bearded goblin in robes with a large parrot on his shoulder, pointing authoritatively.](https://i.imgur.com/oWjWk6V.jpeg)
+![An older, bearded goblin in robes with a large parrot on his shoulder, pointing authoritatively.](/chars/sturlabragason_goblin_pirate_portrait_warlock_large_parrot_on_aca00d03-d530-4206-bde4-9d9c5145639e_0.png)
 
 **Concept:** A wise and mysterious sea-shaman, acting as the ship's navigator, spiritual guide, and master of esoteric lore. Always seen with a fiendishly smart parrot.
 
