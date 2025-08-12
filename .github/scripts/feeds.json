@@ -3,5 +3,6 @@
     "http://feeds.bbci.co.uk/news/world/europe/rss.xml",
     "https://hnrss.org/newest?q=git+OR+linux+OR+terraform+OR+opensource",
     "http://feeds.reuters.com/Reuters/worldNews",
-    "https://small-tech.org/index.xml"
+    "https://small-tech.org/index.xml",
+    "https://bolet.io/feed.xml"
 ]
