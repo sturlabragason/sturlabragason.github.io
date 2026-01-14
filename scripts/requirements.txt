@@ -1,0 +1,6 @@
+matplotlib
+numpy
+jinja2
+feedparser
+pytz
+beautifulsoup4
