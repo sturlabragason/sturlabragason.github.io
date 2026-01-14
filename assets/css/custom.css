@@ -1,3 +1,86 @@
 .e-content p {
     text-align: justify;
 }
+
+/* Custom "Plain and Beautiful" Styles for CV */
+.cv-container {
+    max-width: 680px; /* Optimal reading width */
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #333;
+    line-height: 1.6;
+}
+
+.cv-quote-section {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.cv-quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555;
+    border-left: none; /* Override potential theme styles */
+    padding: 0;
+}
+
+.cv-intro {
+    font-size: 1.05rem;
+    margin-bottom: 3rem;
+    color: #222;
+}
+
+.cv-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+    letter-spacing: -0.02em;
+}
+
+.cv-positions {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.cv-position-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.cv-company-role {
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.cv-role-detail {
+    color: #555;
+    font-weight: normal;
+}
+
+.cv-years {
+    font-variant-numeric: tabular-nums;
+    color: #666;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.cv-approach p {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+    .cv-position-item {
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+    .cv-years {
+        margin-top: 0.2rem;
+        font-size: 0.9rem;
+    }
+}

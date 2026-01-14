@@ -1,0 +1,15 @@
+"I’m Winston Wolfe. I Solve Problems" — Winston Wolfe, Pulp Fiction
+
+I am a methodical problem solver, no-nonsense communicator, and tactful diplomat. For the past decade I have led my colleagues consistently to success as the go-to engineer and hands-on architect. 
+
+Positions
+
+Aeven (2025 - Present) : Principal Platform & AI Engineer
+Devoteam (2020 - 2025) : Principal Architect (Cloud, DevOps, & AI)
+Omada (2018 - 2020) : Senior Consultant & Infrastructure Trainer
+Wise (2017 - 2018) : Technical Consultant & Azure Specialist
+Staff.is (2016 - 2017) : FullStack Developer & Site Reliability Engineer
+
+My approach
+
+I am a cloud-native platform engineer. I focus on open-source best practices and vendor-neutral solutions. My approach to architecture is lean, uncluttered, and minimalist so that it is easy for the whole team to manage. I use a divide-and-conquer style to break down complex backlogs into clear, actionable tasks. Any work I do creates tangible outcomes; code, diagrams, or documentation that ensure everyone knows exactly how to move forward.
