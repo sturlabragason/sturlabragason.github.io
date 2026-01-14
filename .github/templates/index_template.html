@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Maze Gallery</title>
-</head>
-<body>
-    <h1>Maze Gallery</h1>
-    <div>
-    {% for image in images %}
-        <img src="{{ image }}" alt="Maze image" width="300" height="300">
-    {% endfor %}
-    </div>
-</body>
-</html>
+---
+layout: page
+title: Maze Gallery
+permalink: /mazes/
+---
+
+<h1>Maze Gallery</h1>
+<div>
+{% for image in images %}
+    <img src="{{ image }}" alt="Maze image" width="300" height="300">
+{% endfor %}
+</div>

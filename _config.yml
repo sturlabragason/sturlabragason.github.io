@@ -8,6 +8,9 @@ description: >
 
 remote_theme: jekyll/minima
 
+header_pages:
+  - cv.md
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
