@@ -35,17 +35,33 @@ def process_summary(summary):
 
 def fetch_and_parse(feeds):
     news_items = []
+    seen_links = set()  # Track seen links to prevent duplicates
     for feed_url in feeds:
         try:
             feed = feedparser.parse(feed_url)
             for entry in feed.entries:
+                # Skip if we've already seen this link
+                if entry.link in seen_links:
+                    continue
+                seen_links.add(entry.link)
+                
                 published_datetime = parse_date(entry.published)
                 summary = process_summary(entry.summary if 'summary' in entry else '')
+                
+                # Extract image if available
+                image = None
+                if 'summary' in entry:
+                    soup = BeautifulSoup(entry.summary, "html.parser")
+                    img_tag = soup.find('img')
+                    if img_tag and img_tag.get('src'):
+                        image = img_tag['src']
+                
                 news_items.append({
                     'title': entry.title,
                     'link': entry.link,
                     'published': published_datetime,
                     'summary': summary,
+                    'image': image,
                 })
         except Exception as e:
             print(f'Failed to fetch or parse feed {feed_url}: {str(e)}')

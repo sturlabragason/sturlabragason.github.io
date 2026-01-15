@@ -14,6 +14,9 @@
     <div class="item">
         <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
         <p class="published">Published: {{ item.published.strftime('%a, %d %b %Y %H:%M:%S %Z') }}</p>
+        {% if item.image %}
+        <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
+        {% endif %}
         <p>{{ item.summary }}</p>
     </div>
     <hr>

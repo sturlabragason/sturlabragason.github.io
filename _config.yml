@@ -9,7 +9,7 @@ description: >
 remote_theme: jekyll/minima
 
 header_pages:
-  - cv.md
+  - cv/index.md
 
 plugins:
   - jekyll-feed

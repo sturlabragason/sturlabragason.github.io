@@ -1,86 +1,252 @@
-.e-content p {
-    text-align: justify;
+:root {
+    --cv-bg: #ffffff;
+    --cv-text: #111111;
+    --cv-secondary: #555555;
+    --cv-border: #e0e0e0;
+    --cv-accent: #000000;
+    --cv-code-bg: #f4f4f4;
+    --cv-font-main: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --cv-font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+[data-theme="dark"] {
+    --cv-bg: #1a1a1a;
+    --cv-text: #e0e0e0;
+    --cv-secondary: #a0a0a0;
+    --cv-border: #333333;
+    --cv-accent: #ffffff;
+    --cv-code-bg: #2a2a2a;
+}
+
+body {
+    background-color: var(--cv-bg);
+    color: var(--cv-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom "Plain and Beautiful" Styles for CV */
 .cv-container {
-    max-width: 680px; /* Optimal reading width */
-    margin: 0 auto;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #333;
-    line-height: 1.6;
+    max-width: 720px;
+    margin: 4rem auto;
+    font-family: var(--cv-font-main);
+    color: var(--cv-text);
+    line-height: 1.5;
+    padding: 0 1.5rem;
 }
 
-.cv-quote-section {
-    margin-bottom: 3rem;
-    text-align: center;
+/* Header / Quote */
+.cv-header-quote {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+    color: var(--cv-accent);
 }
 
-.cv-quote {
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #555;
-    border-left: none; /* Override potential theme styles */
-    padding: 0;
+.cv-header-author {
+    font-family: var(--cv-font-mono);
+    font-size: 0.9rem;
+    color: var(--cv-secondary);
+    margin-bottom: 4rem;
+    display: block;
 }
 
+/* Intro */
 .cv-intro {
-    font-size: 1.05rem;
-    margin-bottom: 3rem;
-    color: #222;
+    font-size: 1.25rem;
+    margin-bottom: 5rem;
+    color: var(--cv-text);
+    font-weight: 400;
+    max-width: 90%;
 }
 
+/* Section Titles */
 .cv-section-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #eee;
-    letter-spacing: -0.02em;
+    font-family: var(--cv-font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cv-secondary);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--cv-border);
 }
 
+/* Positions List */
 .cv-positions {
     list-style: none;
     padding: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 
 .cv-position-item {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
     align-items: baseline;
-    margin-bottom: 1rem;
+}
+
+.cv-role-group {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
     flex-wrap: wrap;
 }
 
-.cv-company-role {
-    font-weight: 500;
-    font-size: 1.05rem;
+.cv-role {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--cv-text);
 }
 
-.cv-role-detail {
-    color: #555;
-    font-weight: normal;
+.cv-company {
+    color: var(--cv-secondary);
+    font-size: 1.1rem;
 }
 
 .cv-years {
-    font-variant-numeric: tabular-nums;
-    color: #666;
-    font-size: 0.95rem;
+    font-family: var(--cv-font-mono);
+    font-size: 0.8rem;
+    background: var(--cv-code-bg);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    color: var(--cv-secondary);
     white-space: nowrap;
 }
 
+/* Approach Section */
 .cv-approach p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--cv-secondary);
+}
+
+/* Dark Mode Toggle */
+.theme-toggle-btn {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    color: var(--cv-text);
+    font-family: var(--cv-font-mono);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.theme-toggle-btn:hover {
+    opacity: 1;
+}
+
+/* PDF Button */
+.cv-actions {
+    margin-top: 4rem;
+}
+
+.cv-btn {
+    display: inline-block;
+    font-family: var(--cv-font-mono);
+    font-size: 0.85rem;
+    color: var(--cv-secondary);
+    border: 1px solid var(--cv-border);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+}
+
+.cv-btn:hover {
+    border-color: var(--cv-text);
+    color: var(--cv-text);
 }
 
 @media (max-width: 600px) {
-    .cv-position-item {
-        flex-direction: column;
-        margin-bottom: 1.5rem;
+    .cv-container {
+        margin: 2rem auto;
+        padding: 0 1rem;
     }
+
+    .cv-header-quote {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .cv-header-author {
+        margin-bottom: 2rem;
+    }
+
+    .cv-intro {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        max-width: 100%;
+    }
+
+    .cv-position-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .cv-role-group {
+        flex-direction: column;
+        gap: 0.3rem;
+        align-items: flex-start;
+    }
+
+    .cv-role {
+        font-size: 1rem;
+    }
+
+    .cv-company {
+        font-size: 0.95rem;
+    }
+
     .cv-years {
-        margin-top: 0.2rem;
-        font-size: 0.9rem;
+        display: inline-block;
+        width: fit-content;
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
+    }
+
+    .cv-section-title {
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.8rem;
+    }
+
+    .theme-toggle-btn {
+        top: 1rem;
+        right: 1rem;
+        font-size: 0.8rem;
+        padding: 0.3rem;
+    }
+
+    .cv-approach p {
+        font-size: 1rem;
+    }
+
+    .cv-btn {
+        font-size: 0.8rem;
+        padding: 0.6rem 1.2rem;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 400px) {
+    .cv-header-quote {
+        font-size: 1.5rem;
+    }
+
+    .cv-intro {
+        font-size: 1rem;
+    }
+
+    .cv-container {
+        padding: 0 0.5rem;
     }
 }
