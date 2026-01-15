@@ -1,6 +1,6 @@
-matplotlib
-numpy
-jinja2
-feedparser
-pytz
-beautifulsoup4
+matplotlib==3.7.2
+numpy==1.24.3
+jinja2==3.1.2
+feedparser==6.0.10
+pytz==2023.3
+beautifulsoup4==4.12.2
