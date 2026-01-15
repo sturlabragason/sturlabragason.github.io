@@ -1,7 +1,21 @@
+"""
+HTML Template Updater for Maze Gallery
+
+This script updates the maze gallery HTML by rendering a Jinja2 template
+with the current list of generated maze images.
+
+Author: Sturla Bragason
+"""
+
 import os
 from jinja2 import Environment, FileSystemLoader
 
 def update_html():
+    """Update the maze gallery HTML with current maze images.
+    
+    Renders the Jinja2 template with the sorted list of maze images
+    and writes the output to mazes/index.html.
+    """
     # Load files from the root directory
     file_loader = FileSystemLoader('.')
     env = Environment(loader=file_loader)
