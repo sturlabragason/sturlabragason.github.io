@@ -1,3 +1,12 @@
+"""
+Maze Generator for Personal Website
+
+This script generates 50 unique mazes using a recursive backtracking algorithm.
+Mazes are saved as high-resolution PNG images for display in the maze gallery.
+
+Author: Sturla Bragason
+"""
+
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -7,8 +16,16 @@ import time
 HEIGHT = 21
 WIDTH = 21
 
-# Maze Generation
 def generate_maze(width, height):
+    """Generate a maze using recursive backtracking algorithm.
+    
+    Args:
+        width (int): Width of the maze (should be odd for proper wall structure)
+        height (int): Height of the maze (should be odd for proper wall structure)
+    
+    Returns:
+        numpy.ndarray: 2D boolean array where True represents walls and False represents paths
+    """
     # Create a maze filled with walls
     maze = np.ones((height, width), dtype=bool)
 
@@ -46,8 +63,13 @@ def generate_maze(width, height):
 
     return maze
 
-# Maze Visualization
 def visualize_maze(maze, filename):
+    """Visualize and save maze as high-resolution PNG.
+    
+    Args:
+        maze (numpy.ndarray): 2D boolean array representing the maze
+        filename (str): Output filename for the PNG image
+    """
     fig, ax = plt.subplots(figsize=(10,10))
     ax.imshow(maze, cmap='Greys', interpolation='nearest')
     ax.axis('off')

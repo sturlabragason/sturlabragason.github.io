@@ -1,3 +1,19 @@
+"""
+RSS Feed Parser for Curated News
+
+This script fetches RSS feeds from multiple sources, deduplicates articles,
+extracts images, and generates a static HTML page for the curated news feed.
+
+Features:
+- Multi-source RSS aggregation
+- Article deduplication by URL
+- Image extraction from summaries
+- Lazy loading for images
+- Date-based sorting
+
+Author: Sturla Bragason
+"""
+
 import feedparser
 import json
 from jinja2 import Environment, FileSystemLoader
