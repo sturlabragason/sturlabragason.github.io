@@ -21,7 +21,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 def load_feeds():
-    with open('.github/scripts/feeds.json', 'r') as f:
+    with open('scripts/feeds.json', 'r') as f:
         feeds = json.load(f)
     return feeds
 
