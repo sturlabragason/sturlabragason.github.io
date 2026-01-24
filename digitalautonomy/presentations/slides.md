@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Digital Autonomy Presentation
+title: ""
 permalink: /digitalautonomy/presentations/slides/
 ---
 

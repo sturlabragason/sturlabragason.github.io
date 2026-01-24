@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Goblin Pirate Pregens
+title: ""
 ---
 
 ---
