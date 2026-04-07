@@ -27,6 +27,7 @@ I am a methodical problem solver, no-nonsense communicator, and tactful diplomat
 
 **Technical Consultant & Azure Specialist** — Wise
 <br>2017 – 2018
+<br>Deployed Wise's platform on Azure and helped clients solve complex technical problems.
 
 **FullStack Developer & Site Reliability Engineer** — Staff.is
 <br>2016 – 2017
