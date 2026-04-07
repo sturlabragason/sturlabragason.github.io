@@ -19,6 +19,7 @@ I am a methodical problem solver, no-nonsense communicator, and tactful diplomat
 
 **Principal Architect (Cloud, DevOps, & AI)** — Devoteam
 <br>2020 – 2025
+<br>Built modern cloud platforms as code for enterprise clients.
 
 **Senior Consultant & Infrastructure Trainer** — Omada
 <br>2018 – 2020
