@@ -15,7 +15,7 @@ I am a methodical problem solver, no-nonsense communicator, and tactful diplomat
 
 **Principal Platform & AI Engineer** — Aeven
 <br>2025 – Present
-<br>Building Aeven's new infrastructure platform from scratch.
+<br>Building Aeven's new hybrid-cloud infrastructure platform from scratch.
 
 **Principal Architect (Cloud, DevOps, & AI)** — Devoteam
 <br>2020 – 2025
