@@ -42,7 +42,7 @@ jobs:
             format: 'A4',
             displayHeaderFooter: false,
             printBackground: true,
-            margin: { top: '12mm', bottom: '12mm', left: '15mm', right: '15mm' }
+            margin: { top: '8mm', bottom: '8mm', left: '12mm', right: '12mm' }
           });
           await browser.close();
         })();
