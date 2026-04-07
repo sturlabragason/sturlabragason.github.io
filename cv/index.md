@@ -38,4 +38,8 @@ I am a cloud-native platform engineer. I focus on open-source best practices and
 
 sturla.bragason@proton.me
 
+<span class="no-print">
+
 [Download PDF](/cv/sturlabragason_cv.pdf)
+
+</span>
