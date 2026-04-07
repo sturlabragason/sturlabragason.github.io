@@ -4,8 +4,6 @@ title: CV
 permalink: /cv/
 ---
 
-# Sturla Bragason
-
 > *I'm Winston Wolfe. I Solve Problems*
 > — Winston Wolfe, Pulp Fiction
 
