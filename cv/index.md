@@ -23,6 +23,7 @@ I am a methodical problem solver, no-nonsense communicator, and tactful diplomat
 
 **Senior Consultant & Infrastructure Trainer** — Omada
 <br>2018 – 2020
+<br>Deployed Omada's platform for clients and ran a monthly infrastructure course I wrote for partners.
 
 **Technical Consultant & Azure Specialist** — Wise
 <br>2017 – 2018
