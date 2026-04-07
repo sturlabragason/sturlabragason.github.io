@@ -31,6 +31,7 @@ I am a methodical problem solver, no-nonsense communicator, and tactful diplomat
 
 **FullStack Developer & Site Reliability Engineer** — Staff.is
 <br>2016 – 2017
+<br>Built an open source web platform for a temp agency.
 
 ---
 
