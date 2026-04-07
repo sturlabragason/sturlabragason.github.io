@@ -123,24 +123,13 @@ body {
     color: var(--cv-secondary);
 }
 
-/* Dark Mode Toggle */
-.theme-toggle-btn {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    background: transparent;
-    border: none;
-    color: var(--cv-text);
-    font-family: var(--cv-font-mono);
-    font-size: 0.9rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
-
-.theme-toggle-btn:hover {
-    opacity: 1;
+/* Print Styles */
+@media print {
+    .cv-actions,
+    .site-header,
+    .site-nav {
+        display: none !important;
+    }
 }
 
 /* PDF Button */
@@ -215,13 +204,6 @@ body {
     .cv-section-title {
         margin-bottom: 1.5rem;
         padding-bottom: 0.8rem;
-    }
-
-    .theme-toggle-btn {
-        top: 1rem;
-        right: 1rem;
-        font-size: 0.8rem;
-        padding: 0.3rem;
     }
 
     .cv-approach p {

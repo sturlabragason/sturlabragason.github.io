@@ -1,0 +1,45 @@
+name: Generate CV PDF
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'cv/index.md'
+      - 'assets/css/custom.css'
+      - '_layouts/cv.html'
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+
+    - name: Build Jekyll site
+      uses: actions/jekyll-build-pages@v1
+
+    - name: Setup Chrome
+      uses: browser-actions/setup-chrome@v1
+
+    - name: Serve site and print PDF
+      run: |
+        # Serve the built site locally so CSS/assets resolve correctly
+        python3 -m http.server 8000 --directory _site &
+        sleep 2
+        google-chrome \
+          --headless \
+          --disable-gpu \
+          --no-sandbox \
+          --print-to-pdf=cv/sturlabragason_cv.pdf \
+          --print-to-pdf-no-header \
+          http://localhost:8000/cv/
+        kill %1
+
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add cv/sturlabragason_cv.pdf
+        git diff --quiet --staged || git commit -m 'Update CV PDF'
+        git push

@@ -62,7 +62,7 @@ permalink: /cv/
     </div>
 
     <div class="cv-actions">
-        <a href="javascript:window.print()" class="cv-btn">[ PRINT / SAVE PDF ]</a>
+        <a href="/cv/sturlabragason_cv.pdf" class="cv-btn">[ DOWNLOAD PDF ]</a>
     </div>
 
 </div>
