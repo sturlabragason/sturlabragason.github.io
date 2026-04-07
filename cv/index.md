@@ -1,10 +1,8 @@
 ---
-layout: page
-title: ""
+layout: cv
+title: CV
 permalink: /cv/
 ---
-
-<button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">● / ○</button>
 
 <div class="cv-container">
 
@@ -68,37 +66,3 @@ permalink: /cv/
     </div>
 
 </div>
-
-<script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    // Check local storage or system preference
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme == 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    } else if (currentTheme == 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-    }
-
-    toggleBtn.addEventListener('click', function() {
-        let theme = 'light';
-        if (document.documentElement.getAttribute('data-theme') === 'light') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            theme = 'dark';
-        } else if (document.documentElement.getAttribute('data-theme') === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            theme = 'light';
-        } else {
-            // If no attribute is set, check system preference
-            if (prefersDarkScheme.matches) {
-                document.documentElement.setAttribute('data-theme', 'light');
-                theme = 'light';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                theme = 'dark';
-            }
-        }
-        localStorage.setItem('theme', theme);
-    });
-</script>

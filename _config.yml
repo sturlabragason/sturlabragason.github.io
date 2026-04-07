@@ -8,9 +8,6 @@ description: >
 
 remote_theme: jekyll/minima
 
-header_pages:
-  - cv/index.md
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -18,6 +15,8 @@ plugins:
 #   - jekyll-toc
 
 minima:
+  nav_pages:
+    - cv/index.md
   social_links:
     - { platform: github, user_url: "https://github.com/sturlabragason" }
     - { platform: mastodon, user_url: "https://mastodon.social/@sturlabragason" }
