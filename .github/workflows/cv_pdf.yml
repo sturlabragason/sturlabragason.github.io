@@ -19,21 +19,34 @@ jobs:
     - name: Build Jekyll site
       uses: actions/jekyll-build-pages@v1
 
-    - name: Setup Chrome
-      uses: browser-actions/setup-chrome@v1
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install Puppeteer
+      run: npm install puppeteer
 
     - name: Serve site and print PDF
       run: |
-        # Serve the built site locally so CSS/assets resolve correctly
         python3 -m http.server 8000 --directory _site &
         sleep 2
-        google-chrome \
-          --headless \
-          --disable-gpu \
-          --no-sandbox \
-          --print-to-pdf=cv/sturlabragason_cv.pdf \
-          --print-to-pdf-no-header \
-          http://localhost:8000/cv/
+        node -e "
+        const puppeteer = require('puppeteer');
+        (async () => {
+          const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+          const page = await browser.newPage();
+          await page.goto('http://localhost:8000/cv/', { waitUntil: 'networkidle0' });
+          await page.pdf({
+            path: 'cv/sturlabragason_cv.pdf',
+            format: 'A4',
+            displayHeaderFooter: false,
+            printBackground: true,
+            margin: { top: '20mm', bottom: '20mm', left: '15mm', right: '15mm' }
+          });
+          await browser.close();
+        })();
+        "
         kill %1
 
     - name: Commit and push if changed
