@@ -4,7 +4,7 @@ title: CV
 permalink: /cv/
 ---
 
-> *I'm Winston Wolfe. I Solve Problems*
+> *"I'm Winston Wolfe. I Solve Problems."*
 > — Winston Wolfe, Pulp Fiction
 
 I am a methodical problem solver, no-nonsense communicator, and tactful diplomat. For the past decade I have led my colleagues consistently to success as the go-to engineer and hands-on architect.
