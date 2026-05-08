@@ -1,0 +1,468 @@
+---
+layout: null
+permalink: /cv/
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CV — Sturla Bragason</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Sturla Bragason — Principal Platform &amp; AI Engineer. Methodical problem solver, hands-on architect.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* Paper / ink */
+    --paper:    #f3ede2;
+    --paper-2:  #ece5d6;
+    --ink:      #1c1a16;
+    --ink-2:    #3d3a32;
+    --ink-3:    #6b6657;
+    --rule:     rgba(28, 26, 22, 0.14);
+
+    /* Accent (rust/amber) */
+    --accent:   oklch(0.58 0.13 50);
+    --accent-2: oklch(0.58 0.13 50 / 0.12);
+
+    /* Type */
+    --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans:  "Geist", ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
+    --mono:  "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+    /* Density */
+    --gap-sect: clamp(2.5rem, 6vw, 4.5rem);
+    --gap-row:  clamp(1.25rem, 2.4vw, 1.9rem);
+
+    /* Layout */
+    --col-w: 720px;
+    --rail-w: 110px;
+  }
+
+  /* ── Reset ─────────────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16.5px;
+    line-height: 1.55;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { color: var(--accent); }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+
+  /* ── Page frame ────────────────────────────────────────────────────────── */
+  .page {
+    max-width: calc(var(--col-w) + var(--rail-w) + 80px);
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4.5rem) clamp(1.25rem, 4vw, 3rem) 5rem;
+  }
+
+  /* ── Masthead ──────────────────────────────────────────────────────────── */
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-bottom: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .top a { text-decoration: none; }
+  .top a:hover { color: var(--accent); }
+  .top .crumbs { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .top .dot { display: inline-block; width: 4px; height: 4px; border-radius: 50%;
+              background: var(--accent); vertical-align: 2px; margin-right: 0.55rem; }
+
+  /* ── Hero ──────────────────────────────────────────────────────────────── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: var(--gap-sect);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(3rem, 8.5vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin: 0;
+    color: var(--ink);
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .hero .role {
+    font-family: var(--sans);
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    font-weight: 500;
+    color: var(--ink-2);
+    letter-spacing: -0.005em;
+    max-width: 32ch;
+  }
+  .hero .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.5rem;
+    margin-top: 0.5rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .hero .meta span::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin-right: 0.6rem;
+    background: var(--accent);
+    border-radius: 1px;
+    transform: rotate(45deg) translateY(-1px);
+  }
+
+  /* ── Lead paragraph ────────────────────────────────────────────────────── */
+  .lead {
+    font-family: var(--serif);
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 38ch;
+    margin: 0 0 var(--gap-sect);
+    text-wrap: pretty;
+  }
+
+  /* ── Quote ─────────────────────────────────────────────────────────────── */
+  .quote {
+    border-left: 2px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    margin: 0 0 var(--gap-sect);
+    max-width: 42ch;
+  }
+  .quote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    line-height: 1.45;
+    color: var(--ink-2);
+    margin: 0;
+  }
+  .quote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-style: normal;
+    color: var(--ink-3);
+  }
+
+  /* ── Section heading ───────────────────────────────────────────────────── */
+  .sect-head {
+    display: grid;
+    grid-template-columns: var(--rail-w) 1fr;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sect-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+  }
+  .sect-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  /* ── Timeline (positions) ──────────────────────────────────────────────── */
+  .timeline { display: flex; flex-direction: column; gap: var(--gap-row); }
+  .role-row {
+    display: grid;
+    grid-template-columns: var(--rail-w) 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+  .role-row .years {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    color: var(--ink-3);
+    line-height: 1.5;
+    padding-top: 0.18rem;
+  }
+  .role-row .years .sep {
+    display: inline-block;
+    width: 0.7em;
+    border-top: 1px solid currentColor;
+    transform: translateY(-0.22em);
+    margin: 0 0.15em;
+  }
+  .role-body { display: flex; flex-direction: column; gap: 0.4rem; }
+  .role-title {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .role-title .at {
+    color: var(--ink-3);
+    font-weight: 500;
+    margin: 0 0.4em;
+  }
+  .role-title .co {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .role-blurb {
+    font-family: var(--serif);
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin: 0;
+    max-width: 56ch;
+    text-wrap: pretty;
+  }
+
+  /* ── Approach ──────────────────────────────────────────────────────────── */
+  .approach-body {
+    padding-left: calc(var(--rail-w) + 1.5rem);
+    max-width: calc(var(--col-w) - 4rem);
+  }
+  .approach-body p {
+    font-family: var(--serif);
+    font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .approach-body p + p { margin-top: 0.9em; }
+
+  /* ── Footer ────────────────────────────────────────────────────────────── */
+  .foot {
+    margin-top: var(--gap-sect);
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: var(--rail-w) 1fr auto;
+    gap: 1.5rem;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+  }
+  .foot a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
+  .foot a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .foot .pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: 0;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+  .foot .pdf:hover { background: var(--accent); color: var(--paper); border: 0; }
+  .foot .pdf svg { width: 11px; height: 11px; }
+
+  /* ── Density variants ──────────────────────────────────────────────────── */
+  body[data-density="compact"] {
+    --gap-sect: clamp(1.75rem, 4vw, 2.75rem);
+    --gap-row:  clamp(0.9rem, 1.6vw, 1.25rem);
+  }
+  body[data-density="airy"] {
+    --gap-sect: clamp(3.5rem, 8vw, 6rem);
+    --gap-row:  clamp(1.75rem, 3.2vw, 2.6rem);
+  }
+
+  /* ── Hide the quote when toggled off ───────────────────────────────────── */
+  body[data-quote="off"] .quote { display: none; }
+
+  /* ── Small screens ─────────────────────────────────────────────────────── */
+  @media (max-width: 620px) {
+    :root { --rail-w: 78px; }
+    .approach-body { padding-left: 0; }
+    .foot { grid-template-columns: 1fr; }
+    .foot .pdf { justify-self: start; }
+    .top .crumbs { gap: 0.9rem; }
+  }
+
+  /* ── Print — clean PDF export ──────────────────────────────────────────── */
+  @media print {
+    @page { margin: 18mm 16mm; }
+    :root { --rail-w: 110px; }
+    body {
+      background: #fff;
+      color: #000;
+      font-size: 10.5pt;
+    }
+    .no-print, .top { display: none !important; }
+    .page { padding: 0; max-width: 100%; }
+    .hero { margin-bottom: 1.5rem; }
+    .hero h1 { font-size: 36pt; }
+    .lead, .quote { margin-bottom: 1.5rem; }
+    .sect-head { margin-bottom: 0.9rem; padding-bottom: 0.5rem; }
+    section + section { margin-top: 1.5rem; }
+    .role-row { gap: 1rem; }
+    .role-row + .role-row { margin-top: 0.6rem; }
+    .role-blurb { font-size: 10pt; }
+    a { color: #000 !important; text-decoration: none; }
+    .foot { margin-top: 1.5rem; padding-top: 0.6rem; }
+    .quote { border-left-color: #000; }
+    .role-title .co, .hero h1 em { color: #000 !important; }
+  }
+</style>
+</head>
+<body data-density="regular" data-quote="on">
+
+<div class="page">
+
+  <!-- Top strip -->
+  <div class="top no-print">
+    <div class="crumbs">
+      <a href="/"><span class="dot"></span>Sturla Bragason</a>
+    </div>
+    <div class="crumbs">
+      <a href="/cv/">CV</a>
+      <a href="/services/">Services</a>
+      <a href="mailto:sturla.bragason@proton.me">Contact</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Sturla<br>Bragason<em>.</em></h1>
+    <p class="role">Principal Platform &amp; AI Engineer. Hands-on architect, methodical problem-solver, tactful diplomat.</p>
+    <div class="meta">
+      <span>Based in Copenhagen</span>
+      <span>Available for advisory</span>
+      <span>Cloud-native &middot; AI &middot; DevOps</span>
+    </div>
+  </header>
+
+  <!-- Lead -->
+  <p class="lead">
+    For the past decade I have led my colleagues consistently to success as the
+    go-to engineer and hands-on architect.
+  </p>
+
+  <!-- Quote -->
+  <blockquote class="quote">
+    <p>"I'm Winston Wolfe. I solve problems."</p>
+    <cite>Winston Wolfe &mdash; Pulp Fiction</cite>
+  </blockquote>
+
+  <!-- Experience -->
+  <section>
+    <div class="sect-head">
+      <div class="sect-num">01 &nbsp;/&nbsp; Experience</div>
+      <h2 class="sect-title">Selected positions</h2>
+    </div>
+
+    <div class="timeline">
+
+      <article class="role-row">
+        <div class="years">2025<span class="sep"></span>Now</div>
+        <div class="role-body">
+          <div class="role-title">Principal Platform &amp; AI Engineer<span class="at">at</span><span class="co">Aeven</span></div>
+          <p class="role-blurb">Building Aeven's new hybrid-cloud infrastructure platform from scratch.</p>
+        </div>
+      </article>
+
+      <article class="role-row">
+        <div class="years">2020<span class="sep"></span>2025</div>
+        <div class="role-body">
+          <div class="role-title">Principal Architect, Cloud / DevOps / AI<span class="at">at</span><span class="co">Devoteam</span></div>
+          <p class="role-blurb">Built modern cloud platforms as code for enterprise clients.</p>
+        </div>
+      </article>
+
+      <article class="role-row">
+        <div class="years">2018<span class="sep"></span>2020</div>
+        <div class="role-body">
+          <div class="role-title">Senior Consultant &amp; Infrastructure Trainer<span class="at">at</span><span class="co">Omada</span></div>
+          <p class="role-blurb">Deployed Omada's platform for clients and ran a monthly infrastructure course I wrote for partners.</p>
+        </div>
+      </article>
+
+      <article class="role-row">
+        <div class="years">2017<span class="sep"></span>2018</div>
+        <div class="role-body">
+          <div class="role-title">Technical Consultant &amp; Azure Specialist<span class="at">at</span><span class="co">Wise</span></div>
+          <p class="role-blurb">Deployed Wise's platform on Azure and helped clients solve complex technical problems.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section style="margin-top: var(--gap-sect);">
+    <div class="sect-head">
+      <div class="sect-num">02 &nbsp;/&nbsp; Approach</div>
+      <h2 class="sect-title">How I work</h2>
+    </div>
+    <div class="approach-body">
+      <p>
+        I am a cloud-native platform engineer focused on open-source best practices
+        and vendor-neutral solutions. My approach to architecture is lean,
+        uncluttered, and minimalist &mdash; so the whole team can manage it.
+      </p>
+      <p>
+        I use a divide-and-conquer style to break down complex backlogs into clear,
+        actionable tasks. Any work I do creates tangible outcomes: code, diagrams,
+        or documentation that ensure everyone knows exactly how to move forward.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="foot">
+    <div>Contact</div>
+    <div>
+      <a href="mailto:sturla.bragason@proton.me">sturla.bragason@proton.me</a>
+    </div>
+    <a class="pdf no-print" href="/cv/sturlabragason_cv.pdf">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg>
+      Download PDF
+    </a>
+  </footer>
+
+</div>
+
+</body>
+</html>

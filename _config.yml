@@ -16,7 +16,7 @@ plugins:
 
 minima:
   nav_pages:
-    - cv/index.md
+    - cv/index.html
     - services/index.html
   social_links:
     - { platform: github, user_url: "https://github.com/sturlabragason" }
