@@ -5,9 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'cv/index.md'
-      - 'assets/css/custom.css'
-      - '_layouts/cv.html'
+      - 'cv/index.html'
 
 jobs:
   generate-pdf:
