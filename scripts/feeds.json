@@ -1,16 +1,70 @@
-[
-    "https://www.dr.dk/nyheder/service/feeds/indland",
-    "https://www.dr.dk/nyheder/service/feeds/politik",
-    "http://feeds.bbci.co.uk/news/world/europe/rss.xml",
-    "https://hnrss.org/newest?q=git+OR+linux+OR+terraform+OR+opensource+OR+kubernetes+OR+security+OR+rust",
-    "http://feeds.reuters.com/Reuters/worldNews",
-    "https://small-tech.org/index.xml",
-    "https://bolet.io/feed.xml",
-    "https://www.phoronix.com/rss.php",
-    "http://export.arxiv.org/rss/cs",
-    "https://github.blog/feed/",
-    "https://aws.amazon.com/blogs/architecture/feed/",
-    "https://eng.uber.com/feed/",
-    "https://blog.cloudflare.com/rss/",
-    "https://netflixtechblog.com/feed"
-]
+{
+  "filters": {
+    "max_age_days": 7,
+    "require_published_date": true,
+    "deduplicate_by_domain_title": true,
+    "min_hn_points": 2,
+    "drop_titles_matching": [
+      "\\bfilm\\b", "\\bmovie\\b", "\\bcinema\\b", "\\bcelebrit", "\\bgossip",
+      "\\bbig brother\\b", "\\broyal wedding\\b", "\\bhong kong\\b"
+    ]
+  },
+  "feeds": [
+    {
+      "url": "https://www.dr.dk/nyheder/service/feeds/indland",
+      "name": "DR.dk Indland",
+      "tags": ["danish-news"]
+    },
+    {
+      "url": "http://feeds.bbci.co.uk/news/world/europe/rss.xml",
+      "name": "BBC Europe",
+      "tags": ["world-news"]
+    },
+    {
+      "url": "https://hnrss.org/newest?q=git+OR+linux+OR+terraform+OR+opensource",
+      "name": "Hacker News",
+      "tags": ["tech"],
+      "queries": [
+        { "terms": ["kubernetes", "kubevirt", "containerd"], "tags": ["cloud-native"] },
+        { "terms": ["azure", "aws", "cloud"], "tags": ["cloud"] },
+        { "terms": ["kernel", "patch", "driver"], "tags": ["linux"] },
+        { "terms": ["cve-", "exploit", "vulnerability", "malware", "breach"], "tags": ["security"] }
+      ]
+    },
+    {
+      "url": "https://www.phoronix.com/rss.php",
+      "name": "Phoronix",
+      "tags": ["linux", "hardware"]
+    },
+    {
+      "url": "https://lwn.net/headlines/rss",
+      "name": "LWN",
+      "tags": ["linux", "kernel"]
+    },
+    {
+      "url": "https://www.theregister.com/security/headlines.atom",
+      "name": "The Register Security",
+      "tags": ["security"]
+    },
+    {
+      "url": "https://lobste.rs/t/kernel.rss",
+      "name": "Lobsters Kernel",
+      "tags": ["kernel"]
+    },
+    {
+      "url": "https://lobste.rs/t/security.rss",
+      "name": "Lobsters Security",
+      "tags": ["security"]
+    },
+    {
+      "url": "https://small-tech.org/index.xml",
+      "name": "Small Tech",
+      "tags": ["small-tech", "ethics"]
+    },
+    {
+      "url": "https://bolet.io/feed.xml",
+      "name": "Bolet.io",
+      "tags": ["blog"]
+    }
+  ]
+}
