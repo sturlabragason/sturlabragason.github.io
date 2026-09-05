@@ -15,17 +15,29 @@ plugins:
 #   - jekyll-toc
 
 minima:
+  # `auto` emits minima's colours as CSS custom properties and wraps the dark set
+  # in a prefers-color-scheme query. _sass/minima/custom-styles.scss overrides
+  # those properties with the warm-editorial palette, so both modes come from one
+  # source. `classic` would hard-code light values and break dark mode.
+  skin: auto
+  date_format: "%b %-d, %Y"
+  show_excerpts: true
   nav_pages:
     - cv/index.html
     - services/index.html
   social_links:
-    - { platform: github, user_url: "https://github.com/sturlabragason" }
-    - { platform: mastodon, user_url: "https://mastodon.social/@sturlabragason" }
-    - { platform: linkedin, user_url: "https://www.linkedin.com/in/sturlabragason/" }
+    - { title: "GitHub", icon: "github", url: "https://github.com/sturlabragason" }
+    - { title: "Mastodon", icon: "mastodon", url: "https://mastodon.social/@sturlabragason" }
+    - { title: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/sturlabragason/" }
 
-jekyll_spaceship:
-  mermaid:
-    enabled: true
+jekyll-spaceship:
+  # Keeping the default processor list; only mermaid's rendering is tuned.
+  mermaid-processor:
+    mode: default
+    css:
+      class: mermaid
+    config:
+      theme: neutral
 
 collections:
   my_collection:

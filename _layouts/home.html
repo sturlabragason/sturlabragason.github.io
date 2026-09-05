@@ -1,0 +1,43 @@
+---
+layout: base
+---
+
+<div class="home">
+
+  {%- comment -%}
+    The masthead is the site's one display element. The name already sits in the
+    header, so the lede is the description rather than a repeat of the title.
+  {%- endcomment -%}
+  <header class="masthead">
+    {%- if page.title %}
+    <h1 class="masthead-lede">{{ page.title }}</h1>
+    {%- if page.subtitle %}<p class="masthead-deck">{{ page.subtitle | escape }}</p>{% endif %}
+    {%- elsif site.description %}
+    <h1 class="masthead-lede">{{ site.description | strip_newlines | escape }}</h1>
+    {%- endif %}
+  </header>
+
+  {{ content }}
+
+  {%- assign posts = site.posts -%}
+  {%- if posts.size > 0 %}
+  <h2 class="post-list-heading">{{ page.list_title | default: "Writing" }}</h2>
+  <ul class="post-list">
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- for post in posts %}
+    <li>
+      <span class="post-meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
+      </span>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h3>
+      {%- if site.minima.show_excerpts %}
+      <div class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 200 }}</div>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+
+</div>

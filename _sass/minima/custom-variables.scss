@@ -1,0 +1,24 @@
+// Warm Editorial — variable overrides for minima.
+//
+// minima/initialize.scss defines its variables with `!default` and *then* imports
+// this file, so a plain assignment here wins over the theme default while still
+// being seen by _base.scss and _layout.scss further down the import chain.
+
+// Serif body copy. Long-form reading is what this site is for.
+$base-font-family: "Newsreader", Georgia, "Times New Roman", serif;
+$code-font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+// 19px body at a 1.65 leading. Editorial reading size, not UI size.
+$base-font-size:   19px;
+$small-font-size:  15px;
+$base-line-height: 1.65;
+
+$spacing-unit:     32px;
+
+// The shell. The prose column inside it is narrower still (see --measure).
+$content-width:    860px;
+
+$on-palm:          600px;
+$on-laptop:        860px;
+$on-medium:        $on-palm;
+$on-large:         $on-laptop;
