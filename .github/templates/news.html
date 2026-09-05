@@ -1,30 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Curated News</title>
     <!-- Add Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    {% for item in news_items %}
-    <div class="item">
-        <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
-        <p class="published">Published: {{ item.published.strftime('%a, %d %b %Y %H:%M:%S %Z') }}</p>
-        <p class="meta">
-            <span class="source">{{ item.source }}</span>
-            {% for tag in item.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
-        </p>
-        {% if item.image %}
-        <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
-        {% endif %}
-        <p>{{ item.summary }}</p>
+    <div class="container">
+        <header class="site-header">
+            <h1>Curated News</h1>
+            <p>Aggregated headlines from a handful of RSS feeds, refreshed hourly.</p>
+        </header>
+        <main>
+            {% for item in news_items %}
+            <article class="item">
+                <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
+                <p class="published">
+                    <time datetime="{{ item.published.strftime('%Y-%m-%dT%H:%M:%S%z') }}">{{ item.published.strftime('%a, %d %b %Y %H:%M %Z') }}</time>
+                </p>
+                <p class="meta">
+                    <span class="source">{{ item.source }}</span>
+                    {% for tag in item.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+                </p>
+                {% if item.image %}
+                <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
+                {% endif %}
+                <p>{{ item.summary }}</p>
+            </article>
+            {% endfor %}
+        </main>
     </div>
-    <hr>
-    {% endfor %}
 </body>
 
 </html>
