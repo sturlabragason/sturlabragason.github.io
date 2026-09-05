@@ -1,0 +1,26 @@
+{
+    "max_age_days": 30,
+    "max_items_per_feed": 15,
+    "exclude_keywords": [
+        "horoscope",
+        "sponsored",
+        "advertisement",
+        "giveaway",
+        "quiz: ",
+        "watch: live",
+        "liveblog"
+    ],
+    "tag_rules": {
+        "linux": ["linux", "kernel", "systemd", "gnome", "kde", "wayland", "distro"],
+        "git": ["git", "github", "gitlab", "version control", "pull request", "merge conflict"],
+        "cloud": ["aws", "azure", "gcp", "terraform", "pulumi", "kubernetes", "k8s", "serverless", "cloudflare"],
+        "security": ["security", "vulnerability", "cve", "exploit", "breach", "ransomware", "phishing", "malware", "zero-day"],
+        "ai": ["ai", "llm", "gpt", "machine learning", "neural network", "openai", "anthropic", "diffusion model"],
+        "rust": ["rust", "cargo", "rustc"],
+        "database": ["postgres", "postgresql", "sqlite", "mysql", "database", "query planner"],
+        "hardware": ["risc-v", "arm64", "gpu", "cpu", "benchmark", "processor", "silicon"],
+        "denmark": ["danmark", "dansk", "danske", "københavn", "denmark", "danish"],
+        "politics": ["election", "parliament", "minister", "government", "nato", "sanction", "referendum"],
+        "self-hosted": ["self-hosted", "selfhosted", "homelab", "home server", "raspberry pi"]
+    }
+}

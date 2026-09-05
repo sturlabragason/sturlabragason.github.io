@@ -1,8 +1,21 @@
-[
-    "https://www.dr.dk/nyheder/service/feeds/indland",
-    "http://feeds.bbci.co.uk/news/world/europe/rss.xml",
-    "https://hnrss.org/newest?q=git+OR+linux+OR+terraform+OR+opensource",
-    "http://feeds.reuters.com/Reuters/worldNews",
-    "https://small-tech.org/index.xml",
-    "https://bolet.io/feed.xml"
-]
+{
+    "feeds": [
+        { "url": "https://www.dr.dk/nyheder/service/feeds/indland", "source": "DR Nyheder", "category": "Denmark" },
+        { "url": "https://www.version2.dk/rss.xml", "source": "Version2", "category": "Denmark" },
+        { "url": "http://feeds.bbci.co.uk/news/world/europe/rss.xml", "source": "BBC News", "category": "World" },
+        { "url": "https://www.theguardian.com/world/europe-news/rss", "source": "The Guardian", "category": "World" },
+        { "url": "https://hnrss.org/newest?q=git+OR+linux+OR+terraform+OR+opensource", "source": "Hacker News", "category": "Tech" },
+        { "url": "https://hnrss.org/newest?q=kubernetes+OR+rust+OR+postgres+OR+self-hosted", "source": "Hacker News", "category": "Tech" },
+        { "url": "https://lobste.rs/rss", "source": "Lobsters", "category": "Tech" },
+        { "url": "https://lwn.net/headlines/rss", "source": "LWN.net", "category": "Linux" },
+        { "url": "https://www.phoronix.com/rss.php", "source": "Phoronix", "category": "Linux" },
+        { "url": "https://github.blog/feed/", "source": "GitHub Blog", "category": "Dev tools" },
+        { "url": "https://jvns.ca/atom.xml", "source": "Julia Evans", "category": "Engineering blogs" },
+        { "url": "https://bolet.io/feed.xml", "source": "bolet.io", "category": "Engineering blogs" },
+        { "url": "https://small-tech.org/index.xml", "source": "Small Technology", "category": "Digital autonomy" },
+        { "url": "https://krebsonsecurity.com/feed/", "source": "Krebs on Security", "category": "Security" },
+        { "url": "https://aws.amazon.com/blogs/aws/feed/", "source": "AWS News Blog", "category": "Cloud" },
+        { "url": "https://blog.cloudflare.com/rss/", "source": "Cloudflare Blog", "category": "Cloud" },
+        { "url": "http://export.arxiv.org/rss/cs.SE", "source": "arXiv cs.SE", "category": "Research" }
+    ]
+}

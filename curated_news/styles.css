@@ -44,6 +44,27 @@ h1, h2 {
     font-size: 0.6m;  /* adjust this value to make the text smaller or larger */
 }
 
+.item .source-meta {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+}
+
+.item .tags {
+    margin-top: 8px;
+}
+
+.item .tag {
+    display: inline-block;
+    font-size: 0.75em;
+    padding: 2px 8px;
+    margin: 2px 6px 2px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--link-color);
+}
+
 @media (max-width: 600px) {
     body {
         padding: 10px;

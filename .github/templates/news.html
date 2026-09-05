@@ -13,11 +13,13 @@
     {% for item in news_items %}
     <div class="item">
         <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
+        {% if item.source %}<p class="source-meta">{{ item.source }}{% if item.category %} &middot; {{ item.category }}{% endif %}</p>{% endif %}
         <p class="published">Published: {{ item.published.strftime('%a, %d %b %Y %H:%M:%S %Z') }}</p>
         {% if item.image %}
         <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
         {% endif %}
         <p>{{ item.summary }}</p>
+        {% if item.tags %}<p class="tags">{% for tag in item.tags %}<span class="tag">#{{ tag }}</span>{% endfor %}</p>{% endif %}
     </div>
     <hr>
     {% endfor %}
