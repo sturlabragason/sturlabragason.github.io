@@ -1,19 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-</head>
-<body>
-  <header>
-    <h1>{{ site.title }}</h1>
+---
+layout: base
+---
+{%- comment -%}
+  minima has no `default` layout, so this one is the site's own. It gives every
+  page that asks for it the site chrome plus the article measure and prose
+  styling. Pages that bring their own full-bleed layout (the services page, the
+  slide deck) opt out with `wide: true` in their front matter.
+{%- endcomment -%}
+{%- if page.wide %}
+{{ content }}
+{%- else %}
+<article class="post">
+
+  {%- if page.title and page.title != "" %}
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
-  <main>
+  {%- endif %}
+
+  <div class="post-content">
     {{ content }}
-  </main>
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }}</p>
-  </footer>
-</body>
-</html>
+  </div>
+
+</article>
+{%- endif %}

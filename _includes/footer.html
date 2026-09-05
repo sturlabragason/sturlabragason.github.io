@@ -1,40 +1,37 @@
+<link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
 <footer class="site-footer h-card">
-    <data class="u-url" href="{{ " /" | relative_url }}"></data>
+  <data class="u-url" value="{{ '/' | relative_url }}"></data>
 
-    <div class="wrapper">
+  <div class="wrapper">
 
-        <div class="footer-col-wrapper">
-            <div class="footer-col">
-                <p class="feed-subscribe">
-                    <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}">
-                        <svg class="svg-icon orange">
-                            <use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
-                        </svg><span>Subscribe</span>
-                    </a>
-                </p>
-                {%- if site.author %}
-                <ul class="contact-list">
-                    {% if site.author.name -%}
-                    <li class="p-name">{{ site.author.name | escape }}</li>
-                    <li><a href="{{ '/cv' | relative_url }}">About Me</a></li>
-                    <li><a href="{{ '/curated_news' | relative_url }}">My News Feed</a></li>
-                    {% endif -%}
-                    {% if site.author.email -%}
-                    <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-                    {%- endif %}
-                </ul>
-                {%- endif %}
-            </div>
-            <div class="footer-col">
-                <p>{{ site.description | escape }}</p>
-            </div>
-        </div>
-
-        <div class="social-links">
-            {%- include social.html -%}
-        </div>
-
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="footer-heading">{{ site.author.name | default: site.title | escape }}</p>
+        <ul class="contact-list">
+          {%- if site.author.name %}
+          <li class="p-name" hidden>{{ site.author.name | escape }}</li>
+          {%- endif %}
+          <li><a href="{{ '/cv/' | relative_url }}">CV</a></li>
+          <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
+          <li><a href="{{ '/curated_news/' | relative_url }}">News feed</a></li>
+          {%- if site.author.email %}
+          <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+          {%- endif %}
+          <li><a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}">Subscribe</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">About this site</p>
+        <p>{{ site.description | escape }}</p>
+      </div>
     </div>
+
+    <div class="social-links">
+      {%- include social.html -%}
+    </div>
+
+  </div>
 
 </footer>
 
