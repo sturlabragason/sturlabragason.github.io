@@ -56,11 +56,32 @@ def parse_date(date_string):
         print(f'Could not parse date: {date_string}')
         return None
 
+def clean_boilerplate(text):
+    """Strip redundant Hacker News boilerplate lines from a summary.
+
+    The article link is already the item heading, so the "Article URL" and
+    "Comments URL" lines add noise. Points / comment counts are kept but
+    condensed onto a single tidy line.
+    """
+    kept = []
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+        if line.startswith(('Article URL:', 'Comments URL:')):
+            continue
+        line = line.replace('# Comments:', 'Comments:')
+        kept.append(line)
+    if kept and all(part.split(':')[0] in ('Points', 'Comments') for part in kept):
+        return ' · '.join(kept)
+    return '\n'.join(kept)
+
 
 def process_summary(summary):
     summary = BeautifulSoup(summary, "html.parser").get_text()
-    if summary:  
-        if len(summary) >= 200:  
+    summary = clean_boilerplate(summary)
+    if summary:
+        if len(summary) >= 200:
             substring = summary[:200]  
             index = substring.find('. ')  
             if index != -1:  
