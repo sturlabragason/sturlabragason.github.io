@@ -1,8 +1,16 @@
 [
     "https://www.dr.dk/nyheder/service/feeds/indland",
+    "https://www.dr.dk/nyheder/service/feeds/politik",
     "http://feeds.bbci.co.uk/news/world/europe/rss.xml",
-    "https://hnrss.org/newest?q=git+OR+linux+OR+terraform+OR+opensource",
+    "https://hnrss.org/newest?q=git+OR+linux+OR+terraform+OR+opensource+OR+kubernetes+OR+security+OR+rust",
     "http://feeds.reuters.com/Reuters/worldNews",
     "https://small-tech.org/index.xml",
-    "https://bolet.io/feed.xml"
+    "https://bolet.io/feed.xml",
+    "https://www.phoronix.com/rss.php",
+    "http://export.arxiv.org/rss/cs",
+    "https://github.blog/feed/",
+    "https://aws.amazon.com/blogs/architecture/feed/",
+    "https://eng.uber.com/feed/",
+    "https://blog.cloudflare.com/rss/",
+    "https://netflixtechblog.com/feed"
 ]
