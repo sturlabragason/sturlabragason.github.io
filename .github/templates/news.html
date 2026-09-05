@@ -1,40 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Curated News</title>
-    <!-- Add Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="A small, hand-picked feed of Danish, European and open-source technology headlines, refreshed every hour.">
+    <meta name="color-scheme" content="dark light">
+    <meta property="og:title" content="Curated News">
+    <meta property="og:description" content="A small, hand-picked feed of Danish, European and open-source technology headlines, refreshed every hour.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="../favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
 
 <body>
-    <div class="container">
-        <header class="site-header">
-            <h1>Curated News</h1>
-            <p>Aggregated headlines from a handful of RSS feeds, refreshed hourly.</p>
-        </header>
-        <main>
-            {% for item in news_items %}
-            <article class="item">
-                <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
-                <p class="published">
-                    <time datetime="{{ item.published.strftime('%Y-%m-%dT%H:%M:%S%z') }}">{{ item.published.strftime('%a, %d %b %Y %H:%M %Z') }}</time>
-                </p>
-                <p class="meta">
-                    <span class="source">{{ item.source }}</span>
-                    {% for tag in item.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
-                </p>
-                {% if item.image %}
-                <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
-                {% endif %}
-                <p>{{ item.summary }}</p>
-            </article>
-            {% endfor %}
-        </main>
+    <a class="skip-link" href="#content">Skip to headlines</a>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <div class="site-header__text">
+                <h1>Curated News</h1>
+                <p>Danish, European and open-source headlines &mdash; refreshed hourly.</p>
+            </div>
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch colour theme">
+                <span class="theme-toggle__label">Theme</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="toolbar" role="search">
+        <label class="toolbar__search">
+            <span class="visually-hidden">Search headlines</span>
+            <input type="search" id="q" placeholder="Search headlines&hellip;" autocomplete="off" spellcheck="false">
+        </label>
+        <label class="toolbar__source">
+            <span class="visually-hidden">Filter by source</span>
+            <select id="source-filter">
+                <option value="">All sources</option>
+                {% for source in sources %}
+                <option value="{{ source }}">{{ source }}</option>
+                {% endfor %}
+            </select>
+        </label>
     </div>
+
+    {% if tags %}
+    <div class="tag-bar" aria-label="Filter by topic">
+        {% for tag in tags %}
+        <button type="button" class="tag-chip" data-tag="{{ tag }}" aria-pressed="false">{{ tag }}</button>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <main id="content" class="feed">
+        <p class="result-count" aria-live="polite">
+            <span id="count">{{ news_items | length }}</span> of {{ news_items | length }} stories
+        </p>
+
+        {% set ns = namespace(day=None) %}
+        {% for item in news_items %}
+        {% set day = item.published.strftime('%Y-%m-%d') %}
+        {% if day != ns.day %}
+        {% set ns.day = day %}
+        <h2 class="day-heading" data-date="{{ day }}">{{ item.published.strftime('%A, %-d %B %Y') }}</h2>
+        {% endif %}
+        <article class="item"
+                 data-source="{{ item.source }}"
+                 data-tags="{{ item.tags | join(' ') }}"
+                 data-title="{{ item.title | lower }}">
+            <h3 class="item__title"><a href="{{ item.link }}">{{ item.title }}</a></h3>
+            <p class="item__meta">
+                <time datetime="{{ item.published.strftime('%Y-%m-%dT%H:%M:%S%z') }}">{{ item.published.strftime('%H:%M %Z') }}</time>
+                {% if item.source %}<span class="item__source">{{ item.source }}</span>{% endif %}
+                {% for tag in item.tags %}<span class="item__tag" data-tag="{{ tag }}">{{ tag }}</span>{% endfor %}
+            </p>
+            {% if item.image %}
+            <img class="item__image" src="{{ item.image }}" alt="" loading="lazy">
+            {% endif %}
+            {% if item.summary %}<p class="item__summary">{{ item.summary }}</p>{% endif %}
+        </article>
+        {% endfor %}
+
+        <p class="empty-state" hidden>No stories match your filters. <button type="button" id="clear-filters">Clear filters</button></p>
+    </main>
+
+    <footer class="site-footer">
+        <p>{{ sources | length }} sources &middot; {{ news_items | length }} stories{% if generated_at %} &middot; updated <time datetime="{{ generated_at.strftime('%Y-%m-%dT%H:%M:%S%z') }}">{{ generated_at.strftime('%d %b %Y %H:%M %Z') }}</time>{% endif %}</p>
+        <p class="site-footer__sources">{{ sources | join(' · ') }}</p>
+    </footer>
+
+    <script src="app.js" defer></script>
 </body>
 
 </html>
