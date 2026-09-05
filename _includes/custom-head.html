@@ -1,0 +1,39 @@
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbf6ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16130f" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+{%- comment -%}
+  GitHub Pages runs a fixed plugin set that does not include jekyll-spaceship, so
+  mermaid fences arrive in the page as plain `<pre><code class="language-mermaid">`.
+  Rendering them here keeps diagrams as real SVG, which means they can follow the
+  colour scheme instead of being a light-only bitmap. If the module fails to load
+  the fence stays a readable code block.
+{%- endcomment -%}
+<script type="module">
+  const fences = document.querySelectorAll('pre > code.language-mermaid');
+  if (fences.length) {
+    const { default: mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs');
+    for (const code of fences) {
+      const holder = document.createElement('div');
+      holder.className = 'mermaid';
+      holder.textContent = code.textContent;
+      code.parentElement.replaceWith(holder);
+    }
+    const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'strict',
+      theme: 'base',
+      fontFamily: '"Geist", system-ui, sans-serif',
+      themeVariables: dark
+        ? { background: '#1d1915', primaryColor: '#2a231c', primaryTextColor: '#f0e8dc', primaryBorderColor: '#e0946a', lineColor: '#9a8d81', secondaryColor: '#332c25', tertiaryColor: '#16130f', edgeLabelBackground: '#1d1915' }
+        : { background: '#fffdf8', primaryColor: '#f1e3cf', primaryTextColor: '#201914', primaryBorderColor: '#9b5b32', lineColor: '#7a6d63', secondaryColor: '#fbf6ee', tertiaryColor: '#fffdf8', edgeLabelBackground: '#fffdf8' },
+    });
+    await mermaid.run({ querySelector: '.mermaid' });
+  }
+</script>

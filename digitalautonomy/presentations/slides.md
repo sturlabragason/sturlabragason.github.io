@@ -1,6 +1,7 @@
 ---
 layout: default
 title: ""
+wide: true
 permalink: /digitalautonomy/presentations/slides/
 ---
 
