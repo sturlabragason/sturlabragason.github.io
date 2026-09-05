@@ -206,12 +206,22 @@ def fetch_and_parse(config):
 
 def render_page(news_items):
     # Load Jinja2 template
-    env = Environment(loader=FileSystemLoader('.github/templates'))
+    env = Environment(loader=FileSystemLoader('.github/templates'), autoescape=True)
     template = env.get_template('news.html')
+
+    # Filter controls are built from the sources / tags actually present.
+    sources = sorted({item['source'] for item in news_items if item.get('source')})
+    tags = sorted({tag for item in news_items for tag in item.get('tags', [])})
+    generated_at = datetime.now(timezone.utc)
 
     # Render new HTML page
     with open('curated_news/index.html', 'w') as f:
-        f.write(template.render(news_items=news_items))
+        f.write(template.render(
+            news_items=news_items,
+            sources=sources,
+            tags=tags,
+            generated_at=generated_at,
+        ))
 
 
 def main():
