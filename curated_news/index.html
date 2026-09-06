@@ -45,11 +45,15 @@
                 
                 <option value="DR.dk Indland">DR.dk Indland</option>
                 
+                <option value="Hacker News">Hacker News</option>
+                
                 <option value="LWN">LWN</option>
                 
                 <option value="Lobsters Security">Lobsters Security</option>
                 
                 <option value="Phoronix">Phoronix</option>
+                
+                <option value="The Register Security">The Register Security</option>
                 
             </select>
         </label>
@@ -68,6 +72,8 @@
         
         <button type="button" class="tag-chip" data-tag="security" aria-pressed="false">security</button>
         
+        <button type="button" class="tag-chip" data-tag="tech" aria-pressed="false">tech</button>
+        
         <button type="button" class="tag-chip" data-tag="world-news" aria-pressed="false">world-news</button>
         
     </div>
@@ -75,7 +81,7 @@
 
     <main id="content" class="feed">
         <p class="result-count" aria-live="polite">
-            <span id="count">98</span> of 98 stories
+            <span id="count">134</span> of 134 stories
         </p>
 
         
@@ -84,6 +90,38 @@
         
         
         <h2 class="day-heading" data-date="2026-09-06">Sunday, 6 September 2026</h2>
+        
+        <article class="item"
+                 data-source="BBC Europe"
+                 data-tags="world-news"
+                 data-title="germany&#39;s far-right afd set for big win in eastern state, just short of majority">
+            <h3 class="item__title"><a href="https://www.bbc.co.uk/news/articles/cy4zejgz3z9o?at_medium=RSS&amp;at_campaign=rss">Germany&#39;s far-right AfD set for big win in eastern state, just short of majority</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-06T23:02:45+0000">23:02 UTC</time>
+                <span class="item__source">BBC Europe</span>
+                <span class="item__tag" data-tag="world-news">world-news</span>
+            </p>
+            
+            <p class="item__summary">Germany&#39;s AfD has hailed a &#34;historic result&#34; and is projected to win 44% of the vote, far ahead of the conservatives on 17%.</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="Phoronix"
+                 data-tags="hardware linux"
+                 data-title="linux 7.3-rc2 released following another busy week">
+            <h3 class="item__title"><a href="https://www.phoronix.com/news/Linux-7.3-rc2-Released">Linux 7.3-rc2 Released Following Another Busy Week</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-06T18:22:25-0400">18:22 UTC-04:00</time>
+                <span class="item__source">Phoronix</span>
+                <span class="item__tag" data-tag="hardware">hardware</span><span class="item__tag" data-tag="linux">linux</span>
+            </p>
+            
+            <p class="item__summary">After the Linux 7.3 merge window concluded last weekend, today we are up to the Linux 7.3-rc2 test kernel release in working toward the stable v7.3 kernel during the second half of October...</p>
+        </article>
+        
+        
         
         <article class="item"
                  data-source="Lobsters Security"
@@ -102,17 +140,17 @@
         
         
         <article class="item"
-                 data-source="BBC Europe"
-                 data-tags="world-news"
-                 data-title="german far-right set for big win in eastern state, projections show">
-            <h3 class="item__title"><a href="https://www.bbc.co.uk/news/articles/cy4zejgz3z9o?at_medium=RSS&amp;at_campaign=rss">German far-right set for big win in eastern state, projections show</a></h3>
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="show hn: byosynch – continuous two-way file sync over ssh for mac and linux">
+            <h3 class="item__title"><a href="https://byosynch.com/">Show HN: Byosynch – Continuous two-way file sync over SSH for Mac and Linux</a></h3>
             <p class="item__meta">
-                <time datetime="2026-09-06T20:45:11+0000">20:45 UTC</time>
-                <span class="item__source">BBC Europe</span>
-                <span class="item__tag" data-tag="world-news">world-news</span>
+                <time datetime="2026-09-06T20:44:16+0000">20:44 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
             </p>
             
-            <p class="item__summary">Germany&#39;s AfD has hailed a &#34;historic result&#34; and is projected to win more than 44% of the vote, far ahead of the conservative CDU on 18.4%.</p>
+            <p class="item__summary">Disclaimer: I&#39;m the developer of byosynch.Long time Dropbox customer.</p>
         </article>
         
         
@@ -129,6 +167,22 @@
             </p>
             
             <p class="item__summary">There was no announcement of a major breakthrough, after Steve Witkoff and Jared Kushner travelled to Kyiv.</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="show hn: agentic os: one rust linux binary, one sqlite and sandbox per entity">
+            <h3 class="item__title"><a href="https://github.com/mmeyerlein/meclaw">Show HN: Agentic OS: one Rust Linux binary, one SQLite and sandbox per entity</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-06T20:07:16+0000">20:07 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
+            </p>
+            
+            <p class="item__summary">Points: 7 · Comments: 8</p>
         </article>
         
         
@@ -294,6 +348,40 @@
         
         
         <article class="item"
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="ignore files in git without adding them to .gitignore">
+            <h3 class="item__title"><a href="https://luisdalmolin.dev/blog/ignoring-files-in-git-without-gitignore/">Ignore files in Git without adding them to .gitignore</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-06T15:45:16+0000">15:45 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
+            </p>
+            
+            <p class="item__summary">Points: 2 · Comments: 0</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="asahi linux on m3">
+            <h3 class="item__title"><a href="https://asahilinux.org/2026/09/m2-episode-1/">Asahi Linux on M3</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-06T14:08:59+0000">14:08 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
+            </p>
+            
+            <p class="item__summary">https://www.phoronix.com/news/Asahi-Linux-Official-M3
+Points: 316
+Comments: 182</p>
+        </article>
+        
+        
+        
+        <article class="item"
                  data-source="DR.dk Indland"
                  data-tags="danish-news"
                  data-title="per, thor og nomi bygger insekt-byer">
@@ -353,6 +441,22 @@
             </p>
             
             <p class="item__summary">Den omstridte kemifabrik på Harboøre Tange lukker</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="show hn: testate – git for database">
+            <h3 class="item__title"><a href="https://github.com/PT-Perkasa-Pilar-Utama/testate">Show HN: Testate – Git for Database</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-06T12:19:30+0000">12:19 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
+            </p>
+            
+            <p class="item__summary">Points: 3 · Comments: 0</p>
         </article>
         
         
@@ -502,6 +606,23 @@
         
         
         <article class="item"
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="show hn: kaden – linux terminal where ctrl+c copies">
+            <h3 class="item__title"><a href="https://github.com/glitcher255/Kaden-Terminal">Show HN: Kaden – Linux Terminal where Ctrl+C copies</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-06T08:00:49+0000">08:00 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
+            </p>
+            
+            <p class="item__summary">I made Kaden because every other Linux terminal lacks proper text selection.
+Kaden supports Ctrl-C, A, V for copying, selecting and pasting, no more awkward three button hotkeys or fiddling with your </p>
+        </article>
+        
+        
+        
+        <article class="item"
                  data-source="DR.dk Indland"
                  data-tags="danish-news"
                  data-title="von der leyen øjner grønlands digitale infrastruktur: teleselskabet tusass kan godt mærke interessen">
@@ -534,6 +655,22 @@
         
         
         <article class="item"
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="a volunteer stopped a backdoor from exposing linux systems worldwide (2024)">
+            <h3 class="item__title"><a href="https://www.theverge.com/2024/4/2/24119342/xz-utils-linux-backdoor-attempt">A volunteer stopped a backdoor from exposing Linux systems worldwide (2024)</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-06T05:13:48+0000">05:13 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
+            </p>
+            
+            <p class="item__summary">Points: 7 · Comments: 0</p>
+        </article>
+        
+        
+        
+        <article class="item"
                  data-source="DR.dk Indland"
                  data-tags="danish-news"
                  data-title="mens trump fylder mindre, rykker grønland tættere på eu med et nyt partnerskab">
@@ -545,6 +682,22 @@
             </p>
             
             <p class="item__summary">I dag styrker EU og Grønland sit samarbejde, når Ursula von der Leyen kommer til Nuuk for at underskrive erklæring.</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="dhh: programming, ai, vibe coding and linux (lex fridman podcast)">
+            <h3 class="item__title"><a href="https://lexfridman.com/dhh-2-transcript/">DHH: Programming, AI, Vibe Coding and Linux (Lex Fridman Podcast)</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-06T00:01:42+0000">00:01 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
+            </p>
+            
+            <p class="item__summary">Points: 6 · Comments: 0</p>
         </article>
         
         
@@ -596,6 +749,38 @@
             </p>
             
             <p class="item__summary">Katie Taylor ends illustrious career as a three-time undisputed world champion as Croke Park gave one of Ireland&#39;s greatest sporting figures the grandest of farewells.</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="okf agent memory – git-native persistent memory for ai coding agents">
+            <h3 class="item__title"><a href="https://github.com/okf-memory/okf-agent-memory">OKF Agent Memory – Git-native persistent memory for AI coding agents</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-05T22:15:52+0000">22:15 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
+            </p>
+            
+            <p class="item__summary">Points: 75 · Comments: 22</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="saying goodbye to my git server&#39;s cgit front end">
+            <h3 class="item__title"><a href="https://www.worthe-it.co.za/blog/2026-09-05-saying-goodbye-to-my-git-servers-cgit-frontend.html">Saying Goodbye to My Git Server&#39;s CGit Front End</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-05T19:00:30+0000">19:00 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
+            </p>
+            
+            <p class="item__summary">Points: 2 · Comments: 0</p>
         </article>
         
         
@@ -665,6 +850,22 @@
         
         
         <article class="item"
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="trusting-trust attack against an entire linux distribution (via strip utility)">
+            <h3 class="item__title"><a href="https://arxiv.org/abs/2607.24888">Trusting-Trust Attack against an Entire Linux Distribution (via strip utility)</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-05T11:25:18+0000">11:25 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
+            </p>
+            
+            <p class="item__summary">Points: 27 · Comments: 0</p>
+        </article>
+        
+        
+        
+        <article class="item"
                  data-source="Phoronix"
                  data-tags="hardware linux"
                  data-title="nouveau lands display fixes for nvidia blackwell gpus as it works toward hdmi 2.1">
@@ -697,22 +898,6 @@
         
         
         <article class="item"
-                 data-source="Lobsters Security"
-                 data-tags="security"
-                 data-title="trusting-trust attack against an entire linux distribution (via the strip utility)">
-            <h3 class="item__title"><a href="https://arxiv.org/abs/2607.24888">Trusting-Trust Attack against an Entire Linux Distribution (via the strip utility)</a></h3>
-            <p class="item__meta">
-                <time datetime="2026-09-05T05:58:49-0500">05:58 UTC-05:00</time>
-                <span class="item__source">Lobsters Security</span>
-                <span class="item__tag" data-tag="security">security</span>
-            </p>
-            
-            <p class="item__summary">&#34;Ken Thompson&#39;s trusting-trust attack, in which a compromised compiler backdoors the programs it builds and reproduces the backdoor in subsequent rebuilds of itself, is widely regarded as a threat spe</p>
-        </article>
-        
-        
-        
-        <article class="item"
                  data-source="Phoronix"
                  data-tags="hardware linux"
                  data-title="amd working to &#34;push rust deep into the gpu stack&#34;">
@@ -740,6 +925,22 @@
             </p>
             
             <p class="item__summary">GNOME has been working to establish a formal request for comments (RFC) process for solving major technical questions and changes moving forward.</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="Hacker News"
+                 data-tags="tech"
+                 data-title="i wrote a vm for mac to run windows and linux, both on ios">
+            <h3 class="item__title"><a href="https://github.com/theghostshinobi/SMOKE">I wrote a VM for Mac to run Windows and Linux, both on iOS</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-05T07:33:56+0000">07:33 UTC</time>
+                <span class="item__source">Hacker News</span>
+                <span class="item__tag" data-tag="tech">tech</span>
+            </p>
+            
+            <p class="item__summary">Points: 4 · Comments: 0</p>
         </article>
         
         
@@ -812,6 +1013,22 @@
         
         
         <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="ascii smuggling isn&#39;t just an ai security risk">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/04/ascii-smuggling-isnt-just-an-ai-security-risk/5294595">ASCII smuggling isn&#39;t just an AI security risk</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-04T21:23:25+0200">21:23 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Phishers find a new use for invisible Unicode tag characters</p>
+        </article>
+        
+        
+        
+        <article class="item"
                  data-source="BBC Europe"
                  data-tags="world-news"
                  data-title="europe targeted by spiralling campaign of sabotage - and russia is the chief suspect">
@@ -839,6 +1056,22 @@
             </p>
             
             <p class="item__summary">The unmanned aerial vehicle struck without warning in the heart of the Ukrainian capital.</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="rogue openai agents used dead german web site to communicate in may, months before hugging face incident">
+            <h3 class="item__title"><a href="https://www.theregister.com/ai-and-ml/2026/09/04/rogue-openai-agents-used-dead-german-web-site-to-communicate-in-may-months-before-hugging-face-incident/5294554">Rogue OpenAI agents used dead German web site to communicate in May, months before Hugging Face incident</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-04T18:02:08+0200">18:02 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Two cases of agents escaping to solve unsolvable problems paints an uncomfortable question: Is the entire internet in OpenAI&#39;s experimental agentic firing line?</p>
         </article>
         
         
@@ -1071,6 +1304,22 @@ administrators has been released.</p>
         
         
         
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="cisco searched for ios xr bugs and found so many it rolled them into an update release">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/04/cisco-searched-for-ios-xr-bugs-and-found-so-many-it-rolled-them-into-an-update-release/5294410">Cisco searched for IOS XR bugs and found so many it rolled them into an update release</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-04T04:18:36+0200">04:18 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Three critical vulns demand your attention, one a make-me-root mess in Nexus 9000 Series Switches that you can mitigate, not fix</p>
+        </article>
+        
+        
+        
         
         <h2 class="day-heading" data-date="2026-09-03">Thursday, 3 September 2026</h2>
         
@@ -1089,6 +1338,28 @@ administrators has been released.</p>
         </article>
         
         
+        
+        
+        <h2 class="day-heading" data-date="2026-09-04">Friday, 4 September 2026</h2>
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="openai commits $1b in ai credits to frontline cyber defenders">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/04/openai-commits-1b-in-ai-credits-to-frontline-cyber-defenders/5294382">OpenAI commits $1B in AI credits to frontline cyber defenders</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-04T01:47:05+0200">01:47 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Daybreak program brings subsidized models, training, and support to under-resourced teams</p>
+        </article>
+        
+        
+        
+        
+        <h2 class="day-heading" data-date="2026-09-03">Thursday, 3 September 2026</h2>
         
         <article class="item"
                  data-source="Lobsters Security"
@@ -1118,6 +1389,22 @@ administrators has been released.</p>
             </p>
             
             <p class="item__summary">AWS announced today the public preview of Amazon Linux 2027.</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="prolific microsoft 0-day hunter drops crowdstrike falcon exploit poc">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/03/prolific-microsoft-0-day-hunter-drops-crowdstrike-falcon-exploit-poc/5294318">Prolific Microsoft 0-day hunter drops CrowdStrike Falcon exploit PoC</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-03T20:08:22+0200">20:08 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">A shared security &#39;Nightmare&#39;</p>
         </article>
         
         
@@ -1203,6 +1490,22 @@ administrators has been released.</p>
         
         
         <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="drowning in cves and thirsty for answers? try ctem">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/03/sponsored-drowning-in-cves-and-thirsty-for-answers-try-ctem/5293906">Drowning in CVEs and thirsty for answers? Try CTEM</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-03T17:00:00+0200">17:00 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">SPONSORED FEATURE: Boards want to know if they&#39;re less exposed than last quarter</p>
+        </article>
+        
+        
+        
+        <article class="item"
                  data-source="LWN"
                  data-tags="kernel linux"
                  data-title="[$] recent work in memory tiering">
@@ -1269,17 +1572,17 @@ which has different performance characteristics.</p>
         
         
         <article class="item"
-                 data-source="Phoronix"
-                 data-tags="hardware linux"
-                 data-title="nvidia acquiring hugging face for $12.93 billion">
-            <h3 class="item__title"><a href="https://www.phoronix.com/news/NVIDIA-Hugging-Face">NVIDIA Acquiring Hugging Face For $12.93 Billion</a></h3>
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="cybercrooks trawl fishbrain to net password hashes">
+            <h3 class="item__title"><a href="https://www.theregister.com/cyber-crime/2026/09/03/cybercrooks-trawl-fishbrain-to-net-password-hashes/5294158">Cybercrooks trawl Fishbrain to net password hashes</a></h3>
             <p class="item__meta">
-                <time datetime="2026-09-03T08:40:04-0400">08:40 UTC-04:00</time>
-                <span class="item__source">Phoronix</span>
-                <span class="item__tag" data-tag="hardware">hardware</span><span class="item__tag" data-tag="linux">linux</span>
+                <time datetime="2026-09-03T14:45:00+0200">14:45 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
             </p>
             
-            <p class="item__summary">Following rumors in recent days of NVIDIA courting Hugging Face, it&#39;s now been officially announced that NVIDIA is acquiring Hugging Face...</p>
+            <p class="item__summary">Armed with password hashes and salts, attackers could already be kraken those creds</p>
         </article>
         
         
@@ -1317,6 +1620,22 @@ which has different performance characteristics.</p>
         
         
         <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="uk&#39;s online safety act has made &#39;absolutely no difference,&#39; kids say">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/03/uks-online-safety-act-has-made-absolutely-no-difference-kids-say/5293893">UK&#39;s Online Safety Act has made &#39;absolutely no difference,&#39; kids say</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-03T11:14:00+0200">11:14 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Children&#39;s Commissioner also furious with Ofcom over a string of failures</p>
+        </article>
+        
+        
+        
+        <article class="item"
                  data-source="BBC Europe"
                  data-tags="world-news"
                  data-title="&#39;humble but ambitious&#39; - the return of fallen giants schalke">
@@ -1328,6 +1647,38 @@ which has different performance characteristics.</p>
             </p>
             
             <p class="item__summary">One of Germany&#39;s fallen giants, Schalke are back in the Bundesliga after a complicated few years.</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="terminated employee cost company hundreds of thousands of dollars because nobody revoked access">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/03/terminated-employee-cost-company-hundreds-of-thousands-of-dollars-because-nobody-revoked-access/5292763">Terminated employee cost company hundreds of thousands of dollars because nobody revoked access</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-03T09:00:00+0200">09:00 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">They had more access than the average Joe, and IT didn&#39;t track what needed to be cut off</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="to keep the ai hacking genie bottled up, try one-way networks">
+            <h3 class="item__title"><a href="https://www.theregister.com/ai-and-ml/2026/09/03/to-keep-the-ai-hacking-genie-bottled-up-try-one-way-networks/5294121">To keep the AI hacking genie bottled up, try one-way networks</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-03T08:33:00+0200">08:33 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Sandboxes, permissions, and VMs aren&#39;t enough to keep frontier models at bay</p>
         </article>
         
         
@@ -1408,6 +1759,38 @@ Briefs: Kernel infrastructure; Debian AI; Dolphin 26.08; Firefox</p>
         <h2 class="day-heading" data-date="2026-09-02">Wednesday, 2 September 2026</h2>
         
         <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="claude mythos only model to complete full cyber kill chain, experts say">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/02/claude-mythos-only-model-to-complete-full-cyber-kill-chain-experts-say/5294071">Claude Mythos only model to complete full cyber kill chain, experts say</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-02T23:31:31+0200">23:31 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Cyber Weapon Index finds AI attacks &#39;imminent&#39;</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="ai agents carried out every step of this ransomware attack – then left the victim an 80-page security audit">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/02/ai-agents-carried-out-every-step-of-this-ransomware-attack-then-left-the-victim-an-80-page-security-audit/5294009">AI agents carried out every step of this ransomware attack – then left the victim an 80-page security audit</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-02T20:28:00+0200">20:28 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Adding insult to injury</p>
+        </article>
+        
+        
+        
+        <article class="item"
                  data-source="LWN"
                  data-tags="kernel linux"
                  data-title="[$] securely suspending luks-encrypted disks">
@@ -1419,6 +1802,22 @@ Briefs: Kernel infrastructure; Debian AI; Dolphin 26.08; Firefox</p>
             </p>
             
             <p class="item__summary">When a laptop is asleep, its memory is not unreadable.</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="sonicwall&#39;s sma1000 boxes under active attack again">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/02/sonicwalls-sma1000-boxes-under-active-attack-again/5293969">SonicWall&#39;s SMA1000 boxes under active attack again</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-02T18:05:00+0200">18:05 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Miscreants use chained zero days to pwn boxen as third-party SOCs say further attacks &#39;almost certain&#39;</p>
         </article>
         
         
@@ -1477,6 +1876,22 @@ released.</p>
         
         
         <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="legacy lenovo login opens 5,000 dropbox accounts to attackers">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/02/legacy-lenovo-login-opens-5000-dropbox-accounts-to-attackers/5293924">Legacy Lenovo login opens 5,000 Dropbox accounts to attackers</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-02T16:25:00+0200">16:25 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Cloud storage biz severs old integration and urges victims to reset credentials</p>
+        </article>
+        
+        
+        
+        <article class="item"
                  data-source="LWN"
                  data-tags="kernel linux"
                  data-title="eight stable kernels for wednesday">
@@ -1526,6 +1941,22 @@ released.</p>
         
         
         
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="uk cyber bill targets ai users, not the vendors building it">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/02/uk-cyber-bill-targets-ai-users-not-the-vendors-building-it/5293738">UK cyber bill targets AI users, not the vendors building it</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-02T11:44:00+0200">11:44 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Ministers reject proposed red lines and emergency shutdown powers, pointing instead to voluntary safeguards</p>
+        </article>
+        
+        
+        
         
         <h2 class="day-heading" data-date="2026-09-01">Tuesday, 1 September 2026</h2>
         
@@ -1541,6 +1972,92 @@ released.</p>
             </p>
             
             <p class="item__summary">Comments</p>
+        </article>
+        
+        
+        
+        
+        <h2 class="day-heading" data-date="2026-09-02">Wednesday, 2 September 2026</h2>
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="cops, crowdstrike disrupt sality botnet by poisoning the network and diverting into sinkholes">
+            <h3 class="item__title"><a href="https://www.theregister.com/cyber-crime/2026/09/02/cops-crowdstrike-disrupt-sality-botnet-by-poisoning-the-network-and-diverting-into-sinkholes/5293795">Cops, CrowdStrike disrupt Sality botnet by poisoning the network and diverting into sinkholes</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-02T01:54:07+0200">01:54 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">23-year-old botnet down</p>
+        </article>
+        
+        
+        
+        
+        <h2 class="day-heading" data-date="2026-09-01">Tuesday, 1 September 2026</h2>
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="another artifactory cve under attack by ai agents or humans">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/01/another-artifactory-cve-under-attack-by-ai-agents-or-humans/5293769">Another Artifactory CVE under attack by AI agents or humans</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-01T23:07:13+0200">23:07 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Unauthenticated intruders can mint admin tokens, and exposed servers are already being hit</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="attacker stole a metr api key, used $600k worth of credits, and no one noticed for weeks">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/01/attacker-stole-a-metr-api-key-used-600k-worth-of-credits-and-no-one-noticed-for-weeks/5293730">Attacker stole a METR API key, used $600K worth of credits, and no one noticed for weeks</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-01T22:45:00+0200">22:45 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">The model provider gave METR the credits for free</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="firefox helps iphone users bypass ads on web sites while making money showing its own ads">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/01/firefox-helps-iphone-users-bypass-ads-on-web-sites-while-making-money-showing-its-own-ads/5293747">Firefox helps iPhone users bypass ads on web sites while making money showing its own ads</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-01T22:17:31+0200">22:17 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Baked-in Firefox ad blocking on iOS begins rolling out slowly today, and is off by default</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="anthropic pledges to try harder to keep models under control, asks partners to chip in">
+            <h3 class="item__title"><a href="https://www.theregister.com/ai-and-ml/2026/09/01/anthropic-pledges-to-try-harder-to-keep-models-under-control-asks-partners-to-chip-in/5293733">Anthropic pledges to try harder to keep models under control, asks partners to chip in</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-01T21:27:23+0200">21:27 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Security ..</p>
         </article>
         
         
@@ -1599,6 +2116,22 @@ code.</p>
         
         
         <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="33-hour bgp hijack of softaculous traffic prompts security scramble">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/09/01/33-hour-bgp-hijack-of-softaculous-traffic-prompts-security-scramble/5293608">33-hour BGP hijack of Softaculous traffic prompts security scramble</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-01T14:04:00+0200">14:04 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Hosting software vendor tells customers to reset credentials and hunt for malicious packages</p>
+        </article>
+        
+        
+        
+        <article class="item"
                  data-source="BBC Europe"
                  data-tags="world-news"
                  data-title="why did modi urge putin to end ukraine war - and will he listen?">
@@ -1614,8 +2147,72 @@ code.</p>
         
         
         
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="healthcare cyberattacks hit pacemakers and millions of patient records">
+            <h3 class="item__title"><a href="https://www.theregister.com/cyber-crime/2026/08/31/healthcare-cyberattacks-hit-pacemakers-and-millions-of-patient-records/5293537">Healthcare cyberattacks hit pacemakers and millions of patient records</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-09-01T00:10:38+0200">00:10 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">McKesson admits breach as ShinyHunters demands $55.2M</p>
+        </article>
+        
+        
+        
         
         <h2 class="day-heading" data-date="2026-08-31">Monday, 31 August 2026</h2>
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="openclaw 2.0 pours glitter on slow-burning security dumpster fire">
+            <h3 class="item__title"><a href="https://www.theregister.com/ai-and-ml/2026/08/31/openclaw-20-pours-glitter-on-slow-burning-security-dumpster-fire/5293492">OpenClaw 2.0 pours glitter on slow-burning security dumpster fire</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-08-31T21:13:31+0200">21:13 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Making installation easier and putting a new wrapper on the interface while leaving most of the security to users is a recipe for more trouble with the popular agent harness</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="attack hides malware in pngs and drops custom reverse tunnel on victims&#39; machines">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/08/31/attack-hides-malware-in-pngs-and-drops-custom-reverse-tunnel-on-victims-machines/5293480">Attack hides malware in PNGs and drops custom reverse tunnel on victims&#39; machines</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-08-31T20:26:03+0200">20:26 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Next-level ClickFix wave sets off multi-stage attack chain</p>
+        </article>
+        
+        
+        
+        <article class="item"
+                 data-source="The Register Security"
+                 data-tags="security"
+                 data-title="anthropic cracks down on hijacked user accounts mining ai tokens">
+            <h3 class="item__title"><a href="https://www.theregister.com/security/2026/08/31/anthropic-cracks-down-on-hijacked-user-accounts-mining-ai-tokens/5293461">Anthropic cracks down on hijacked user accounts mining AI tokens</a></h3>
+            <p class="item__meta">
+                <time datetime="2026-08-31T18:03:46+0200">18:03 UTC+02:00</time>
+                <span class="item__source">The Register Security</span>
+                <span class="item__tag" data-tag="security">security</span>
+            </p>
+            
+            <p class="item__summary">Commodity malware steals authenticated sessions, letting thieves freeload on victims&#39; paid usage</p>
+        </article>
+        
+        
         
         <article class="item"
                  data-source="BBC Europe"
@@ -1703,8 +2300,8 @@ code.</p>
     </main>
 
     <footer class="site-footer">
-        <p>5 sources &middot; 98 stories &middot; updated <time datetime="2026-09-06T21:11:04+0000">06 Sep 2026 21:11 UTC</time></p>
-        <p class="site-footer__sources">BBC Europe · DR.dk Indland · LWN · Lobsters Security · Phoronix</p>
+        <p>7 sources &middot; 134 stories &middot; updated <time datetime="2026-09-06T23:37:19+0000">06 Sep 2026 23:37 UTC</time></p>
+        <p class="site-footer__sources">BBC Europe · DR.dk Indland · Hacker News · LWN · Lobsters Security · Phoronix · The Register Security</p>
     </footer>
 
     <script src="app.js" defer></script>
