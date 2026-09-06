@@ -4,6 +4,16 @@ on:
   workflow_dispatch:
   schedule:
     - cron:  '0 * * * *' # runs every hour
+  push:
+    branches: [main]
+    # Regenerate curated_news/index.html straight after a render change is
+    # merged, so the committed artifact never drifts from its inputs.
+    paths:
+      - '.github/templates/news.html'
+      - 'scripts/rss_parser.py'
+      - 'scripts/feeds.json'
+      - 'curated_news/styles.css'
+      - 'curated_news/app.js'
 
 jobs:
   update-feed:
