@@ -3,38 +3,464 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0d1117">
     <title>Curated News</title>
-    <!-- Add Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
     <div class="container">
         <header class="site-header">
-            <h1>Curated News</h1>
-            <p>Aggregated headlines from a handful of RSS feeds, refreshed hourly.</p>
+            <div class="header-content">
+                <div class="header-badge">LIVE AGGREGATOR</div>
+                <h1>Curated News</h1>
+                <p class="subtitle">Hand-picked tech, security, and world headlines refreshed hourly.</p>
+                <div class="header-stats">
+                    <span id="headerArticleCount">{{ news_items|length }} articles</span>
+                    <span class="dot-separator">·</span>
+                    <span>Hourly updates</span>
+                    <span class="dot-separator">·</span>
+                    <a href="https://github.com/sturlabragason/sturlabragason.github.io" class="header-link" target="_blank" rel="noopener">GitHub ↗</a>
+                </div>
+            </div>
         </header>
-        <main>
+
+        <section class="controls-wrapper" id="controls">
+            <div class="search-row">
+                <div class="search-box">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="search" id="searchInput" placeholder="Search headlines, sources, or tags… (/)" aria-label="Search articles" autocomplete="off" spellcheck="false">
+                    <button type="button" id="clearSearchBtn" class="clear-btn" aria-label="Clear search" hidden>×</button>
+                </div>
+                <div class="view-toggles">
+                    <button type="button" id="viewCardsBtn" class="view-btn active" title="Detailed Card View" aria-label="Detailed Card View">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                        <span class="btn-text">Cards</span>
+                    </button>
+                    <button type="button" id="viewCompactBtn" class="view-btn" title="Compact List View" aria-label="Compact List View">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                        <span class="btn-text">Compact</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="filters-scroll-area" role="toolbar" aria-label="Filter by source or category">
+                <div class="filter-group" id="filterPills">
+                    <button type="button" class="filter-pill active" data-filter-type="all" data-filter-value="all">All <span class="pill-count" id="countAll">{{ news_items|length }}</span></button>
+                </div>
+            </div>
+
+            <div class="status-bar" id="statusBar">
+                <div class="status-info">
+                    Showing <strong id="visibleCount">{{ news_items|length }}</strong> of {{ news_items|length }} items
+                    <span id="activeFilterLabel" class="active-filter-label" hidden></span>
+                </div>
+                <button type="button" id="resetFiltersBtn" class="reset-link" hidden>Reset filter</button>
+            </div>
+        </section>
+
+        <main id="newsContainer" class="news-grid">
             {% for item in news_items %}
-            <article class="item">
-                <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
-                <p class="published">
-                    <time datetime="{{ item.published.strftime('%Y-%m-%dT%H:%M:%S%z') }}">{{ item.published.strftime('%a, %d %b %Y %H:%M %Z') }}</time>
-                </p>
-                <p class="meta">
-                    <span class="source">{{ item.source }}</span>
-                    {% for tag in item.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
-                </p>
+            <article class="item"
+                     data-source="{{ item.source|e }}"
+                     data-tags="{{ item.tags|join(",")|e }}"
+                     data-link="{{ item.link }}"
+                     data-title="{{ item.title|lower|e }}"
+                     data-summary="{{ item.summary|lower|e }}">
+                <div class="item-header">
+                    <button type="button" class="source-badge" data-click-filter="source:{{ item.source }}" title="Filter by source: {{ item.source }}">{{ item.source }}</button>
+                    {% if item.published %}
+                    <time class="published-time" datetime="{{ item.published.strftime("%Y-%m-%dT%H:%M:%S%z") }}" title="{{ item.published.strftime("%a, %d %b %Y %H:%M %Z") }}">
+                        {{ item.published.strftime("%d %b %H:%M") }}
+                    </time>
+                    {% endif %}
+                </div>
+
+                <h2 class="item-title">
+                    <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" class="item-link">
+                        <span>{{ item.title }}</span>
+                        <svg class="external-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                </h2>
+
                 {% if item.image %}
-                <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
+                <div class="item-image-wrapper">
+                    <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy" class="item-image">
+                </div>
                 {% endif %}
-                <p>{{ item.summary }}</p>
+
+                {% if item.summary %}
+                <p class="item-summary">{{ item.summary }}</p>
+                {% endif %}
+
+                {% if item.tags %}
+                <div class="item-tags">
+                    {% for tag in item.tags %}
+                    <button type="button" class="tag-pill" data-click-filter="tag:{{ tag }}" title="Filter by tag: {{ tag }}">#{{ tag }}</button>
+                    {% endfor %}
+                </div>
+                {% endif %}
             </article>
             {% endfor %}
         </main>
+
+        <div id="noResults" class="no-results" hidden>
+            <p>No articles matched your criteria.</p>
+            <button type="button" id="clearAllFiltersBtn" class="clear-filters-action">Clear search & filters</button>
+        </div>
+
+        <footer class="site-footer">
+            <p>Aggregated from {{ news_items|map(attribute="source")|unique|list|length }} curated feeds. Made with minimal static HTML & CSS.</p>
+            <button type="button" id="clearHistoryBtn" class="footer-link">Clear read status history</button>
+        </footer>
     </div>
+
+    <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top" hidden>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <script>
+    (function () {
+        "use strict";
+
+        const STORAGE_KEY_READ = "curated_news_read_urls";
+        const STORAGE_KEY_VIEW = "curated_news_view_mode";
+
+        // DOM Elements
+        const searchInput = document.getElementById("searchInput");
+        const clearSearchBtn = document.getElementById("clearSearchBtn");
+        const viewCardsBtn = document.getElementById("viewCardsBtn");
+        const viewCompactBtn = document.getElementById("viewCompactBtn");
+        const newsContainer = document.getElementById("newsContainer");
+        const filterPillsContainer = document.getElementById("filterPills");
+        const visibleCountEl = document.getElementById("visibleCount");
+        const activeFilterLabel = document.getElementById("activeFilterLabel");
+        const resetFiltersBtn = document.getElementById("resetFiltersBtn");
+        const noResults = document.getElementById("noResults");
+        const clearAllFiltersBtn = document.getElementById("clearAllFiltersBtn");
+        const backToTopBtn = document.getElementById("backToTop");
+        const clearHistoryBtn = document.getElementById("clearHistoryBtn");
+        const articles = Array.from(document.querySelectorAll(".item"));
+
+        // State
+        let activeFilter = { type: "all", value: "all" };
+        let searchQuery = "";
+        let readUrls = new Set();
+
+        try {
+            const stored = localStorage.getItem(STORAGE_KEY_READ);
+            if (stored) {
+                readUrls = new Set(JSON.parse(stored));
+            }
+        } catch (e) {
+            console.warn("Could not read localStorage:", e);
+        }
+
+        // Mark read items
+        function applyReadStates() {
+            articles.forEach(article => {
+                const link = article.getAttribute("data-link");
+                if (readUrls.has(link)) {
+                    article.classList.add("is-read");
+                } else {
+                    article.classList.remove("is-read");
+                }
+            });
+        }
+
+        // Relative time formatting
+        function updateRelativeTimes() {
+            const timeElements = document.querySelectorAll(".published-time");
+            const now = new Date();
+
+            timeElements.forEach(el => {
+                const dtStr = el.getAttribute("datetime");
+                if (!dtStr) return;
+                const dt = new Date(dtStr);
+                if (isNaN(dt.getTime())) return;
+
+                const diffSec = Math.floor((now - dt) / 1000);
+                if (diffSec < 60) {
+                    el.textContent = "just now";
+                } else if (diffSec < 3600) {
+                    const mins = Math.floor(diffSec / 60);
+                    el.textContent = mins + "m ago";
+                } else if (diffSec < 86400) {
+                    const hours = Math.floor(diffSec / 3600);
+                    el.textContent = hours + "h ago";
+                } else if (diffSec < 604800) {
+                    const days = Math.floor(diffSec / 86400);
+                    el.textContent = days === 1 ? "yesterday" : days + "d ago";
+                }
+            });
+        }
+
+        // Build filter pills dynamically from actual content
+        function setupFilterPills() {
+            const sourceCounts = {};
+            const tagCounts = {};
+
+            articles.forEach(article => {
+                const source = article.getAttribute("data-source");
+                if (source) {
+                    sourceCounts[source] = (sourceCounts[source] || 0) + 1;
+                }
+                const tagsStr = article.getAttribute("data-tags");
+                if (tagsStr) {
+                    tagsStr.split(",").forEach(t => {
+                        const tag = t.trim();
+                        if (tag) {
+                            tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+                        }
+                    });
+                }
+            });
+
+            const sortedSources = Object.entries(sourceCounts)
+                .sort((a, b) => b[1] - a[1]);
+
+            const sortedTags = Object.entries(tagCounts)
+                .sort((a, b) => b[1] - a[1]);
+
+            sortedSources.forEach(([src, count]) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "filter-pill";
+                btn.dataset.filterType = "source";
+                btn.dataset.filterValue = src;
+                btn.innerHTML = `${escapeHtml(src)} <span class="pill-count">${count}</span>`;
+                filterPillsContainer.appendChild(btn);
+            });
+
+            if (sortedSources.length > 0 && sortedTags.length > 0) {
+                const div = document.createElement("span");
+                div.className = "pill-separator";
+                div.textContent = "|";
+                filterPillsContainer.appendChild(div);
+            }
+
+            sortedTags.forEach(([tag, count]) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "filter-pill tag-filter-pill";
+                btn.dataset.filterType = "tag";
+                btn.dataset.filterValue = tag;
+                btn.innerHTML = `#${escapeHtml(tag)} <span class="pill-count">${count}</span>`;
+                filterPillsContainer.appendChild(btn);
+            });
+        }
+
+        function escapeHtml(str) {
+            var map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+            return str.replace(/[&<>"']/g, function (tag) { return map[tag] || tag; });
+        }
+
+        function applyFilters() {
+            const query = searchQuery.trim().toLowerCase();
+            let visible = 0;
+
+            articles.forEach(article => {
+                const source = article.getAttribute("data-source");
+                const tags = (article.getAttribute("data-tags") || "").split(",").map(s => s.trim());
+                const title = article.getAttribute("data-title") || "";
+                const summary = article.getAttribute("data-summary") || "";
+
+                let matchesFilter = true;
+                if (activeFilter.type === "source") {
+                    matchesFilter = (source === activeFilter.value);
+                } else if (activeFilter.type === "tag") {
+                    matchesFilter = tags.includes(activeFilter.value);
+                }
+
+                let matchesSearch = true;
+                if (query) {
+                    matchesSearch = title.includes(query) ||
+                                    summary.includes(query) ||
+                                    source.toLowerCase().includes(query) ||
+                                    tags.some(t => t.toLowerCase().includes(query));
+                }
+
+                if (matchesFilter && matchesSearch) {
+                    article.hidden = false;
+                    visible++;
+                } else {
+                    article.hidden = true;
+                }
+            });
+
+            visibleCountEl.textContent = visible;
+            noResults.hidden = (visible > 0);
+
+            const hasActiveFilter = (activeFilter.type !== "all") || Boolean(query);
+            resetFiltersBtn.hidden = !hasActiveFilter;
+
+            if (activeFilter.type !== "all") {
+                activeFilterLabel.hidden = false;
+                activeFilterLabel.textContent = `(${activeFilter.type === "tag" ? "#" : ""}${activeFilter.value})`;
+            } else {
+                activeFilterLabel.hidden = true;
+            }
+
+            const pills = filterPillsContainer.querySelectorAll(".filter-pill");
+            pills.forEach(pill => {
+                const pType = pill.dataset.filterType;
+                const pVal = pill.dataset.filterValue;
+                if (pType === activeFilter.type && pVal === activeFilter.value) {
+                    pill.classList.add("active");
+                } else {
+                    pill.classList.remove("active");
+                }
+            });
+        }
+
+        function setFilter(type, value) {
+            activeFilter = { type, value };
+            applyFilters();
+        }
+
+        filterPillsContainer.addEventListener("click", e => {
+            const btn = e.target.closest(".filter-pill");
+            if (!btn) return;
+            const type = btn.dataset.filterType;
+            const val = btn.dataset.filterValue;
+            setFilter(type, val);
+        });
+
+        document.addEventListener("click", e => {
+            const trigger = e.target.closest("[data-click-filter]");
+            if (!trigger) return;
+            e.preventDefault();
+            e.stopPropagation();
+
+            const raw = trigger.getAttribute("data-click-filter");
+            const colonIdx = raw.indexOf(":");
+            if (colonIdx === -1) return;
+
+            const type = raw.slice(0, colonIdx);
+            const val = raw.slice(colonIdx + 1);
+            setFilter(type, val);
+
+            document.getElementById("controls").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        searchInput.addEventListener("input", e => {
+            searchQuery = e.target.value;
+            clearSearchBtn.hidden = !Boolean(searchQuery);
+            applyFilters();
+        });
+
+        clearSearchBtn.addEventListener("click", () => {
+            searchInput.value = "";
+            searchQuery = "";
+            clearSearchBtn.hidden = true;
+            searchInput.focus();
+            applyFilters();
+        });
+
+        resetFiltersBtn.addEventListener("click", () => {
+            activeFilter = { type: "all", value: "all" };
+            searchQuery = "";
+            searchInput.value = "";
+            clearSearchBtn.hidden = true;
+            applyFilters();
+        });
+
+        clearAllFiltersBtn.addEventListener("click", () => {
+            activeFilter = { type: "all", value: "all" };
+            searchQuery = "";
+            searchInput.value = "";
+            clearSearchBtn.hidden = true;
+            applyFilters();
+        });
+
+        document.addEventListener("keydown", e => {
+            if (e.key === "/" && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+                searchInput.select();
+            } else if (e.key === "Escape" && document.activeElement === searchInput) {
+                searchInput.value = "";
+                searchQuery = "";
+                clearSearchBtn.hidden = true;
+                searchInput.blur();
+                applyFilters();
+            }
+        });
+
+        document.addEventListener("click", e => {
+            const link = e.target.closest(".item-link");
+            if (!link) return;
+
+            const href = link.getAttribute("href");
+            if (!href) return;
+
+            readUrls.add(href);
+            try {
+                localStorage.setItem(STORAGE_KEY_READ, JSON.stringify(Array.from(readUrls)));
+            } catch (err) {
+                console.warn(err);
+            }
+
+            const article = link.closest(".item");
+            if (article) {
+                article.classList.add("is-read");
+            }
+        });
+
+        clearHistoryBtn.addEventListener("click", () => {
+            if (confirm("Clear read article history?")) {
+                readUrls.clear();
+                try {
+                    localStorage.removeItem(STORAGE_KEY_READ);
+                } catch (e) {}
+                applyReadStates();
+            }
+        });
+
+        function setViewMode(mode) {
+            if (mode === "compact") {
+                newsContainer.classList.add("compact-view");
+                viewCompactBtn.classList.add("active");
+                viewCardsBtn.classList.remove("active");
+            } else {
+                newsContainer.classList.remove("compact-view");
+                viewCardsBtn.classList.add("active");
+                viewCompactBtn.classList.remove("active");
+            }
+            try {
+                localStorage.setItem(STORAGE_KEY_VIEW, mode);
+            } catch (e) {}
+        }
+
+        viewCardsBtn.addEventListener("click", () => setViewMode("cards"));
+        viewCompactBtn.addEventListener("click", () => setViewMode("compact"));
+
+        const savedView = localStorage.getItem(STORAGE_KEY_VIEW) || "cards";
+        setViewMode(savedView);
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 320) {
+                backToTopBtn.hidden = false;
+            } else {
+                backToTopBtn.hidden = true;
+            }
+        }, { passive: true });
+
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        setupFilterPills();
+        applyReadStates();
+        updateRelativeTimes();
+        setInterval(updateRelativeTimes, 60000);
+    })();
+    </script>
 </body>
 
 </html>
