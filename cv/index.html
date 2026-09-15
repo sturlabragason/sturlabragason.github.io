@@ -324,8 +324,8 @@ permalink: /cv/
 
   /* ── Print — clean PDF export ──────────────────────────────────────────── */
   @media print {
-    @page { margin: 18mm 16mm; }
-    :root { --rail-w: 110px; }
+    @page { margin: 14mm 16mm; }
+    :root { --rail-w: 110px; --gap-sect: 0.8rem; --gap-row: 0.7rem; }
     body {
       background: #fff;
       color: #000;
@@ -333,16 +333,21 @@ permalink: /cv/
     }
     .no-print, .top { display: none !important; }
     .page { padding: 0; max-width: 100%; }
-    .hero { margin-bottom: 1.5rem; }
-    .hero h1 { font-size: 36pt; }
-    .lead, .quote { margin-bottom: 1.5rem; }
-    .sect-head { margin-bottom: 0.9rem; padding-bottom: 0.5rem; }
-    section + section { margin-top: 1.5rem; }
+    .hero { margin-bottom: 0.6rem; padding-bottom: 0.6rem; gap: 0.6rem; }
+    .hero h1 { font-size: 24pt; }
+    .lead, .quote { margin-bottom: 0.7rem; }
+    /* wider measures — fewer wrapped lines on paper than on screen */
+    .hero .role { max-width: 62ch; font-size: 11pt; }
+    .lead { max-width: 74ch; font-size: 13pt; }
+    .quote { max-width: 74ch; }
+    .sect-head { margin-bottom: 0.7rem; padding-bottom: 0.4rem; }
+    section + section { margin-top: 1rem; }
     .role-row { gap: 1rem; }
-    .role-row + .role-row { margin-top: 0.6rem; }
+    .role-row + .role-row { margin-top: 0.5rem; }
     .role-blurb { font-size: 10pt; }
+    .approach-body p + p { margin-top: 0.5em; }
     a { color: #000 !important; text-decoration: none; }
-    .foot { margin-top: 1.5rem; padding-top: 0.6rem; }
+    .foot { margin-top: 0.9rem; padding-top: 0.4rem; }
     .quote { border-left-color: #000; }
     .role-title .co, .hero h1 em { color: #000 !important; }
   }
@@ -399,7 +404,7 @@ permalink: /cv/
         <div class="years">2025<span class="sep"></span>Now</div>
         <div class="role-body">
           <div class="role-title">Principal Platform &amp; AI Engineer<span class="at">at</span><span class="co">Aeven</span></div>
-          <p class="role-blurb">Designing Aeven's new hybrid-cloud platform with a team of engineers.</p>
+          <p class="role-blurb">Designed and built Aeven's polycloud platform, leading ~35 engineers. It runs all Aeven customers for the next decade.</p>
         </div>
       </article>
 
