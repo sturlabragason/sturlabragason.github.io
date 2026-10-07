@@ -13,7 +13,7 @@ permalink: /cv/
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -25,13 +25,11 @@ permalink: /cv/
     --ink-3:    #6b6657;
     --rule:     rgba(28, 26, 22, 0.14);
 
-    /* Accent (ink) */
-    --accent:   #1c1a16;
-    --accent-2: rgba(28, 26, 22, 0.12);
+    /* Accent (rust, 5.3:1 on paper) */
+    --accent:   #9a4a2b;
 
     /* Type */
     --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-    --sans:  "Geist", ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
     --mono:  "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
 
     /* Density */
@@ -41,6 +39,7 @@ permalink: /cv/
     /* Layout */
     --col-w: 720px;
     --rail-w: 130px;
+    --rail-gap: 1.5rem;
   }
 
   /* ── Reset ─────────────────────────────────────────────────────────────── */
@@ -49,10 +48,9 @@ permalink: /cv/
   body {
     background: var(--paper);
     color: var(--ink);
-    font-family: var(--sans);
+    font-family: var(--serif);
     font-size: 16.5px;
     line-height: 1.55;
-    font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -77,7 +75,7 @@ permalink: /cv/
     margin-bottom: clamp(2rem, 5vw, 3.5rem);
     border-bottom: 1px solid var(--rule);
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11.5px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--ink-3);
@@ -110,12 +108,12 @@ permalink: /cv/
     color: var(--accent);
   }
   .hero .role {
-    font-family: var(--sans);
-    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    font-family: var(--serif);
+    font-size: clamp(1.15rem, 1.8vw, 1.35rem);
     font-weight: 500;
+    line-height: 1.4;
     color: var(--ink-2);
-    letter-spacing: -0.005em;
-    max-width: 32ch;
+    max-width: 34ch;
   }
   .hero .meta {
     display: flex;
@@ -123,8 +121,8 @@ permalink: /cv/
     gap: 0 1.5rem;
     margin-top: 0.5rem;
     font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.03em;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--ink-3);
   }
@@ -153,9 +151,9 @@ permalink: /cv/
 
   /* ── Quote ─────────────────────────────────────────────────────────────── */
   .quote {
-    border-left: 2px solid var(--accent);
+    border-left: 1px solid var(--ink-3);
     padding: 0.25rem 0 0.25rem 1.25rem;
-    margin: 0 0 var(--gap-sect);
+    margin: 0 0 1.75rem;
     max-width: 42ch;
   }
   .quote p {
@@ -170,8 +168,8 @@ permalink: /cv/
     display: block;
     margin-top: 0.5rem;
     font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     font-style: normal;
     color: var(--ink-3);
@@ -182,15 +180,16 @@ permalink: /cv/
     display: grid;
     grid-template-columns: var(--rail-w) 1fr;
     align-items: baseline;
-    gap: 1.5rem;
+    gap: var(--rail-gap);
     margin-bottom: 1.75rem;
     padding-bottom: 0.9rem;
     border-bottom: 1px solid var(--rule);
   }
   .sect-num {
     font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.08em;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     color: var(--ink-3);
   }
   .sect-title {
@@ -207,7 +206,7 @@ permalink: /cv/
   .role-row {
     display: grid;
     grid-template-columns: var(--rail-w) 1fr;
-    gap: 1.5rem;
+    gap: var(--rail-gap);
     align-items: baseline;
   }
   .role-row .years {
@@ -216,7 +215,6 @@ permalink: /cv/
     letter-spacing: 0.02em;
     color: var(--ink-3);
     line-height: 1.5;
-    padding-top: 0.18rem;
   }
   .role-row .years .sep {
     display: inline-block;
@@ -227,16 +225,18 @@ permalink: /cv/
   }
   .role-body { display: flex; flex-direction: column; gap: 0.4rem; }
   .role-title {
-    font-family: var(--sans);
+    font-family: var(--serif);
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.12rem;
+    line-height: 1.35;
     color: var(--ink);
-    letter-spacing: -0.005em;
+    text-wrap: balance;
   }
   .role-title .at {
     color: var(--ink-3);
-    font-weight: 500;
-    margin: 0 0.4em;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0 0.35em;
   }
   .role-title .co {
     color: var(--accent);
@@ -254,7 +254,7 @@ permalink: /cv/
 
   /* ── Approach ──────────────────────────────────────────────────────────── */
   .approach-body {
-    padding-left: calc(var(--rail-w) + 1.5rem);
+    padding-left: calc(var(--rail-w) + var(--rail-gap));
     max-width: calc(var(--col-w) - 4rem);
   }
   .approach-body p {
@@ -274,10 +274,10 @@ permalink: /cv/
     border-top: 1px solid var(--rule);
     display: grid;
     grid-template-columns: var(--rail-w) 1fr auto;
-    gap: 1.5rem;
+    gap: var(--rail-gap);
     align-items: baseline;
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11.5px;
     letter-spacing: 0.03em;
     color: var(--ink-3);
     text-transform: uppercase;
@@ -294,8 +294,8 @@ permalink: /cv/
     border: 0;
     border-radius: 999px;
     text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 0.05em;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
   }
   .foot .pdf:hover { background: var(--accent); color: var(--paper); border: 0; }
   .foot .pdf svg { width: 11px; height: 11px; }
@@ -315,7 +315,8 @@ permalink: /cv/
 
   /* ── Small screens ─────────────────────────────────────────────────────── */
   @media (max-width: 620px) {
-    :root { --rail-w: 78px; }
+    .role-row, .sect-head { grid-template-columns: 1fr; gap: 0.25rem; }
+    .sect-num { display: none; }
     .approach-body { padding-left: 0; }
     .foot { grid-template-columns: 1fr; }
     .foot .pdf { justify-self: start; }
@@ -325,7 +326,7 @@ permalink: /cv/
   /* ── Print — clean PDF export ──────────────────────────────────────────── */
   @media print {
     @page { margin: 14mm 16mm; }
-    :root { --rail-w: 110px; --gap-sect: 0.8rem; --gap-row: 0.7rem; }
+    :root { --rail-w: 110px; --rail-gap: 1rem; --gap-sect: 1.5rem; --gap-row: 0.9rem; }
     body {
       background: #fff;
       color: #000;
@@ -342,9 +343,11 @@ permalink: /cv/
     .quote { max-width: 74ch; }
     .sect-head { margin-bottom: 0.7rem; padding-bottom: 0.4rem; }
     section + section { margin-top: 1rem; }
-    .role-row { gap: 1rem; }
+    .sect-title { font-size: 14pt; }
+    .role-title { font-size: 11.5pt; }
     .role-row + .role-row { margin-top: 0.5rem; }
     .role-blurb { font-size: 10pt; }
+    .approach-body p { font-size: 10.5pt; line-height: 1.5; }
     .approach-body p + p { margin-top: 0.5em; }
     a { color: #000 !important; text-decoration: none; }
     .foot { margin-top: 0.9rem; padding-top: 0.4rem; }
@@ -382,7 +385,7 @@ permalink: /cv/
 
   <!-- Quote -->
   <blockquote class="quote">
-    <p>"I'm Winston Wolfe. I solve problems."</p>
+    <p>&ldquo;I&rsquo;m Winston Wolfe. I solve problems.&rdquo;</p>
     <cite>Winston Wolfe &mdash; Pulp Fiction</cite>
   </blockquote>
 
@@ -394,7 +397,7 @@ permalink: /cv/
   <!-- Experience -->
   <section>
     <div class="sect-head">
-      <div class="sect-num">01 &nbsp;/&nbsp; Experience</div>
+      <div class="sect-num">Experience</div>
       <h2 class="sect-title">Selected positions</h2>
     </div>
 
@@ -438,7 +441,7 @@ permalink: /cv/
   <!-- Approach -->
   <section style="margin-top: var(--gap-sect);">
     <div class="sect-head">
-      <div class="sect-num">02 &nbsp;/&nbsp; Approach</div>
+      <div class="sect-num">Approach</div>
       <h2 class="sect-title">How I work</h2>
     </div>
     <div class="approach-body">
