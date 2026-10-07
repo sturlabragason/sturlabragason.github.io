@@ -10,10 +10,19 @@ permalink: /cv/
 <title>CV | Sturla Bragason</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Sturla Bragason, Principal Platform &amp; AI Engineer. Methodical problem solver, hands-on architect.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://sturlabragason.github.io/cv/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Sturla Bragason, Principal Platform &amp; AI Engineer">
+<meta property="og:description" content="Hands-on architect and methodical problem-solver. CNCF, polycloud, Kubernetes. Based near Aarhus.">
+<meta property="og:url" content="https://sturlabragason.github.io/cv/">
+<meta name="twitter:card" content="summary">
+<!-- Self-hosted fonts (SIL OFL, licences in /assets/fonts/): no third-party requests. -->
+<link rel="preload" href="/assets/fonts/space-mono-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face { font-family: "Space Mono"; font-weight: 400; font-display: swap; src: url("/assets/fonts/space-mono-400-latin.woff2") format("woff2"); }
+  @font-face { font-family: "Space Mono"; font-weight: 700; font-display: swap; src: url("/assets/fonts/space-mono-700-latin.woff2") format("woff2"); }
+  @font-face { font-family: "JetBrains Mono"; font-weight: 400 500; font-display: swap; src: url("/assets/fonts/jetbrains-mono-latin.woff2") format("woff2"); }
   /* Mono: dark, compact, monochrome. */
   :root {
     --surface: #0e0e0f;
@@ -43,14 +52,14 @@ permalink: /cv/
 
   nav { display: flex; justify-content: space-between; align-items: center; height: 48px; border-bottom: 1px solid var(--line); font-size: 13px; }
   nav .home { text-decoration: none; font-family: var(--display); font-weight: 700; }
-  nav .home::before { content: "~/"; color: var(--accent); }
+  nav .home::before { content: "~/"; content: "~/" / ""; color: var(--accent); }
   nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
   nav ul a { text-decoration: none; color: var(--muted); }
   nav ul a[aria-current] { color: var(--text); text-decoration: underline; text-decoration-color: var(--accent); }
 
   header { padding: 72px 0 40px; }
   h1 { font-family: var(--display); font-weight: 700; font-size: clamp(2.5rem, 7.5vw, 4.75rem); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 20px; }
-  h1::after { content: "_"; color: var(--accent); animation: blink 1.1s steps(1) infinite; }
+  h1::after { content: "_"; content: "_" / ""; color: var(--accent); animation: blink 1.1s steps(1) 4; }
   @keyframes blink { 50% { opacity: 0; } }
   @media (prefers-reduced-motion: reduce) { h1::after { animation: none; } }
   .role { font-size: 17px; max-width: 46ch; margin: 0 0 24px; }
@@ -61,11 +70,11 @@ permalink: /cv/
   .intro { border: 1px solid var(--line); background: var(--raised); padding: 24px; margin-bottom: 56px; }
   .lead { font-family: var(--display); font-size: clamp(1.15rem, 2.2vw, 1.5rem); line-height: 1.4; margin: 0 0 16px; max-width: 34ch; }
   .intro blockquote { margin: 0; color: var(--muted); font-size: 13px; }
-  .intro blockquote::before { content: "# "; color: var(--accent); }
+  .intro blockquote::before { content: "# "; content: "# " / ""; color: var(--accent); }
 
   section { margin-bottom: 56px; }
   h2 { font-family: var(--display); font-size: 15px; font-weight: 700; margin: 0 0 20px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
-  h2::before { content: "## "; color: var(--accent); }
+  h2::before { content: "## "; content: "## " / ""; color: var(--accent); }
   .jobs { list-style: none; margin: 0; padding: 0; }
   .job { display: grid; grid-template-columns: 120px 1fr; gap: 20px; padding: 14px 0; }
   .job + .job { border-top: 1px dashed var(--line); }
@@ -125,6 +134,7 @@ permalink: /cv/
     </ul>
   </nav>
 
+  <main>
   <header>
     <h1>Sturla Bragason</h1>
     <p class="role">Principal Platform &amp; AI Engineer. Hands-on architect, methodical problem-solver, at home in code and in front of a room.</p>
@@ -179,6 +189,8 @@ permalink: /cv/
     <p>I&rsquo;m a platform engineer rooted in CNCF and open-source practice, vendor-neutral by default. I keep platforms lean and uncluttered, so the whole team can manage them.</p>
     <p>Complex backlogs become small, ordered tasks. Each one leaves something concrete behind, so the team can move without me in the room.</p>
   </section>
+
+  </main>
 
   <footer>
     <a href="mailto:sturla.bragason@proton.me">sturla.bragason@proton.me</a>
