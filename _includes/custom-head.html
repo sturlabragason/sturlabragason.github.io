@@ -1,11 +1,11 @@
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#fbf6ee" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#16130f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F3EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14201C" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
 
 {%- comment -%}
   GitHub Pages runs a fixed plugin set that does not include jekyll-spaceship, so
@@ -29,10 +29,10 @@
       startOnLoad: true,
       securityLevel: 'strict',
       theme: 'base',
-      fontFamily: '"Geist", system-ui, sans-serif',
+      fontFamily: '"Public Sans", system-ui, sans-serif',
       themeVariables: dark
-        ? { background: '#1d1915', primaryColor: '#2a231c', primaryTextColor: '#f0e8dc', primaryBorderColor: '#e0946a', lineColor: '#9a8d81', secondaryColor: '#332c25', tertiaryColor: '#16130f', edgeLabelBackground: '#1d1915' }
-        : { background: '#fffdf8', primaryColor: '#f1e3cf', primaryTextColor: '#201914', primaryBorderColor: '#9b5b32', lineColor: '#7a6d63', secondaryColor: '#fbf6ee', tertiaryColor: '#fffdf8', edgeLabelBackground: '#fffdf8' },
+        ? { background: '#1B2A25', primaryColor: '#1E332C', primaryTextColor: '#EDEAE2', primaryBorderColor: '#4FBFA5', lineColor: '#9FA19B', secondaryColor: '#14201C', tertiaryColor: '#1B2A25', edgeLabelBackground: '#1B2A25' }
+        : { background: '#FFFFFF', primaryColor: '#E4EFEC', primaryTextColor: '#17211F', primaryBorderColor: '#0B6B5C', lineColor: '#676D6A', secondaryColor: '#F4F3EE', tertiaryColor: '#FFFFFF', edgeLabelBackground: '#FFFFFF' },
     });
     await mermaid.run({ querySelector: '.mermaid' });
   }

@@ -1,73 +1,71 @@
-/* Curated News — reading-focused feed UI
-   Palette: warm-tinted charcoal, single amber accent, automatic light mode. */
+/* Curated News — house style.
+   Source: ../claude-for-small-business/shared/artifact-style.md. Palette and type
+   are the house tokens verbatim; the names the rules below use (--bg, --text…)
+   are aliases onto them. Bare :root is light, the media query is guarded by
+   :not([data-theme="light"]), and [data-theme="dark"] repeats the dark values so
+   the theme toggle wins in either direction. */
 
 :root {
-    color-scheme: dark light;
+    color-scheme: light dark;
 
-    --bg: #16150f;
-    --bg-raised: #1e1c15;
-    --bg-sunken: #100f0b;
-    --text: #f2ede1;
-    --text-dim: #a8a293;
-    --text-faint: #6f6a5c;
-    --border: #322f24;
-    --border-strong: #45412f;
-    --accent: #e0a34a;
-    --accent-soft: rgba(224, 163, 74, 0.14);
-    --focus: #f0c47a;
-    --radius-lg: 14px;
-    --radius-sm: 8px;
+    --ink: #17211F;
+    --paper: #F4F3EE;
+    --paper-raised: #FFFFFF;
+    --line: #DEDCD1;
+    --accent: #0B6B5C;
+    --accent-soft: #E4EFEC;
+    --amber: #B9781F;
+    --amber-soft: #F6EBDA;
+
+    --font-display: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+
+    --bg: var(--paper);
+    --bg-raised: var(--paper-raised);
+    --bg-sunken: var(--paper);
+    --text: var(--ink);
+    --text-dim: color-mix(in srgb, var(--ink) 72%, var(--paper));
+    --text-faint: color-mix(in srgb, var(--ink) 58%, var(--paper));
+    --border: var(--line);
+    --border-strong: color-mix(in srgb, var(--line) 70%, var(--ink));
+    --focus: var(--accent);
+    --radius-lg: 6px;
+    --radius-sm: 3px;
     --measure: 68ch;
-    --page: 44rem;
+    --page: 52.5rem;
 
-    --serif: "Newsreader", Georgia, "Times New Roman", serif;
-    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --serif: var(--font-display);
+    --sans: var(--font-body);
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg: #faf7ef;
-        --bg-raised: #ffffff;
-        --bg-sunken: #f1ece0;
-        --text: #23201a;
-        --text-dim: #5f5a4d;
-        --text-faint: #8b8474;
-        --border: #e4ddcb;
-        --border-strong: #d3caae;
-        --accent: #a86a1a;
-        --accent-soft: rgba(168, 106, 26, 0.12);
-        --focus: #a86a1a;
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ink: #EDEAE2;
+        --paper: #14201C;
+        --paper-raised: #1B2A25;
+        --line: #2C3A34;
+        --accent: #4FBFA5;
+        --accent-soft: #1E332C;
+        --amber: #E0A559;
+        --amber-soft: #362A16;
     }
 }
 
 :root[data-theme="dark"] {
     color-scheme: dark;
-    --bg: #16150f;
-    --bg-raised: #1e1c15;
-    --bg-sunken: #100f0b;
-    --text: #f2ede1;
-    --text-dim: #a8a293;
-    --text-faint: #6f6a5c;
-    --border: #322f24;
-    --border-strong: #45412f;
-    --accent: #e0a34a;
-    --accent-soft: rgba(224, 163, 74, 0.14);
-    --focus: #f0c47a;
+    --ink: #EDEAE2;
+    --paper: #14201C;
+    --paper-raised: #1B2A25;
+    --line: #2C3A34;
+    --accent: #4FBFA5;
+    --accent-soft: #1E332C;
+    --amber: #E0A559;
+    --amber-soft: #362A16;
 }
 
 :root[data-theme="light"] {
     color-scheme: light;
-    --bg: #faf7ef;
-    --bg-raised: #ffffff;
-    --bg-sunken: #f1ece0;
-    --text: #23201a;
-    --text-dim: #5f5a4d;
-    --text-faint: #8b8474;
-    --border: #e4ddcb;
-    --border-strong: #d3caae;
-    --accent: #a86a1a;
-    --accent-soft: rgba(168, 106, 26, 0.12);
-    --focus: #a86a1a;
 }
 
 *,
@@ -116,7 +114,7 @@ a {
     top: -48px;
     padding: 8px 14px;
     background: var(--accent);
-    color: #16150f;
+    color: var(--paper-raised);
     border-radius: var(--radius-sm);
     font-weight: 600;
     text-decoration: none;
@@ -131,7 +129,7 @@ a {
 :where(a, button, input, select):focus-visible {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 }
 
 /* Header ------------------------------------------------------------------ */
@@ -171,9 +169,10 @@ a {
     background: var(--bg-raised);
     color: var(--text-dim);
     border: 1px solid var(--border-strong);
-    border-radius: 999px;
-    font: inherit;
-    font-size: 0.8rem;
+    border-radius: var(--radius-sm);
+    font: 600 0.75rem var(--sans);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     cursor: pointer;
     transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
 }
@@ -257,10 +256,10 @@ html.no-js .result-count {
     background: transparent;
     color: var(--text-dim);
     border: 1px solid var(--border-strong);
-    border-radius: 999px;
-    font: inherit;
-    font-size: 0.78rem;
-    letter-spacing: 0.01em;
+    border-radius: var(--radius-sm);
+    font: 600 0.75rem var(--sans);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     cursor: pointer;
     transition: color 140ms ease, background 140ms ease, border-color 140ms ease;
 }
@@ -285,7 +284,8 @@ html.no-js .result-count {
 .result-count {
     margin: 1rem 0 0;
     color: var(--text-faint);
-    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     font-variant-numeric: tabular-nums;
 }
 
@@ -313,8 +313,8 @@ html.no-js .result-count {
 .item__title {
     margin: 0;
     font-family: var(--serif);
-    font-weight: 500;
-    font-size: 1.3rem;
+    font-weight: 600;
+    font-size: 1.375rem;
     line-height: 1.28;
     letter-spacing: -0.01em;
     text-wrap: pretty;
@@ -341,7 +341,8 @@ html.no-js .result-count {
     align-items: center;
     gap: 0.5rem;
     margin: 0.55rem 0 0;
-    font-size: 0.76rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     color: var(--text-faint);
     font-variant-numeric: tabular-nums;
 }
@@ -354,15 +355,19 @@ html.no-js .result-count {
 
 .item__tag {
     padding: 0.05rem 0.45rem;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    color: var(--text-dim);
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: var(--accent-soft);
+    color: var(--accent);
+    font: 600 0.7rem var(--sans);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     cursor: pointer;
 }
 
 .item__tag:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    background: var(--accent);
+    color: var(--paper-raised);
 }
 
 .item__image {
