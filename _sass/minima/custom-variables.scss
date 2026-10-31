@@ -1,23 +1,22 @@
-// House style — variable overrides for minima (see custom-styles.scss).
+// Brand v1.1 — variable overrides for minima (see custom-styles.scss).
 //
 // minima/initialize.scss defines its variables with `!default` and *then* imports
 // this file, so a plain assignment here wins over the theme default while still
 // being seen by _base.scss and _layout.scss further down the import chain.
 
-$base-font-family: "Public Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-$code-font-family: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+$base-font-family: "IBM Plex Sans", Arial, "Helvetica Neue", system-ui, sans-serif;
+$code-font-family: "IBM Plex Mono", Consolas, "Courier New", ui-monospace, monospace;
 
-// --text-base from the house scale.
-$base-font-size:   16px;
-$small-font-size:  14px;
-$base-line-height: 1.65;
+// Body 18 on web, 1.55 leading.
+$base-font-size:   18px;
+$small-font-size:  15px;
+$base-line-height: 1.55;
 
 $spacing-unit:     32px;
 
-// The shell. The prose column inside it is narrower still (see --measure).
-$content-width:    840px;
+$content-width:    1200px;
 
-$on-palm:          600px;
-$on-laptop:        860px;
+$on-palm:          760px;
+$on-laptop:        1024px;
 $on-medium:        $on-palm;
 $on-large:         $on-laptop;

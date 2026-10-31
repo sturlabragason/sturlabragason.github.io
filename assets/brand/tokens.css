@@ -1,0 +1,75 @@
+/* Sturla Bragason design tokens, v1.1 "Untangle" (2026-10-31).
+   Spec: business/brand/README.md (people) and DESIGN.md (agents). Fonts are self-hosted (GDPR):
+   copy fonts/ next to this file or adjust the url() paths. */
+@font-face{font-family:"IBM Plex Sans";font-weight:300;font-display:swap;src:url("fonts/IBMPlexSans-Light.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-weight:400;font-display:swap;src:url("fonts/IBMPlexSans-Regular.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-weight:500;font-display:swap;src:url("fonts/IBMPlexSans-Medium.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-weight:600;font-display:swap;src:url("fonts/IBMPlexSans-SemiBold.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;font-display:swap;src:url("fonts/IBMPlexMono-Regular.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;font-display:swap;src:url("fonts/IBMPlexMono-Medium.woff2") format("woff2")}
+
+:root {
+  /* Color. Quiet neutrals; Lane blue is the one accent, at most one action or one line per view. */
+  --color-ink: #161616;        /* text, rules. 18.1:1 on paper */
+  --color-logo: #000000;       /* the logo only, pure K in print */
+  --color-paper: #ffffff;
+  --color-grey: #525252;       /* secondary text. 7.81:1 on paper, 7.1:1 on fill */
+  --color-body-strong: #393939;/* long body copy on paper, 11.55:1 */
+  --color-fill: #f4f4f4;       /* bands, figure ground */
+  --color-hair: #e0e0e0;       /* 1 px rules only, never text */
+  --color-lane: #0033cc;       /* accent. 8.95:1 on paper, white on it 8.95:1 */
+  --color-lane-hover: #002699; /* white on it 12.09:1 */
+  --color-lane-tint: #d0dbff;  /* text selection only */
+  --color-charcoal: #161616;   /* footer, dark covers */
+  --color-grey-on-ink: #a8a8a8;/* 7.61:1 on charcoal */
+  --color-lane-on-ink: #8aa4ff;/* accent on charcoal, 7.61:1 */
+  --color-signal: #c40000;     /* errors and overdue only. 6.27:1 on paper */
+
+  /* Type */
+  --font-sans: "IBM Plex Sans", Arial, "Helvetica Neue", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", Consolas, "Courier New", ui-monospace, monospace;
+  --weight-light: 300;   /* display and headings */
+  --weight-regular: 400; /* body */
+  --weight-medium: 500;  /* h3, labels, table heads */
+  --weight-semibold: 600;/* strong in body, sparingly */
+
+  --text-display: clamp(2.875rem, 5.3vw, 4.75rem); /* 46 → 76 */
+  --text-h2: clamp(2rem, 3vw, 2.75rem);            /* 32 → 44 */
+  --text-h3: 1.625rem;  /* 26 */
+  --text-lede: 1.25rem; /* 20 */
+  --text-body: 1.125rem;/* 18 web; 16 in documents */
+  --text-sm: 0.9375rem; /* 15 */
+  --text-xs: 0.8125rem; /* 13 captions */
+  --leading-display: 1.05;
+  --leading-heading: 1.15;
+  --leading-body: 1.55;
+  --tracking-display: -0.015em;
+  --measure: 68ch;
+
+  /* Space: 8 px grid */
+  --space-1: 0.25rem; /* 4 */
+  --space-2: 0.5rem;  /* 8 */
+  --space-3: 1rem;    /* 16 */
+  --space-4: 1.5rem;  /* 24 */
+  --space-5: 2rem;    /* 32 */
+  --space-6: 3rem;    /* 48 */
+  --space-7: 4rem;    /* 64 */
+  --space-8: 6rem;    /* 96 */
+  --space-9: 7rem;    /* 112, between page sections */
+  --gutter: 2.5rem;   /* 40 page side padding desktop; 20 px under 760 px */
+
+  /* Lines and shape: square, flat */
+  --rule-hair: 1px solid var(--color-hair);
+  --rule-section: 1px solid var(--color-ink);
+  --rule-principle: 2px solid var(--color-ink);
+  --radius: 0;
+  --focus: 2px solid var(--color-lane);
+  --focus-offset: 3px;
+
+  /* Motif (build_motif.py) */
+  --motif-stroke: 1.4px;
+  --motif-accent-stroke: 2.24px;
+}
+
+::selection { background: var(--color-lane-tint); }
+:focus-visible { outline: var(--focus); outline-offset: var(--focus-offset); }

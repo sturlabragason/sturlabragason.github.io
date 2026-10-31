@@ -15,10 +15,9 @@ plugins:
 #   - jekyll-toc
 
 minima:
-  # `auto` emits minima's colours as CSS custom properties and wraps the dark set
-  # in a prefers-color-scheme query. _sass/minima/custom-styles.scss overrides
-  # those properties with the warm-editorial palette, so both modes come from one
-  # source. `classic` would hard-code light values and break dark mode.
+  # `auto` emits minima's colours as CSS custom properties. _sass/minima/custom-styles.scss
+  # overrides them with the brand palette (light only); `classic` would hard-code
+  # minima's own values instead of the variables.
   skin: auto
   date_format: "%b %-d, %Y"
   show_excerpts: true

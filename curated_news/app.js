@@ -1,6 +1,6 @@
 /* Curated News — progressive enhancement.
    The page is fully readable without JS; this adds search, filtering,
-   relative timestamps, friendlier day headings and a theme toggle. */
+   relative timestamps and friendlier day headings. */
 (function () {
   "use strict";
 
@@ -12,7 +12,6 @@
   var countEl = document.getElementById("count");
   var emptyState = document.querySelector(".empty-state");
   var clearBtn = document.getElementById("clear-filters");
-  var themeToggle = document.getElementById("theme-toggle");
 
   var activeTags = [];
 
@@ -128,34 +127,4 @@
       if (map[key]) h.textContent = map[key];
     });
   })();
-
-  /* ---- Theme toggle ---------------------------------------------------- */
-
-  if (themeToggle) {
-    var root = document.documentElement;
-    var stored = null;
-    try { stored = localStorage.getItem("cn-theme"); } catch (e) {}
-    if (stored === "light" || stored === "dark") root.setAttribute("data-theme", stored);
-
-    var label = themeToggle.querySelector(".theme-toggle__label");
-    function syncLabel() {
-      var explicit = root.getAttribute("data-theme");
-      var dark = explicit
-        ? explicit === "dark"
-        : window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (label) label.textContent = dark ? "Light mode" : "Dark mode";
-    }
-    syncLabel();
-
-    themeToggle.addEventListener("click", function () {
-      var explicit = root.getAttribute("data-theme");
-      var dark = explicit
-        ? explicit === "dark"
-        : window.matchMedia("(prefers-color-scheme: dark)").matches;
-      var next = dark ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      try { localStorage.setItem("cn-theme", next); } catch (e) {}
-      syncLabel();
-    });
-  }
 })();

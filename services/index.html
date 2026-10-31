@@ -1,213 +1,54 @@
 ---
 layout: default
-title: Services — AI Enablement & Platform Engineering
+title: "Services: AI enablement and platform engineering"
 nav_title: Services
 wide: true
 permalink: /services/
 ---
 
 <style>
-  :root {
-    --s-bg: #ffffff;
-    --s-text: #111111;
-    --s-secondary: #555555;
-    --s-border: #e0e0e0;
-    --s-accent: #000000;
-    --s-tag-bg: #f4f4f4;
-    --s-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --s-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  }
+  /* Brand v1.1 "Untangle" (claude-for-small-business/business/brand). Tokens come
+     from /assets/brand/tokens.css via the site head. Light only. */
+  .sc-wrap { max-width: 1200px; margin: 0 auto; padding: var(--space-8, 4rem) 0 var(--space-9, 6rem); color: var(--color-ink); }
+  .sc-hero h1 { max-width: 20ch; }
+  .sc-hero h1 { font-weight: 300; font-size: var(--text-display); line-height: var(--leading-display); letter-spacing: var(--tracking-display); margin: 0 0 var(--space-5, 2rem); color: var(--color-ink); }
+  .sc-lede { font-size: var(--text-lede); line-height: 1.5; color: var(--color-grey); max-width: 46ch; margin: 0 0 var(--space-8, 4rem); }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --s-bg: #1a1a1a;
-      --s-text: #e0e0e0;
-      --s-secondary: #a0a0a0;
-      --s-border: #333333;
-      --s-accent: #ffffff;
-      --s-tag-bg: #2a2a2a;
-    }
-  }
+  .sc-service { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-6, 3rem); padding: var(--space-7, 3.5rem) 0; border-top: 1px solid var(--color-ink); }
+  .sc-service-title { font-weight: 300; font-size: var(--text-h3); line-height: 1.25; margin: 0 0 var(--space-3, 1rem); color: var(--color-ink); }
+  .sc-price { display: block; font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-body-strong, #393939); line-height: 1.6; }
+  .sc-service-desc { font-size: var(--text-body); line-height: 1.6; color: var(--color-body-strong, #393939); margin: 0 0 var(--space-4, 1.5rem); }
+  .sc-tags { font-size: var(--text-sm); color: var(--color-grey); margin: 0 0 var(--space-4, 1.5rem); }
+  .sc-tag:not(:last-child)::after { content: ","; }
+  .sc-deliverables { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--color-hair); }
+  .sc-deliverables li { padding: 22px 0; border-bottom: 1px solid var(--color-hair); font-size: var(--text-body); color: var(--color-ink); margin: 0; }
 
-  .sc-wrap {
-    max-width: 780px;
-    margin: 4rem auto;
-    padding: 0 1.5rem;
-    font-family: var(--s-font);
-    color: var(--s-text);
-    background: var(--s-bg);
-  }
+  .sc-cta { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-6, 3rem); padding-top: var(--space-7, 3.5rem); border-top: 1px solid var(--color-ink); }
+  .sc-cta h2 { font-weight: 300; font-size: var(--text-h2); line-height: 1.15; margin: 0; color: var(--color-ink); }
+  .sc-cta p { font-size: var(--text-body); color: var(--color-body-strong, #393939); line-height: 1.6; margin: 0 0 var(--space-5, 2rem); }
+  .sc-button { display: inline-flex; justify-content: space-between; align-items: center; min-width: 230px; gap: 2rem; padding: 18px 20px; background: var(--color-lane); color: var(--color-paper) !important; font-weight: 500; text-decoration: none !important; }
+  .sc-button:hover { background: var(--color-lane-hover, #002699); }
+  .sc-mail { display: block; margin-top: var(--space-3, 1rem); font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-grey) !important; }
 
-  .sc-hero {
-    margin-bottom: 4rem;
-  }
-
-  .sc-hero h1 {
-    font-size: 2.6rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin: 0 0 0.75rem;
-    color: var(--s-accent);
-  }
-
-  .sc-hero p {
-    font-size: 1.2rem;
-    color: var(--s-secondary);
-    max-width: 600px;
-    line-height: 1.55;
-    margin: 0;
-  }
-
-  .sc-divider {
-    border: none;
-    border-top: 1px solid var(--s-border);
-    margin: 3.5rem 0;
-  }
-
-  .sc-service {
-    margin-bottom: 3.5rem;
-  }
-
-  .sc-service-header {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.5rem;
-  }
-
-  .sc-service-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--s-text);
-    margin: 0;
-  }
-
-  .sc-price {
-    font-family: var(--s-mono);
-    font-size: 0.82rem;
-    color: var(--s-secondary);
-    background: var(--s-tag-bg);
-    padding: 0.25rem 0.65rem;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-
-  .sc-service-desc {
-    font-size: 1.05rem;
-    color: var(--s-secondary);
-    line-height: 1.6;
-    margin: 0.75rem 0 1rem;
-  }
-
-  .sc-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
-  }
-
-  .sc-tag {
-    font-family: var(--s-mono);
-    font-size: 0.78rem;
-    color: var(--s-secondary);
-    background: var(--s-tag-bg);
-    padding: 0.2rem 0.55rem;
-    border-radius: 3px;
-  }
-
-  .sc-deliverables {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .sc-deliverables li {
-    font-size: 0.95rem;
-    color: var(--s-secondary);
-    padding: 0.3rem 0;
-    padding-left: 1.2rem;
-    position: relative;
-  }
-
-  .sc-deliverables li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    font-family: var(--s-mono);
-    color: var(--s-border);
-  }
-
-  .sc-cta {
-    margin-top: 4rem;
-    padding: 2rem;
-    border: 1px solid var(--s-border);
-    border-radius: 6px;
-  }
-
-  .sc-cta h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem;
-    color: var(--s-text);
-  }
-
-  .sc-cta p {
-    font-size: 0.95rem;
-    color: var(--s-secondary);
-    margin: 0 0 1rem;
-    line-height: 1.55;
-  }
-
-  .sc-cta a {
-    font-family: var(--s-mono);
-    font-size: 0.85rem;
-    color: var(--s-text);
-    text-decoration: none;
-    border-bottom: 1px solid var(--s-border);
-    padding-bottom: 1px;
-    transition: border-color 0.2s;
-  }
-
-  .sc-cta a:hover {
-    border-color: var(--s-text);
-  }
-
-  .sc-label {
-    font-family: var(--s-mono);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--s-secondary);
-    display: block;
-    margin-bottom: 2rem;
-  }
-
-  @media (max-width: 600px) {
-    .sc-hero h1 { font-size: 1.9rem; }
-    .sc-hero p { font-size: 1.05rem; }
-    .sc-wrap { margin: 2rem auto; }
-    .sc-service-title { font-size: 1.2rem; }
+  @media (max-width: 760px) {
+    .sc-service, .sc-cta { grid-template-columns: 1fr; gap: var(--space-3, 1rem); }
   }
 </style>
 
 <div class="sc-wrap">
 
   <div class="sc-hero">
-    <span class="sc-label">AI Enablement &amp; Platform Engineering</span>
     <h1>I build the systems that make your engineering teams AI-native.</h1>
-    <p>Principal-level hands-on consulting. Open-source-first, enterprise-grade. No slide decks — production systems.</p>
+    <p class="sc-lede">Principal-level, hands-on consulting in AI enablement and platform engineering. Open-source-first, enterprise-grade. Production systems, not slide decks.</p>
   </div>
 
-  <hr class="sc-divider">
-
   <div class="sc-service">
-    <div class="sc-service-header">
-      <h2 class="sc-service-title">AI Agent Orchestration &amp; Enablement</h2>
+    <div>
+      <h2 class="sc-service-title">AI agent orchestration and enablement</h2>
       <span class="sc-price">from €8,000 / project · €4,500 / mo retainer</span>
     </div>
-    <p class="sc-service-desc">Design, build, and operate multi-agent AI systems for engineering teams. Tiered architecture — local inference via Ollama through to managed inference and full agent orchestration. Enables AI-assisted development: automated code review, TDD loops, planning automation, and project management with human-in-the-loop governance.</p>
+    <div>
+    <p class="sc-service-desc">Design, build, and operate multi-agent AI systems for engineering teams. Tiered architecture, from local inference via Ollama through to managed inference and full agent orchestration. Enables AI-assisted development: automated code review, TDD loops, planning automation, and project management with human-in-the-loop governance.</p>
     <div class="sc-tags">
       <span class="sc-tag">Ollama</span>
       <span class="sc-tag">Claude / ClaudeFlow</span>
@@ -222,16 +63,16 @@ permalink: /services/
       <li>Implementation of agent workflows (code review, testing, deployment automation)</li>
       <li>Team onboarding and governance framework</li>
     </ul>
+    </div>
   </div>
 
-  <hr class="sc-divider">
-
   <div class="sc-service">
-    <div class="sc-service-header">
-      <h2 class="sc-service-title">Platform Engineering &amp; Cloud-Native Infrastructure</h2>
+    <div>
+      <h2 class="sc-service-title">Platform engineering and cloud-native infrastructure</h2>
       <span class="sc-price">from €12,000 / project · €6,000 / mo retainer</span>
     </div>
-    <p class="sc-service-desc">Design and implement internal developer platforms, container orchestration, and hybrid cloud infrastructure. IaC-first, GitOps pipelines. Deep enterprise experience with HPE Morpheus and hybrid cloud — bridges the gap between cloud-native ideals and enterprise reality.</p>
+    <div>
+    <p class="sc-service-desc">Design and implement internal developer platforms, container orchestration, and hybrid cloud infrastructure. IaC-first, GitOps pipelines. Deep enterprise experience with HPE Morpheus and hybrid cloud, bridging the gap between cloud-native ideals and enterprise reality.</p>
     <div class="sc-tags">
       <span class="sc-tag">Kubernetes / KubeVirt</span>
       <span class="sc-tag">OpenTofu / Terraform</span>
@@ -242,20 +83,20 @@ permalink: /services/
     </div>
     <ul class="sc-deliverables">
       <li>Internal developer platform design and build</li>
-      <li>Container strategy — migration, orchestration, security</li>
+      <li>Container strategy: migration, orchestration, security</li>
       <li>IaC modernization from ClickOps to OpenTofu</li>
       <li>CI/CD pipeline architecture and cloud cost optimization</li>
     </ul>
+    </div>
   </div>
 
-  <hr class="sc-divider">
-
   <div class="sc-service">
-    <div class="sc-service-header">
-      <h2 class="sc-service-title">Open Source AI Stack Consulting</h2>
+    <div>
+      <h2 class="sc-service-title">Open-source AI stack consulting</h2>
       <span class="sc-price">from €5,500 / project · day rate €1,200</span>
     </div>
-    <p class="sc-service-desc">Help organizations adopt open-source AI tooling instead of locked-in SaaS. Evaluate, integrate, and operate open models and frameworks. Focus on practical enablement — getting teams productive with AI, not building research prototypes.</p>
+    <div>
+    <p class="sc-service-desc">Help organizations adopt open-source AI tooling instead of locked-in SaaS. Evaluate, integrate, and operate open models and frameworks. Focus on practical enablement: getting teams productive with AI, not building research prototypes.</p>
     <div class="sc-tags">
       <span class="sc-tag">Ollama</span>
       <span class="sc-tag">vLLM</span>
@@ -265,17 +106,21 @@ permalink: /services/
       <span class="sc-tag">LoRA / QLoRA</span>
     </div>
     <ul class="sc-deliverables">
-      <li>AI tool landscape evaluation — build vs. buy vs. open source</li>
+      <li>AI tool landscape evaluation: build vs. buy vs. open source</li>
       <li>Self-hosted inference setup (GPU planning, model selection, benchmarking)</li>
       <li>RAG pipeline design and implementation</li>
       <li>Cost modeling: self-hosted vs. API vs. hybrid</li>
     </ul>
+    </div>
   </div>
 
   <div class="sc-cta">
     <h2>Let's talk</h2>
-    <p>Engagements are project-based, retainer, or embedded. Currently taking on new clients for Q2–Q3 2026.</p>
-    <a href="mailto:sturla.bragason@proton.me">sturla.bragason@proton.me</a>
+    <div>
+    <p>Engagements are project-based, retainer, or embedded. Currently taking on new clients for Q2 to Q3 2026.</p>
+    <a class="sc-button" href="mailto:sturla.bragason@proton.me"><span>Get in touch</span><span aria-hidden="true">&rarr;</span></a>
+    <a class="sc-mail" href="mailto:sturla.bragason@proton.me">sturla.bragason@proton.me</a>
+    </div>
   </div>
 
 </div>

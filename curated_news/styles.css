@@ -1,71 +1,30 @@
-/* Curated News — house style.
-   Source: ../claude-for-small-business/shared/artifact-style.md. Palette and type
-   are the house tokens verbatim; the names the rules below use (--bg, --text…)
-   are aliases onto them. Bare :root is light, the media query is guarded by
-   :not([data-theme="light"]), and [data-theme="dark"] repeats the dark values so
-   the theme toggle wins in either direction. */
+/* Curated News — brand v1.1 "Untangle".
+   Source: claude-for-small-business/business/brand/DESIGN.md. The brand tokens
+   and self-hosted fonts come from ../assets/brand/tokens.css; the names the rules
+   below use (--bg, --text…) are aliases onto them. Light only, square, flat, and
+   Lane blue is the only accent. */
 
 :root {
-    color-scheme: light dark;
-
-    --ink: #17211F;
-    --paper: #F4F3EE;
-    --paper-raised: #FFFFFF;
-    --line: #DEDCD1;
-    --accent: #0B6B5C;
-    --accent-soft: #E4EFEC;
-    --amber: #B9781F;
-    --amber-soft: #F6EBDA;
-
-    --font-display: 'Zilla Slab', Georgia, 'Times New Roman', serif;
-    --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
-
-    --bg: var(--paper);
-    --bg-raised: var(--paper-raised);
-    --bg-sunken: var(--paper);
-    --text: var(--ink);
-    --text-dim: color-mix(in srgb, var(--ink) 72%, var(--paper));
-    --text-faint: color-mix(in srgb, var(--ink) 58%, var(--paper));
-    --border: var(--line);
-    --border-strong: color-mix(in srgb, var(--line) 70%, var(--ink));
-    --focus: var(--accent);
-    --radius-lg: 6px;
-    --radius-sm: 3px;
-    --measure: 68ch;
-    --page: 52.5rem;
-
-    --serif: var(--font-display);
-    --sans: var(--font-body);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --ink: #EDEAE2;
-        --paper: #14201C;
-        --paper-raised: #1B2A25;
-        --line: #2C3A34;
-        --accent: #4FBFA5;
-        --accent-soft: #1E332C;
-        --amber: #E0A559;
-        --amber-soft: #362A16;
-    }
-}
-
-:root[data-theme="dark"] {
-    color-scheme: dark;
-    --ink: #EDEAE2;
-    --paper: #14201C;
-    --paper-raised: #1B2A25;
-    --line: #2C3A34;
-    --accent: #4FBFA5;
-    --accent-soft: #1E332C;
-    --amber: #E0A559;
-    --amber-soft: #362A16;
-}
-
-:root[data-theme="light"] {
     color-scheme: light;
+
+    --bg: var(--color-paper);
+    --bg-raised: var(--color-paper);
+    --bg-sunken: var(--color-fill);
+    --text: var(--color-ink);
+    --text-dim: var(--color-grey);
+    --text-faint: var(--color-grey);
+    --border: var(--color-hair);
+    --border-strong: var(--color-ink);
+    --accent: var(--color-lane);
+    --accent-soft: var(--color-lane-tint);
+    --focus: var(--color-lane);
+    --radius-lg: 0;
+    --radius-sm: 0;
+    --measure: 68ch;
+    --page: 60rem;
+
+    --serif: var(--font-sans);
+    --sans: var(--font-sans);
 }
 
 *,
@@ -114,9 +73,9 @@ a {
     top: -48px;
     padding: 8px 14px;
     background: var(--accent);
-    color: var(--paper-raised);
+    color: var(--color-paper);
     border-radius: var(--radius-sm);
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
     transition: top 160ms ease;
     z-index: 10;
@@ -140,50 +99,33 @@ a {
 
 .site-header__inner {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 1rem;
+    gap: 3rem;
+}
+
+.site-header__lockup img {
+    display: block;
+    height: 44px;
+    width: auto;
 }
 
 .site-header h1 {
     margin: 0;
-    font-family: var(--serif);
-    font-weight: 600;
-    font-size: clamp(2rem, 7vw, 2.9rem);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: var(--text-display);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+    color: var(--text);
     text-wrap: balance;
 }
 
 .site-header p {
-    margin: 0.5rem 0 0;
+    margin: 1rem 0 0;
     max-width: var(--measure);
     color: var(--text-dim);
-    font-size: 0.95rem;
-}
-
-.theme-toggle {
-    flex: none;
-    margin-top: 0.4rem;
-    padding: 0.4rem 0.8rem;
-    background: var(--bg-raised);
-    color: var(--text-dim);
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-sm);
-    font: 600 0.75rem var(--sans);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
-}
-
-.theme-toggle:hover {
-    color: var(--text);
-    border-color: var(--accent);
-}
-
-.theme-toggle:active {
-    transform: translateY(1px);
+    font-size: var(--text-lede);
 }
 
 /* Toolbar -------------------------------------------------------------------- */
@@ -195,8 +137,7 @@ a {
     display: flex;
     gap: 0.6rem;
     padding: 0.75rem 0;
-    background: color-mix(in srgb, var(--bg) 92%, transparent);
-    backdrop-filter: blur(8px);
+    background: var(--bg);
     border-bottom: 1px solid var(--border);
 }
 
@@ -237,7 +178,6 @@ a {
 
 html.no-js .toolbar,
 html.no-js .tag-bar,
-html.no-js .theme-toggle,
 html.no-js .result-count {
     display: none;
 }
@@ -255,11 +195,9 @@ html.no-js .result-count {
     padding: 0.25rem 0.7rem;
     background: transparent;
     color: var(--text-dim);
-    border: 1px solid var(--border-strong);
+    border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    font: 600 0.75rem var(--sans);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    font: 400 var(--text-xs) var(--sans);
     cursor: pointer;
     transition: color 140ms ease, background 140ms ease, border-color 140ms ease;
 }
@@ -270,8 +208,8 @@ html.no-js .result-count {
 }
 
 .tag-chip[aria-pressed="true"] {
-    color: var(--accent);
-    background: var(--accent-soft);
+    color: var(--color-paper);
+    background: var(--accent);
     border-color: var(--accent);
 }
 
@@ -292,13 +230,11 @@ html.no-js .result-count {
 .day-heading {
     margin: 2.25rem 0 0.25rem;
     padding-bottom: 0.35rem;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-dim);
+    border-bottom: 1px solid var(--color-ink);
+    color: var(--text);
     font-family: var(--sans);
-    font-weight: 600;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    font-weight: 500;
+    font-size: var(--text-sm);
 }
 
 .day-heading:first-of-type {
@@ -312,27 +248,22 @@ html.no-js .result-count {
 
 .item__title {
     margin: 0;
-    font-family: var(--serif);
-    font-weight: 600;
+    font-family: var(--sans);
+    font-weight: 400;
     font-size: 1.375rem;
-    line-height: 1.28;
-    letter-spacing: -0.01em;
+    line-height: 1.3;
     text-wrap: pretty;
 }
 
 .item__title a {
+    color: var(--text);
     text-decoration: none;
-    background-image: linear-gradient(var(--accent), var(--accent));
-    background-size: 0% 1.5px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 180ms ease, color 140ms ease;
+    transition: color 140ms ease;
 }
 
 .item__title a:hover,
 .item__title a:focus-visible {
     color: var(--accent);
-    background-size: 100% 1.5px;
 }
 
 .item__meta {
@@ -348,26 +279,18 @@ html.no-js .result-count {
 }
 
 .item__source {
-    color: var(--text-dim);
-    font-weight: 600;
-    letter-spacing: 0.03em;
+    color: var(--text);
+    font-weight: 500;
 }
 
 .item__tag {
-    padding: 0.05rem 0.45rem;
-    border: 0;
-    border-radius: var(--radius-sm);
-    background: var(--accent-soft);
-    color: var(--accent);
-    font: 600 0.7rem var(--sans);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    font: 400 var(--text-xs) var(--sans);
     cursor: pointer;
 }
 
 .item__tag:hover {
-    background: var(--accent);
-    color: var(--paper-raised);
+    color: var(--accent);
 }
 
 .item__image {

@@ -1,0 +1,15 @@
+{%- comment -%}
+  Brand nav (business/brand/DESIGN.md): lockup left, plain links, one primary
+  button flush right, 80 px tall, hairline under.
+{%- endcomment -%}
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/brand/logo/lockup.svg' | relative_url }}" width="174" height="44" alt="Sturla Bragason, platform and AI engineering">
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      {%- include nav-items.html paths=site.minima.nav_pages -%}
+      <a class="nav-cta" href="mailto:{{ site.author.email }}">Get in touch <span aria-hidden="true">&rarr;</span></a>
+    </nav>
+  </div>
+</header>

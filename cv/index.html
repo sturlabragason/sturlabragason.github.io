@@ -16,142 +16,120 @@ permalink: /cv/
 <meta property="og:description" content="Hands-on architect and methodical problem-solver. CNCF, polycloud, Kubernetes. Based near Aarhus.">
 <meta property="og:url" content="https://sturlabragason.github.io/cv/">
 <meta name="twitter:card" content="summary">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.ico">
+<link rel="preload" href="/assets/brand/fonts/IBMPlexSans-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/brand/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Brand v1.1 "Untangle": tokens and self-hosted fonts (claude-for-small-business/business/brand). -->
+<link rel="stylesheet" href="/assets/brand/tokens.css">
+<meta name="color-scheme" content="light">
 <style>
-  /* House style: ../claude-for-small-business/shared/artifact-style.md */
-  :root {
-    --ink: #17211F; --paper: #F4F3EE; --paper-raised: #FFFFFF; --line: #DEDCD1;
-    --accent: #0B6B5C; --accent-soft: #E4EFEC; --amber: #B9781F; --amber-soft: #F6EBDA;
-    --good: #2E7D4F; --good-soft: #E4F0E8;
-    --muted: color-mix(in srgb, var(--ink) 64%, var(--paper));
-    --font-display: 'Zilla Slab', Georgia, 'Times New Roman', serif;
-    --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
-    --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem;
-    --text-lg: 1.125rem; --text-xl: 1.375rem; --text-2xl: 1.75rem; --text-3xl: 2.25rem;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --ink: #EDEAE2; --paper: #14201C; --paper-raised: #1B2A25; --line: #2C3A34;
-      --accent: #4FBFA5; --accent-soft: #1E332C; --amber: #E0A559; --amber-soft: #362A16;
-      --good: #6FCB94; --good-soft: #1D3226;
-    }
-  }
-  :root[data-theme="dark"] {
-    --ink: #EDEAE2; --paper: #14201C; --paper-raised: #1B2A25; --line: #2C3A34;
-    --accent: #4FBFA5; --accent-soft: #1E332C; --amber: #E0A559; --amber-soft: #362A16;
-    --good: #6FCB94; --good-soft: #1D3226;
-  }
-
   *, *::before, *::after { box-sizing: border-box; }
   html, body { margin: 0; }
-  body { background: var(--paper); color: var(--ink); font: 400 var(--text-base)/1.6 var(--font-body); -webkit-font-smoothing: antialiased; }
-  a { color: var(--accent); text-underline-offset: 3px; }
-  a:hover { color: var(--ink); }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+  body { background: var(--color-paper); color: var(--color-body-strong); font: 400 var(--text-body)/var(--leading-body) var(--font-sans); -webkit-font-smoothing: antialiased; }
+  a { color: var(--color-lane); text-decoration: none; }
+  a:hover { color: var(--color-lane-hover); text-decoration: underline; text-underline-offset: 3px; }
 
-  .page { display: flex; flex-direction: column; gap: 1.25rem; max-width: 840px; margin: 0 auto; padding: 2rem 1.5rem; }
-  main { display: flex; flex-direction: column; gap: 1.25rem; }
-  .panel { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 6px; padding: 1.5rem; }
+  .nav { display: flex; justify-content: space-between; align-items: stretch; min-height: 80px; padding-left: var(--gutter); border-bottom: var(--rule-hair); }
+  .nav .lockup { display: flex; align-items: center; }
+  .nav .lockup img { display: block; height: 44px; width: auto; }
+  .nav .links { display: flex; align-items: stretch; gap: var(--space-5); }
+  .nav ul { display: flex; align-items: center; gap: var(--space-5); list-style: none; margin: 0; padding: 0; font-size: var(--text-sm); }
+  .nav ul a { color: var(--color-ink); }
+  .nav ul a:hover, .nav ul a[aria-current] { color: var(--color-lane); text-decoration: none; }
+  .nav .cta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-width: 230px; padding: 0 var(--space-3); background: var(--color-lane); color: var(--color-paper); font-size: var(--text-sm); font-weight: 500; }
+  .nav .cta:hover { background: var(--color-lane-hover); color: var(--color-paper); text-decoration: none; }
 
-  nav { display: flex; justify-content: space-between; align-items: center; font-size: var(--text-sm); }
-  nav .home { color: var(--ink); text-decoration: none; font: 600 var(--text-lg) var(--font-display); }
-  nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
-  nav ul a { color: var(--muted); text-decoration: none; font-weight: 500; }
-  nav ul a:hover, nav ul a[aria-current] { color: var(--accent); }
+  .page { max-width: 1200px; margin: 0 auto; padding: var(--space-8) var(--gutter) var(--space-9); }
+  h1, h2 { font-weight: 300; color: var(--color-ink); letter-spacing: var(--tracking-display); text-wrap: balance; }
+  h1 { font-size: var(--text-display); line-height: var(--leading-display); margin: 0 0 var(--space-4); }
+  .role { font-size: var(--text-lede); line-height: 1.5; color: var(--color-grey); max-width: 46ch; margin: 0 0 var(--space-6); }
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-2) var(--space-5); margin: 0; font-size: var(--text-sm); max-width: 40rem; }
+  .facts dt { color: var(--color-grey); }
+  .facts dd { margin: 0; color: var(--color-ink); }
 
-  .page-header { display: flex; gap: 1rem; align-items: flex-start; }
-  .brand-mark { flex: none; display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font: 600 var(--text-xl) var(--font-display); }
-  h1, h2 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; }
-  h1 { font-size: var(--text-3xl); line-height: 1.1; margin: 0 0 0.35rem; }
-  .role { margin: 0 0 1rem; max-width: 60ch; }
-  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.35rem 1.25rem; margin: 0; font-size: var(--text-sm); }
-  .facts dt { color: var(--muted); }
-  .facts dd { margin: 0; }
-  .status { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 3px; font: 600 var(--text-xs) var(--font-body); text-transform: uppercase; letter-spacing: 0.04em; }
-  .status--good { background: var(--good-soft); color: var(--good); }
+  .intro { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-5); margin: var(--space-9) 0 0; padding-top: var(--space-4); border-top: var(--rule-section); }
+  .lead { font-size: var(--text-h3); font-weight: 300; line-height: 1.3; color: var(--color-ink); margin: 0; }
+  .intro blockquote { margin: 0; align-self: end; color: var(--color-grey); font-size: var(--text-sm); }
 
-  .lead { font: 600 var(--text-xl)/1.35 var(--font-display); margin: 0 0 0.75rem; max-width: 40ch; }
-  .intro blockquote { margin: 0; color: var(--muted); font-size: var(--text-sm); }
+  section { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-5); margin-top: var(--space-9); padding-top: var(--space-4); border-top: var(--rule-section); }
+  h2 { font-size: var(--text-h2); line-height: var(--leading-heading); margin: 0; }
+  .jobs { list-style: none; margin: 0; padding: 0; border-top: var(--rule-hair); }
+  .job { padding: 22px 0; border-bottom: var(--rule-hair); }
+  .job time { display: block; color: var(--color-grey); font: 400 var(--text-xs) var(--font-mono); font-variant-numeric: tabular-nums; margin-bottom: var(--space-1); }
+  .job h3 { margin: 0; font-size: var(--text-body); font-weight: 500; color: var(--color-ink); }
+  .job h3 span { color: var(--color-grey); font-weight: 400; }
+  .job p { margin: var(--space-2) 0 0; color: var(--color-grey); max-width: var(--measure); }
+  .approach p { margin: 0; max-width: var(--measure); }
+  .approach p + p { margin-top: var(--space-3); }
 
-  h2 { font-size: var(--text-xl); margin: 0 0 0.75rem; }
-  .jobs { list-style: none; margin: 0; padding: 0; }
-  .job { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1.25rem; padding: 0.9rem 0; }
-  .job + .job { border-top: 1px solid var(--line); }
-  .job time { color: var(--muted); font: 500 var(--text-sm) var(--font-mono); font-variant-numeric: tabular-nums; padding-top: 2px; }
-  .job h3 { margin: 0; font-size: var(--text-base); font-weight: 600; }
-  .job h3 span { color: var(--muted); font-weight: 400; }
-  .job p { margin: 0.25rem 0 0; color: var(--muted); max-width: 62ch; font-size: var(--text-sm); }
-  .approach p { margin: 0; max-width: 64ch; }
-  .approach p + p { margin-top: 0.75rem; }
+  footer { background: var(--color-charcoal); color: var(--color-grey-on-ink); font-size: var(--text-sm); }
+  footer .wrap { max-width: 1200px; margin: 0 auto; padding: var(--space-7) var(--gutter); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4); }
+  footer img { display: block; height: 44px; width: auto; }
+  footer a { color: var(--color-grey-on-ink); }
+  footer a:hover { color: var(--color-lane-on-ink); }
+  footer .pdf::after { content: " \2192"; }
 
-  footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-top: 0.5rem; border-top: 1px solid var(--line); font-size: var(--text-sm); }
-  .pdf { background: var(--accent); color: var(--paper-raised); padding: 0.55rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600; }
-  .pdf:hover { color: var(--paper-raised); filter: brightness(1.1); }
-
-  @media screen and (max-width: 640px) {
-    .page { padding: 1rem 1rem 2.5rem; }
-    nav ul { gap: 0.9rem; }
-    h1 { font-size: var(--text-2xl); }
-    .job { grid-template-columns: 1fr; gap: 0.15rem; }
-    .panel { padding: 1rem; }
+  @media screen and (max-width: 760px) {
+    .nav { flex-wrap: wrap; padding: var(--space-3) var(--gutter); gap: var(--space-3); }
+    .nav .links { width: 100%; flex-wrap: wrap; gap: var(--space-3); }
+    .nav .cta { width: 100%; padding-block: 15px; }
+    .page { padding-top: var(--space-6); }
+    .intro, section { grid-template-columns: 1fr; gap: var(--space-4); }
   }
 
   @media print {
     @page { size: A4; margin: 12mm 14mm; }
-    :root, :root:not([data-theme]) { --ink: #000; --paper: #fff; --paper-raised: #fff; --line: #bbb; --muted: #3a3a3a; --accent: #0B6B5C; --accent-soft: #E4EFEC; }
     body { font-size: 9pt; line-height: 1.45; }
-    nav, .pdf { display: none !important; }
-    .page, main { padding: 0; max-width: none; gap: 4mm; }
-    .panel { padding: 3.5mm 4mm; }
-    h1 { font-size: 22pt; }
-    .lead { font-size: 12pt; }
-    h2 { font-size: 11pt; margin-bottom: 2mm; }
-    .job { grid-template-columns: 26mm 1fr; padding: 2mm 0; gap: 4mm; }
+    .nav { display: none !important; }
+    .page { padding: 0; max-width: none; }
+    h1 { font-size: 30pt; margin-bottom: 2mm; }
+    .role { font-size: 11pt; margin-bottom: 4mm; }
+    .facts { font-size: 8.5pt; }
+    .intro, section { margin-top: 6mm; padding-top: 2.5mm; gap: 6mm; }
+    .lead { font-size: 13pt; }
+    h2 { font-size: 15pt; }
+    .job { padding: 2.5mm 0; }
     .job h3 { font-size: 9.5pt; }
-    .job time, .job p, .facts, .intro blockquote { font-size: 8.5pt; }
-    footer { padding-top: 3mm; }
-    a { text-decoration: none; }
+    .job time, .job p, .intro blockquote { font-size: 8.5pt; }
+    footer { background: none; color: var(--color-grey); }
+    footer .wrap { padding: 4mm 0 0; border-top: var(--rule-hair); }
+    footer img, footer .pdf { display: none; }
+    footer a { color: var(--color-ink); }
   }
 </style>
 </head>
 <body>
-<div class="page">
-  <nav aria-label="Primary">
-    <a class="home" href="/">Sturla Bragason</a>
+<nav class="nav" aria-label="Primary">
+  <a class="lockup" href="/"><img src="/assets/brand/logo/lockup.svg" width="174" height="44" alt="Sturla Bragason, platform and AI engineering"></a>
+  <div class="links">
     <ul>
       <li><a href="/cv/" aria-current="page">CV</a></li>
       <li><a href="https://crew.sturlabragason.online">Services</a></li>
-      <li><a href="mailto:sturla.bragason@proton.me">Contact</a></li>
     </ul>
-  </nav>
+    <a class="cta" href="mailto:sturla.bragason@proton.me">Get in touch <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</nav>
 
-  <main>
-  <header class="panel page-header">
-    <div class="brand-mark" aria-hidden="true">SB</div>
-    <div>
+<main class="page">
+  <header>
     <h1>Sturla Bragason</h1>
     <p class="role">Principal Platform &amp; AI Engineer. Hands-on architect, methodical problem-solver, at home in code and in front of a room.</p>
     <dl class="facts">
       <dt>Location</dt><dd>Near Aarhus, Denmark</dd>
-      <dt>Status</dt><dd><span class="status status--good">Available for advisory</span></dd>
+      <dt>Status</dt><dd>Available for advisory</dd>
       <dt>Stack</dt><dd>CNCF, polycloud, Kubernetes</dd>
     </dl>
-    </div>
   </header>
 
-  <div class="panel intro">
+  <div class="intro">
     <p class="lead">For the past decade I&rsquo;ve been the engineer my colleagues bring the hard problems to.</p>
     <blockquote>&ldquo;I&rsquo;m Winston Wolfe. I solve problems.&rdquo; Winston Wolfe, Pulp Fiction</blockquote>
   </div>
 
-  <section class="panel">
+  <section>
     <h2>Experience</h2>
     <ol class="jobs">
-      <li class="job">
+<li class="job">
         <time>2025 - now</time>
         <div>
           <h3>Principal Platform &amp; AI Engineer <span>@ Aeven</span></h3>
@@ -182,18 +160,21 @@ permalink: /cv/
     </ol>
   </section>
 
-  <section class="panel approach">
+  <section class="approach">
     <h2>How I work</h2>
-    <p>I&rsquo;m a platform engineer rooted in CNCF and open-source practice, vendor-neutral by default. I keep platforms lean and uncluttered, so the whole team can manage them.</p>
-    <p>Complex backlogs become small, ordered tasks. Each one leaves something concrete behind, so the team can move without me in the room.</p>
+    <div>
+      <p>I&rsquo;m a platform engineer rooted in CNCF and open-source practice, vendor-neutral by default. I keep platforms lean and uncluttered, so the whole team can manage them.</p>
+      <p>Complex backlogs become small, ordered tasks. Each one leaves something concrete behind, so the team can move without me in the room.</p>
+    </div>
   </section>
+</main>
 
-  </main>
-
-  <footer>
+<footer>
+  <div class="wrap">
+    <img src="/assets/brand/logo/lockup-reversed.svg" width="174" height="44" alt="Sturla Bragason, platform and AI engineering">
     <a href="mailto:sturla.bragason@proton.me">sturla.bragason@proton.me</a>
     <a class="pdf" href="/cv/sturlabragason_cv.pdf">Download CV (PDF)</a>
-  </footer>
-</div>
+  </div>
+</footer>
 </body>
 </html>

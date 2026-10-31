@@ -8,7 +8,7 @@ A small hand-picked news feed served at `/curated_news/`.
 | --- | --- | --- |
 | `index.html` | **generated** | Written by `.github/workflows/rss_update.yml` (hourly + on render changes). Do **not** edit by hand or regenerate it inside a feature branch — that is what caused repeated merge conflicts, because the hourly job commits a new `index.html` to `main` every hour. |
 | `styles.css` | source | Page styling. |
-| `app.js` | source | Progressive enhancement: search, source/tag filters, relative times, theme toggle. |
+| `app.js` | source | Progressive enhancement: search, source/tag filters, relative times. |
 
 ## Making changes
 

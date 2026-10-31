@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Curated News</title>
     <meta name="description" content="A small, hand-picked feed of Danish, European and open-source technology headlines, refreshed every hour.">
-    <meta name="color-scheme" content="light dark">
+    <meta name="color-scheme" content="light">
     <meta property="og:title" content="Curated News">
     <meta property="og:description" content="A small, hand-picked feed of Danish, European and open-source technology headlines, refreshed every hour.">
     <meta property="og:type" content="website">
     <link rel="icon" href="../favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="preload" href="../assets/brand/fonts/IBMPlexSans-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/brand/tokens.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
@@ -22,13 +22,11 @@
 
     <header class="site-header">
         <div class="site-header__inner">
+            <a class="site-header__lockup" href="../"><img src="../assets/brand/logo/lockup.svg" width="174" height="44" alt="Sturla Bragason, platform and AI engineering"></a>
             <div class="site-header__text">
-                <h1>Curated News</h1>
-                <p>Danish, European and open-source headlines &mdash; refreshed hourly.</p>
+                <h1>Curated news</h1>
+                <p>Danish, European and open-source headlines, refreshed hourly.</p>
             </div>
-            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch colour theme">
-                <span class="theme-toggle__label">Theme</span>
-            </button>
         </div>
     </header>
 

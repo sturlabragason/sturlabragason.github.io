@@ -1,17 +1,21 @@
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#F4F3EE" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#14201C" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/brand/logo/icon-180.png' | relative_url }}">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+{%- comment -%}
+  Brand v1.1 "Untangle" (claude-for-small-business/business/brand). Fonts are
+  self-hosted from assets/brand/fonts; the brand forbids Google Fonts (GDPR).
+{%- endcomment -%}
+<link rel="preload" href="{{ '/assets/brand/fonts/IBMPlexSans-Light.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/brand/fonts/IBMPlexSans-Regular.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/brand/tokens.css' | relative_url }}">
 
 {%- comment -%}
   GitHub Pages runs a fixed plugin set that does not include jekyll-spaceship, so
   mermaid fences arrive in the page as plain `<pre><code class="language-mermaid">`.
-  Rendering them here keeps diagrams as real SVG, which means they can follow the
-  colour scheme instead of being a light-only bitmap. If the module fails to load
+  Rendering them here keeps diagrams as real SVG in the brand colours instead of
+  a remote bitmap. If the module fails to load
   the fence stays a readable code block.
 {%- endcomment -%}
 <script type="module">
@@ -24,15 +28,12 @@
       holder.textContent = code.textContent;
       code.parentElement.replaceWith(holder);
     }
-    const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     mermaid.initialize({
       startOnLoad: true,
       securityLevel: 'strict',
       theme: 'base',
-      fontFamily: '"Public Sans", system-ui, sans-serif',
-      themeVariables: dark
-        ? { background: '#1B2A25', primaryColor: '#1E332C', primaryTextColor: '#EDEAE2', primaryBorderColor: '#4FBFA5', lineColor: '#9FA19B', secondaryColor: '#14201C', tertiaryColor: '#1B2A25', edgeLabelBackground: '#1B2A25' }
-        : { background: '#FFFFFF', primaryColor: '#E4EFEC', primaryTextColor: '#17211F', primaryBorderColor: '#0B6B5C', lineColor: '#676D6A', secondaryColor: '#F4F3EE', tertiaryColor: '#FFFFFF', edgeLabelBackground: '#FFFFFF' },
+      fontFamily: '"IBM Plex Sans", Arial, sans-serif',
+      themeVariables: { background: '#FFFFFF', primaryColor: '#F4F4F4', primaryTextColor: '#161616', primaryBorderColor: '#161616', lineColor: '#525252', secondaryColor: '#FFFFFF', tertiaryColor: '#F4F4F4', edgeLabelBackground: '#FFFFFF' },
     });
     await mermaid.run({ querySelector: '.mermaid' });
   }

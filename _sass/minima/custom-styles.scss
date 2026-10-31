@@ -1,490 +1,427 @@
-// House style — the site's own layer over minima.
+// Brand v1.1 "Untangle" — the site's own layer over minima.
 //
-// Source: ../claude-for-small-business/shared/artifact-style.md ("a ledger, not a
-// landing page"). Palette, type families, scale and the 6px panel radius are taken
-// verbatim from that file. The legacy names further down (--bg, --fg, --surface…)
-// are aliases onto the house tokens so the component rules below never carry a
-// literal colour: one override point recolours the whole site.
-//
-// Theme order follows the guide: bare :root is light, the prefers-color-scheme
-// block is guarded by :not([data-theme="light"]), and [data-theme="dark"] repeats
-// the dark values so an explicit toggle wins either way.
+// Source: claude-for-small-business/business/brand/DESIGN.md (normative) and
+// tokens.css, copied to assets/brand/. White, calm and exact: IBM Plex Sans
+// Light headings, 1 px hairlines, square corners, no depth, and Lane blue as the
+// only accent. The brand has no dark theme, so the site is light only.
 //
 // This file is minima's last import, so it wins ties without needing !important.
 
 // ---------------------------------------------------------------------------
-// 1. Tokens
+// 1. Tokens (values from assets/brand/tokens.css; repeated here so the Sass
+//    build does not depend on the load order of that file)
 // ---------------------------------------------------------------------------
 
-@mixin house-dark {
-  --ink: #EDEAE2;
-  --paper: #14201C;
-  --paper-raised: #1B2A25;
-  --line: #2C3A34;
-  --accent: #4FBFA5;
-  --accent-soft: #1E332C;
-  --amber: #E0A559;
-  --amber-soft: #362A16;
-  --good: #6FCB94;
-  --good-soft: #1D3226;
-  --warn: #E0A559;
-  --warn-soft: #362A16;
-  --critical: #E37B6B;
-  --critical-soft: #3A211C;
-}
-
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 
-  // House default palette
-  --ink: #17211F;
-  --paper: #F4F3EE;
-  --paper-raised: #FFFFFF;
-  --line: #DEDCD1;
-  --accent: #0B6B5C;
-  --accent-soft: #E4EFEC;
-  --amber: #B9781F;
-  --amber-soft: #F6EBDA;
+  --color-ink: #161616;
+  --color-paper: #ffffff;
+  --color-grey: #525252;
+  --color-body-strong: #393939;
+  --color-fill: #f4f4f4;
+  --color-hair: #e0e0e0;
+  --color-lane: #0033cc;
+  --color-lane-hover: #002699;
+  --color-lane-tint: #d0dbff;
+  --color-charcoal: #161616;
+  --color-grey-on-ink: #a8a8a8;
+  --color-lane-on-ink: #8aa4ff;
 
-  // Semantic — never repurposed for branding
-  --good: #2E7D4F;
-  --good-soft: #E4F0E8;
-  --warn: #B9781F;
-  --warn-soft: #F6EBDA;
-  --critical: #B3392C;
-  --critical-soft: #FBEAE7;
+  --font-sans: "IBM Plex Sans", Arial, "Helvetica Neue", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", Consolas, "Courier New", ui-monospace, monospace;
 
-  --font-display: 'Zilla Slab', Georgia, 'Times New Roman', serif;
-  --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  --text-display: clamp(2.875rem, 5.3vw, 4.75rem);
+  --text-h2: clamp(2rem, 3vw, 2.75rem);
+  --text-h3: 1.625rem;
+  --text-lede: 1.25rem;
+  --text-body: 1.125rem;
+  --text-sm: 0.9375rem;
+  --text-xs: 0.8125rem;
+  --leading-display: 1.05;
+  --leading-heading: 1.15;
+  --leading-body: 1.55;
+  --tracking-display: -0.015em;
+  --measure: 68ch;
 
-  --text-xs: 0.75rem;   --text-sm: 0.875rem;  --text-base: 1rem;
-  --text-lg: 1.125rem;  --text-xl: 1.375rem;  --text-2xl: 1.75rem;
-  --text-3xl: 2.25rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4rem;
+  --space-8: 6rem;
+  --space-9: 7rem;
+  --gutter: 2.5rem;
 
-  // Aliases used by the component rules below. --muted is derived rather than
-  // invented so it follows the theme and any brand override automatically.
-  --bg:            var(--paper);
-  --surface:       var(--paper-raised);
-  --surface-warm:  var(--accent-soft);
-  --fg:            var(--ink);
-  --fg-2:          var(--ink);
-  --muted:         color-mix(in srgb, var(--ink) 64%, var(--paper));
-  --border:        var(--line);
-  --border-soft:   var(--line);
-  --accent-line:   color-mix(in srgb, var(--accent) 45%, transparent);
-  --focus-ring:    0 0 0 3px color-mix(in srgb, var(--accent) 35%, transparent);
-  --font-ui:       var(--font-body);
-
-  // Diagrams are remote-rendered SVGs on a light canvas, so they keep a white
-  // card in both schemes rather than being recoloured (see section 8).
-  --diagram-paper: #FFFFFF;
-
-  --leading-body: 1.65;
-  --leading-tight: 1.15;
-  --tracking-display: -0.01em;
-  --tracking-label: 0.04em;
-
-  --measure: 46rem;
-  --rhythm: 1.6rem;
-  --section-y: 2rem;
-  --gap: 1.25rem;
-
-  --radius-sm: 6px;
-  --radius-md: 6px;
+  --rule-hair: 1px solid var(--color-hair);
+  --rule-section: 1px solid var(--color-ink);
 
   // minima's own hooks — everything the theme colours flows from these.
-  --minima-background-color:      var(--bg);
-  --minima-text-color:            var(--fg-2);
-  --minima-heading-color:         var(--fg);
-  --minima-site-title-color:      var(--fg);
-  --minima-brand-color:           var(--muted);
-  --minima-brand-color-light:     var(--border);
-  --minima-brand-color-dimmed:    var(--muted);
-  --minima-brand-color-dark:      var(--fg-2);
-  --minima-link-base-color:       var(--accent);
-  --minima-link-visited-color:    var(--accent);
-  --minima-link-hover-color:      var(--fg);
-  --minima-code-background-color: var(--paper);
-  --minima-border-color-01:       var(--border);
-  --minima-border-color-02:       var(--border-soft);
-  --minima-border-color-03:       var(--muted);
-  --minima-table-text-color:      var(--fg-2);
-  --minima-table-zebra-color:     var(--paper-raised);
-  --minima-table-header-bg-color: var(--paper);
-  --minima-table-header-border:   var(--border);
-  --minima-table-border-color:    var(--border);
+  --minima-background-color:      var(--color-paper);
+  --minima-text-color:            var(--color-body-strong);
+  --minima-heading-color:         var(--color-ink);
+  --minima-site-title-color:      var(--color-ink);
+  --minima-brand-color:           var(--color-grey);
+  --minima-brand-color-light:     var(--color-hair);
+  --minima-brand-color-dimmed:    var(--color-grey);
+  --minima-brand-color-dark:      var(--color-ink);
+  --minima-link-base-color:       var(--color-lane);
+  --minima-link-visited-color:    var(--color-lane);
+  --minima-link-hover-color:      var(--color-lane-hover);
+  --minima-code-background-color: var(--color-fill);
+  --minima-border-color-01:       var(--color-hair);
+  --minima-border-color-02:       var(--color-hair);
+  --minima-border-color-03:       var(--color-grey);
+  --minima-table-text-color:      var(--color-body-strong);
+  --minima-table-zebra-color:     var(--color-paper);
+  --minima-table-header-bg-color: var(--color-paper);
+  --minima-table-header-border:   var(--color-ink);
+  --minima-table-border-color:    var(--color-hair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { @include house-dark; }
+@media screen and (max-width: 760px) {
+  :root { --gutter: 1.25rem; --space-9: 4.5rem; }
 }
-
-:root[data-theme="dark"] { @include house-dark; }
 
 // ---------------------------------------------------------------------------
 // 2. Base
 // ---------------------------------------------------------------------------
 
-html {
-  -webkit-text-size-adjust: 100%;
-}
+html { -webkit-text-size-adjust: 100%; }
 
 body {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
   line-height: var(--leading-body);
   font-weight: 400;
-  color: var(--fg-2);
-  background-color: var(--bg);
+  color: var(--color-body-strong);
+  background-color: var(--color-paper);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  font-optical-sizing: auto;
 }
 
-::selection {
-  background: var(--accent-soft);
-}
+::selection { background: var(--color-lane-tint); }
 
 a {
-  color: var(--accent);
+  color: var(--color-lane);
   text-decoration: none;
-  border-bottom: 1px solid var(--accent-line);
-  transition: background-color 150ms cubic-bezier(0.2, 0, 0, 1),
-              border-color 150ms cubic-bezier(0.2, 0, 0, 1);
 
-  &:visited { color: var(--accent); }
-
-  &:hover {
-    color: var(--accent);
-    text-decoration: none;
-    background-color: var(--accent-soft);
-    border-bottom-color: var(--accent);
-  }
+  &:visited { color: var(--color-lane); }
+  &:hover { color: var(--color-lane-hover); text-decoration: underline; text-underline-offset: 3px; }
 }
 
 :focus-visible {
-  outline: none;
-  box-shadow: var(--focus-ring);
-  border-radius: 3px;
+  outline: 2px solid var(--color-lane);
+  outline-offset: 3px;
 }
 
 hr {
   border: 0;
-  border-top: 1px solid var(--border);
-  margin-block: var(--section-y);
+  border-top: var(--rule-hair);
+  margin-block: var(--space-7);
 }
 
-// The prose measure. Everything that is read rather than scanned sits in it.
 .wrapper {
-  max-width: 840px;
+  max-width: 1200px;
+  padding-inline: var(--gutter);
 }
 
 .page-content {
-  padding-block: var(--section-y) calc(var(--section-y) * 1.2);
-  background-color: var(--bg);
+  padding-block: var(--space-8) var(--space-9);
+  background-color: var(--color-paper);
 }
 
 // ---------------------------------------------------------------------------
-// 3. Masthead and navigation
+// 3. Nav — lockup left, plain links, one primary button flush right
 // ---------------------------------------------------------------------------
 
 .site-header {
   border-top: 0;
-  border-bottom: 1px solid var(--border-soft);
-  background-color: var(--bg);
+  border-bottom: var(--rule-hair);
+  background-color: var(--color-paper);
   min-height: 0;
-  line-height: 1.4;
+  line-height: 1.3;
 
   > .wrapper {
     display: flex;
-    align-items: baseline;
+    align-items: stretch;
     justify-content: space-between;
-    gap: 1.5rem;
-    padding-block: 1.6rem;
+    gap: var(--space-4);
+    min-height: 80px;
+    max-width: none;
+    margin: 0;
+    padding-left: var(--gutter);
+    padding-right: 0;
+
+    // minima's clearfix ::after would be a third flex item and push the nav off the edge
+    &::after { content: none; }
   }
 }
 
 .site-title {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 600;
-  letter-spacing: var(--tracking-display);
-  color: var(--fg);
-  border-bottom: 0;
-  margin: 0;
+  display: flex;
+  align-items: center;
   float: none;
+  margin: 0;
+  border: 0;
 
-  &:visited { color: var(--fg); }
-  &:hover { color: var(--accent); background: none; }
+  img { display: block; height: 44px; width: auto; }
+  &:hover { text-decoration: none; }
 }
 
 .site-nav {
   float: none;
+  position: static;
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-5);
   border: 0;
   background: none;
-  position: static;
   line-height: inherit;
 
   .nav-items {
     display: flex;
-    gap: 1.6rem;
+    align-items: center;
+    gap: var(--space-5);
   }
 
   .nav-item {
-    font-family: var(--font-ui);
     font-size: var(--text-sm);
-    font-weight: 500;
-    color: var(--muted);
-    border-bottom: 1px solid transparent;
+    font-weight: 400;
+    color: var(--color-ink);
     padding: 0;
     margin: 0;
 
-    &:hover {
-      color: var(--fg);
-      background: none;
-      border-bottom-color: var(--accent);
-    }
+    &:visited { color: var(--color-ink); }
+    &:hover { color: var(--color-lane); text-decoration: none; }
   }
 }
 
-@media screen and (max-width: 600px) {
+.nav-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-width: 230px;
+  padding: 0 var(--space-3);
+  background: var(--color-lane);
+  color: var(--color-paper);
+  font-size: var(--text-sm);
+  font-weight: 500;
+
+  &:visited { color: var(--color-paper); }
+  &:hover { background: var(--color-lane-hover); color: var(--color-paper); text-decoration: none; }
+}
+
+@media screen and (max-width: 760px) {
   .site-header > .wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
+    flex-wrap: wrap;
+    padding-right: var(--gutter);
+    padding-block: var(--space-3);
+    gap: var(--space-3);
   }
 
   .site-nav {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+
     label[for="nav-trigger"] { display: none; }
-
-    .nav-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.1rem;
-    }
-
+    .nav-items { gap: var(--space-4); }
     .nav-item { display: inline; }
   }
+
+  .nav-cta { width: 100%; padding-block: 15px; }
 }
 
 // ---------------------------------------------------------------------------
-// 4. Home — the post index
+// 4. Home — display headline, the Untangle motif, then rows of writing
 // ---------------------------------------------------------------------------
 
-.home {
-  max-width: var(--measure);
-}
-
-.masthead {
-  margin-bottom: calc(var(--section-y) * 1.1);
-}
+.masthead { max-width: 52rem; }
 
 .masthead-lede {
-  font-family: var(--font-display);
-  font-size: clamp(var(--text-2xl), 3.2vw, var(--text-3xl));
-  font-weight: 600;
-  line-height: 1.16;
+  font-size: var(--text-display);
+  font-weight: 300;
+  line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
-  color: var(--fg);
-  margin: 0 0 1.5rem;
-  max-width: 24ch;
+  color: var(--color-ink);
+  margin: 0 0 var(--space-4);
   text-wrap: balance;
 }
 
 .masthead-deck {
-  font-size: var(--text-lg);
-  line-height: 1.55;
-  color: var(--muted);
+  font-size: var(--text-lede);
+  line-height: 1.5;
+  color: var(--color-grey);
   margin: 0;
-  max-width: 38ch;
+  max-width: 46ch;
+}
+
+// Full bleed: the tangle runs off the left edge of the viewport.
+.motif {
+  margin: var(--space-7) calc(50% - 50vw) var(--space-9);
+  width: 100vw;
+  line-height: 0;
+
+  img { display: block; width: 100%; height: auto; }
 }
 
 .post-list-heading {
-  font-family: var(--font-ui);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-label);
-  color: var(--muted);
-  margin-bottom: 0.75rem;
+  font-size: var(--text-h2);
+  font-weight: 300;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-ink);
+  margin: 0;
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-5);
+  border-top: var(--rule-section);
 }
 
-// The ledger-card pattern: one bordered panel, hairline rows inside it.
+// Rows with hairlines, not a grid of cards.
 .post-list {
   margin: 0;
   list-style: none;
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-top: var(--rule-hair);
 
   > li {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    column-gap: var(--space-5);
     margin: 0;
-    padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+    border-bottom: var(--rule-hair);
   }
 
-  > li:last-child { border-bottom: 0; }
+  > li > .post-meta { grid-row: span 2; padding-top: 0.4rem; }
 
   h3 {
-    margin: 0.35rem 0 0;
-    font-size: var(--text-xl);
-    line-height: 1.25;
-    font-weight: 600;
-    letter-spacing: var(--tracking-display);
+    margin: 0;
+    font-size: var(--text-h3);
+    line-height: 1.2;
+    font-weight: 400;
   }
 }
 
 .post-link {
   display: inline;
-  font-family: var(--font-display);
   font-size: inherit;
-  color: var(--fg);
-  border-bottom: 1px solid transparent;
+  color: var(--color-ink);
 
-  &:visited { color: var(--fg); }
-
-  &:hover {
-    color: var(--accent);
-    background: none;
-    border-bottom-color: var(--accent-line);
-  }
+  &:visited { color: var(--color-ink); }
+  &:hover { color: var(--color-lane); text-decoration: none; }
 }
 
 .post-excerpt {
-  margin: 0.75rem 0 0;
-  color: var(--muted);
-  font-size: var(--text-base);
-  line-height: 1.6;
+  margin: var(--space-3) 0 0;
+  color: var(--color-grey);
+  font-size: var(--text-body);
+  max-width: var(--measure);
 
   p { margin: 0; }
 }
 
+// Dates are data: Plex Mono, grey.
 .post-meta {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  font-weight: 500;
   font-variant-numeric: tabular-nums;
-  color: var(--muted);
+  color: var(--color-grey);
+}
+
+@media screen and (max-width: 760px) {
+  .post-list > li { grid-template-columns: 1fr; }
+  .post-list > li > .post-meta { grid-row: auto; padding: 0 0 0.25rem; }
 }
 
 .page-heading {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: 600;
+  font-size: var(--text-h2);
+  font-weight: 300;
   letter-spacing: var(--tracking-display);
-  color: var(--fg);
+  color: var(--color-ink);
 }
 
 // ---------------------------------------------------------------------------
 // 5. Article
 // ---------------------------------------------------------------------------
 
-.post {
-  max-width: var(--measure);
-}
+.post { max-width: var(--measure); }
 
-// One axis: the title, the meta and the body all hang off the same edge.
 .post-header {
-  margin-bottom: calc(var(--rhythm) * 2);
-  text-align: start;
-  border-bottom: 1px solid var(--border-soft);
-  padding-bottom: 1.4rem;
-
-  .post-meta {
-    display: block;
-    margin-top: 0.2rem;
-  }
+  text-align: left;
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: var(--rule-hair);
 }
 
 .post-title,
 .post-content h1 {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: 600;
-  line-height: var(--leading-tight);
+  font-size: var(--text-display);
+  font-weight: 300;
+  line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
-  color: var(--fg);
-  margin-bottom: 0.9rem;
-  text-align: start;
+  color: var(--color-ink);
+  margin: 0 0 var(--space-4);
   text-wrap: balance;
-
-  @media screen and (max-width: 600px) {
-    font-size: var(--text-xl);
-  }
 }
 
 .post-content {
-  margin-bottom: var(--section-y);
-  color: var(--fg-2);
+  margin-bottom: var(--space-7);
+  color: var(--color-body-strong);
 
-  > p,
-  > ul,
-  > ol,
-  > dl {
-    margin-bottom: var(--rhythm);
-  }
+  > p, > ul, > ol, > dl { margin-bottom: var(--space-4); }
 
   h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    color: var(--fg);
+    color: var(--color-ink);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    font-weight: 300;
+    line-height: var(--leading-heading);
     letter-spacing: var(--tracking-display);
-    line-height: 1.25;
-    // Whitespace carries the hierarchy: a large gap above, a small one below.
-    margin-top: calc(var(--rhythm) * 1.9);
-    margin-bottom: 0.7rem;
   }
 
-  h2 { font-size: var(--text-xl); font-weight: 600; }
-  h3 { font-size: var(--text-lg); font-weight: 600; }
-  h4 { font-size: var(--text-base); font-weight: 600; }
+  h3 { font-size: var(--text-h3); font-weight: 400; line-height: 1.2; }
+  h4, h5, h6 { font-size: var(--text-body); font-weight: 500; }
 
-  h5, h6 {
-    font-family: var(--font-ui);
-    font-size: var(--text-xs);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-label);
-    color: var(--muted);
-  }
-
-  strong { font-weight: 600; color: var(--fg); }
+  strong { font-weight: 600; color: var(--color-ink); }
 
   li { margin-bottom: 0.5rem; }
-
   ul, ol { padding-inline-start: 1.4rem; }
 
   img {
     max-width: 100%;
     height: auto;
-    border-radius: var(--radius-sm);
     display: block;
-    margin-block: var(--rhythm);
+    margin-block: var(--space-5);
   }
 
-  // A blockquote is a pull quote here: a break in the rhythm, not a heading.
   blockquote {
-    color: var(--fg);
-    font-size: var(--text-lg);
+    color: var(--color-ink);
+    font-size: var(--text-lede);
+    font-weight: 300;
     font-style: normal;
     line-height: 1.5;
-    letter-spacing: -0.008em;
-    border-inline-start: 2px solid var(--accent-line);
-    padding-inline-start: 1.6rem;
-    padding-block: 0.2rem;
-    margin-block: calc(var(--rhythm) * 1.4);
+    letter-spacing: 0;
+    border-inline-start: 2px solid var(--color-ink);
+    padding-inline-start: var(--space-4);
+    margin-block: var(--space-5);
     margin-inline: 0;
 
     > :last-child { margin-bottom: 0; }
   }
 
   table {
-    font-family: var(--font-ui);
     font-size: var(--text-sm);
-    border-color: var(--border);
+    border-collapse: collapse;
+    border: 0;
 
-    th, td { border-color: var(--border); }
-    th { font-weight: 600; color: var(--fg); }
+    th, td { border: 0; border-bottom: var(--rule-hair); padding: 0.75rem 1rem 0.75rem 0; }
+    th { font-weight: 500; color: var(--color-ink); border-bottom: var(--rule-section); background: none; }
+    tr:nth-child(even) { background: none; }
   }
 }
 
@@ -495,60 +432,58 @@ hr {
 code {
   font-family: var(--font-mono);
   font-size: 0.85em;
-  font-feature-settings: "liga" 0;
-  border-radius: 3px;
-  border: 1px solid var(--border-soft);
-  background-color: var(--surface);
-  color: var(--fg);
-  padding: 0.12em 0.35em;
+  border-radius: 0;
+  border: 0;
+  background-color: var(--color-fill);
+  color: var(--color-ink);
+  padding: 0.1em 0.3em;
 }
 
 pre {
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
   line-height: 1.6;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 1.15rem 1.35rem;
+  background-color: var(--color-fill);
+  border: 0;
+  border-radius: 0;
+  padding: var(--space-4);
   overflow-x: auto;
 
-  > code {
-    border: 0;
-    padding: 0;
-    background: none;
-    font-size: inherit;
-  }
+  > code { padding: 0; background: none; font-size: inherit; }
 }
 
 .highlighter-rouge,
-figure.highlight {
-  margin-block: var(--rhythm);
-}
+figure.highlight { margin-block: var(--space-5); }
 
 .highlight {
-  background: none;
-
-  .lineno { color: var(--muted); }
+  background: var(--color-fill);
+  .lineno { color: var(--color-grey); }
 }
 
 // ---------------------------------------------------------------------------
-// 7. Footer
+// 7. Footer — Charcoal, reversed lockup, links in grey on ink
 // ---------------------------------------------------------------------------
 
 .site-footer {
-  border-top: 1px solid var(--border-soft);
-  padding-block: calc(var(--section-y) * 0.8);
-  font-family: var(--font-ui);
+  border-top: 0;
+  background: var(--color-charcoal);
+  color: var(--color-grey-on-ink);
+  padding-block: var(--space-7);
   font-size: var(--text-sm);
-  color: var(--muted);
+}
+
+.footer-lockup {
+  display: block;
+  height: 44px;
+  width: auto;
+  margin-bottom: var(--space-6);
 }
 
 .footer-col-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5rem;
-  color: var(--muted);
+  gap: var(--space-6);
+  color: var(--color-grey-on-ink);
   margin-inline: 0;
 }
 
@@ -559,12 +494,10 @@ figure.highlight {
 }
 
 .footer-heading {
-  font-size: var(--text-xs);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-label);
-  color: var(--fg);
-  margin-bottom: 0.9rem;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-paper);
+  margin-bottom: var(--space-3);
 }
 
 .contact-list {
@@ -573,33 +506,17 @@ figure.highlight {
 
   li { margin-bottom: 0.4rem; }
 
-  // The footer is chrome, not a call to action: one accent per screen.
-  a {
-    color: var(--muted);
-    border-bottom-color: transparent;
-  }
-
-  a:hover {
-    color: var(--fg);
-    background: none;
-    border-bottom-color: var(--accent-line);
-  }
+  a, a:visited { color: var(--color-grey-on-ink); }
+  a:hover { color: var(--color-lane-on-ink); }
 }
 
-.social-links {
-  margin-top: 2rem;
-}
+.social-links { margin-top: var(--space-6); }
 
 .social-media-list {
   display: flex;
   margin: 0;
 
-  li {
-    float: none;
-    min-width: 0;
-    min-height: 0;
-    margin: 0 0.6rem 0 0;
-  }
+  li { float: none; min-width: 0; min-height: 0; margin: 0 var(--space-3) 0 0; }
 
   a {
     display: grid;
@@ -607,64 +524,49 @@ figure.highlight {
     width: 2.5rem;
     height: 2.5rem;
     padding: 0;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-grey);
+    border-radius: 0;
     background: none;
 
-    &:hover {
-      background: none;
-      border-color: var(--accent);
-    }
+    &:hover { border-color: var(--color-lane-on-ink); text-decoration: none; }
   }
 
-  .grey, .svg-icon { color: var(--muted); fill: var(--muted); }
+  .grey, .svg-icon { color: var(--color-grey-on-ink); fill: var(--color-grey-on-ink); }
   a:hover .grey,
-  a:hover .svg-icon { color: var(--accent); fill: var(--accent); }
+  a:hover .svg-icon { color: var(--color-lane-on-ink); fill: var(--color-lane-on-ink); }
+}
+
+.footer-legal {
+  margin: var(--space-6) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-body-strong);
+  font-size: var(--text-xs);
+  color: var(--color-grey-on-ink);
 }
 
 // ---------------------------------------------------------------------------
 // 8. Mermaid diagrams
 // ---------------------------------------------------------------------------
 //
-// Two renderers can produce a diagram here and both are styled:
-//
-//   div.mermaid  — client-side mermaid.js (see _includes/custom-head.html). This
-//                  is what actually runs on GitHub Pages, which does not load
-//                  jekyll-spaceship. It emits a real SVG, so it is themed per
-//                  colour scheme and stays legible in dark mode.
-//   img.mermaid  — jekyll-spaceship's `mermaid!` fence, rendered remotely for a
-//                  light canvas. It cannot be recoloured from here, so it keeps
-//                  a paper card in both schemes rather than inverting into mush.
+// div.mermaid is client-side mermaid.js (see _includes/custom-head.html), which
+// is what runs on GitHub Pages. img.mermaid is jekyll-spaceship's remote render.
+// Both sit on a Fill ground: flat, square, no border.
 
 .mermaid {
   display: block;
   box-sizing: border-box;
-  margin-block: calc(var(--rhythm) * 1.2);
-  padding: 1.5rem;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  margin-block: var(--space-5);
+  padding: var(--space-4);
+  background-color: var(--color-fill);
   text-align: center;
   overflow-x: auto;
 
-  svg {
-    max-width: 100%;
-    height: auto;
-  }
+  svg { max-width: 100%; height: auto; }
 }
 
-img.mermaid {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  background-color: var(--diagram-paper);
-}
+img.mermaid { width: 100%; max-width: 100%; height: auto; }
 
-// Until the renderer swaps it out — or if it never loads — the source stays a
-// readable code block instead of a wall of unstyled text.
-pre > code.language-mermaid {
-  display: block;
-}
+pre > code.language-mermaid { display: block; }
 
 // ---------------------------------------------------------------------------
 // 9. Print
@@ -673,8 +575,7 @@ pre > code.language-mermaid {
 @media print {
   .site-nav,
   .site-footer,
-  .social-links { display: none !important; }
+  .motif { display: none !important; }
 
-  body { background: #ffffff; color: #000000; }
   .post, .home { max-width: none; }
 }
