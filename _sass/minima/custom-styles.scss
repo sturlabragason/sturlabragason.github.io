@@ -249,6 +249,13 @@ hr {
   text-wrap: balance;
 }
 
+.masthead-lockup {
+  margin: 0;
+  line-height: 0;
+
+  img { display: block; width: clamp(18rem, 60vw, 44rem); height: auto; }
+}
+
 .masthead-deck {
   font-size: var(--text-lede);
   line-height: 1.5;

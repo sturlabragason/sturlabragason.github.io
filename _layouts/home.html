@@ -5,15 +5,17 @@ layout: base
 <div class="home">
 
   {%- comment -%}
-    The masthead is the site's one display element. The name already sits in the
-    header, so the lede is the description rather than a repeat of the title.
+    The masthead is the site's one display element: the lockup at hero scale,
+    unless the page sets its own title.
   {%- endcomment -%}
   <header class="masthead">
     {%- if page.title %}
     <h1 class="masthead-lede">{{ page.title }}</h1>
     {%- if page.subtitle %}<p class="masthead-deck">{{ page.subtitle | escape }}</p>{% endif %}
-    {%- elsif site.description %}
-    <h1 class="masthead-lede">{{ site.description | strip_newlines | escape }}</h1>
+    {%- else %}
+    <h1 class="masthead-lockup">
+      <img src="{{ '/assets/brand/logo/lockup.svg' | relative_url }}" width="290" height="74" alt="Sturla Bragason, platform and AI engineering">
+    </h1>
     {%- endif %}
   </header>
 
